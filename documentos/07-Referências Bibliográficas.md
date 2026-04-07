@@ -1,7 +1,9 @@
 # Referências Bibliográficas
 
-[Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.]
+> - BRASIL. Lei nº 12.305, de 2 de agosto de 2010. Institui a Política Nacional de Resíduos Sólidos; altera a Lei nº 9.605, de 12 de fevereiro de 1998; e dá outras providências. Brasília, DF: Presidência da República, 2010. Disponível em: <https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12305.htm>. Acesso em: 20 mar. 2026.
 
-> **Links Úteis**:
-> - [Formato ABNT](https://www.normastecnicas.com/abnt/)
-> - [Referências Bibliográficas da ABNT](https://comunidade.rockcontent.com/referencia-bibliografica-abnt/)
+> - GOUVEIA, Nelson. Resíduos sólidos urbanos: impactos socioambientais e perspectiva de manejo sustentável com inclusão social. *Ciência & Saúde Coletiva*, v. 17, p. 1503–1510, 2012. Disponível em: <https://doi.org/10.1590/S1413-81232012000600014>. Acesso em: 21 mar. 2026.
+
+> - JACOBI, Pedro Roberto; BESEN, Gina Rizpah. Gestão de resíduos sólidos em São Paulo: desafios da sustentabilidade. *Estudos Avançados*, v. 25, n. 71, p. 135–158, 2011. Disponível em: <https://doi.org/10.1590/S0103-40142011000100010>. Acesso em: 21 mar. 2026.
+
+> - SILVA, Cassio Aurélio et al. Cidades inteligentes e a gestão de resíduos sólidos: uma revisão sistemática da literatura. *Revista de Gestão Ambiental e Sustentabilidade*, v. 9, n. 1, p. 1–22, 2020. Disponível em <https://www2.camara.leg.br/a-camara/estruturaadm/altosestudos/pdf/cidades_inteligentes.pdf> Acesso em: 23 mar. 2026.
