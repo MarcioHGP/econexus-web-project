@@ -1,16 +1,16 @@
-# Título do Projeto
+# EcoNexus
 
-`CURSO`
+`ANÁLISE E DESENVOLVIMENTO DE SISTEMAS`
 
-`DISCIPLINA`
+`DESENVOLVIMENTO DE APLICAÇÃO WEB FRONT-END`
 
-`SEMESTRE`
+`1⁰ SEMESTRE`
 
 [Descrever resumidamente, em um ou dois parágrafos, o projeto desenvolvido.]
 
 ## Integrantes
 
-* Nome completo do aluno 1
+* Bernardo Pereira
 * Nome completo do aluno 2
 * Nome completo do aluno 3
 * Nome completo do aluno 4
