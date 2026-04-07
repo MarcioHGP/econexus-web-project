@@ -1,25 +1,27 @@
-# EcoNexus
+# EcoNexus - Plataforma Inteligente de Gestão de Resíduos e Reciclagem Urbana 
 
 `ANÁLISE E DESENVOLVIMENTO DE SISTEMAS`
 
 `DESENVOLVIMENTO DE APLICAÇÃO WEB FRONT-END`
 
-`1⁰ SEMESTRE`
+`1⁰ SEMESTRE DE 2026`
 
-[Descrever resumidamente, em um ou dois parágrafos, o projeto desenvolvido.]
+A Plataforma Inteligente de Gestão de Resíduos e Reciclagem Urbana EcoNexus propõe a criação de um hub digital que utiliza geolocalização e interfaces intuitivas para conectar diretamente cidadãos e empresas às cooperativas de catadores. Ao centralizar informações e otimizar a logística de coleta, a plataforma elimina gargalos históricos de comunicação, transformando o descarte de materiais — antes um passivo ambiental — em um processo transparente e eficiente.
+
+Fundamentada nas diretrizes da Política Nacional de Resíduos Sólidos (PNRS), a iniciativa foca no fortalecimento da economia circular e na inclusão social dos agentes de reciclagem. Através de uma aplicação web responsiva, o sistema busca aumentar os índices de reaproveitamento de materiais, reduzir custos operacionais para as cooperativas e educar a população sobre o descarte correto. Em suma, o projeto não apenas moderniza a gestão de resíduos em Belo Horizonte, mas também promove um impacto socioeconômico positivo, transformando a sustentabilidade em uma prática acessível e conectada para o ecossistema das cidades inteligentes.
 
 ## Integrantes
 
-* Bernardo Pereira
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Arthur Michel Santos Fonseca 
+* Bernardo Do Valle Pereira 
+* Marlon Gomes da Silva 
+* Tainara Lorraine Carvalho 
 * Nome completo do aluno 5
 * Nome completo do aluno 6
 
 ## Orientador
 
-* Nome completo do professor
+* Viviâne de Almeida Tôrres 
 
 # Documentação
 
@@ -35,7 +37,7 @@
 
 # Hospedagem
 
-* Insira o endereço eletrônico público de acesso ao conteúdo publicado. 
+* Em análise.
 
 # Código-Fonte
 
