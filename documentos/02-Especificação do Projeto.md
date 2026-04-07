@@ -2,62 +2,106 @@
 
 ## Perfis de Usuários
 
-[Enumere e faça o detalhamento dos perfis de usuários. Utilize o modelo de tabela abaixo para sintetizá-los.]
+<table>
+  <tbody>
+    <tr align=center>
+      <th colspan="2">Cidadão</th>
+    </tr>
+    <tr>
+        <td width="150px"><b>Descrição </b></td>
+        <td width="600px">Usuário doméstico com acesso a smartphones.</td>
+    </tr>
+    <tr>
+      <td><b>Necessidades</b></td>
+      <td>
+         <ul>
+            <li>Localizar pontos próximos </li>
+            <li>Agendar coletas </li>
+            <li>Entender o que é reciclável.  </li>
+          </ul> 
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 <table>
-<tbody>
-<tr align=center>
-<th colspan="2">Perfil Nome </th>
-</tr>
-<tr>
-<td width="150px"><b>Descrição</b></td>
-<td width="600px">...</td>
-</tr>
-<tr>
-<td><b>Necessidades</b></td>
-<td>...</td>
-</tr>
-</tbody>
+  <tbody>
+    <tr align=center>
+      <th colspan="2">Cooperativa</th>
+    </tr>
+    <tr>
+        <td width="150px"><b>Descrição</b></td>
+        <td width="600px">Entidade que realiza a coleta e triagem.</td>
+    </tr>
+    <tr>
+      <td><b>Necessidades</b></td>
+      <td>
+          <ul>
+            <li>Receber alertas de coleta </li>
+            <li>Gerenciar status de pedidos </li>
+            <li>Visualizar mapas de demanda </li>
+          </ul>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 
 ## Histórias de Usuários
 
-[Apresente aqui as histórias de usuários que são relevantes para o projeto da solução.]
-
-> **Link Útil**:
-> - [Como escrever boas histórias de usuário](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-
 [Utilize o modelo de tabela abaixo para apresentar as histórias de usuários.]
 
-|EU COMO... `QUEM`   | QUERO/PRECISO ... `O QUE` |PARA ... `PORQUE`                 |
-|--------------------|---------------------------|----------------------------------|
-| ...                | ...                       | ...                              |
-| ...                | ...                       | ...                              |
+|EU COMO... `QUEM`                     | QUERO/PRECISO ... `O QUE`                                                                 | PARA ... `PORQUE`                                                                 |
+|--------------------------------------|-------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+| Administrador ou Novo Usuário       | Realizar o cadastro na plataforma com a definição de um perfil específico                | Que o sistema restrinja ou libere funcionalidades de acordo com as minhas permissões |
+| Representante de uma Cooperativa    | Realizar um cadastro exclusivo fornecendo dados institucionais e geográficos             | Que a plataforma direcione ferramentas específicas de gestão de coletas e análise de dados para a minha organização |
+| Usuário                             | Visualizar um mapa interativo que exiba os pontos de coleta recicláveis                  | Que eu consiga me organizar e descartar os meus resíduos corretamente             |
+| Usuário                             | Anexar fotos do material no momento do pedido                                             | Que a cooperativa consiga identificar corretamente o tipo e o volume dos resíduos antes de realizar a coleta |
+| Usuário                             | Filtrar os pontos de coleta pelo tipo de material                                         | Para encontrar rapidamente o local adequado para destinar meu resíduo              |
+| Usuário                             | Realizar solicitações de coleta diretamente para uma cooperativa informando tipo de material, quantidade, localização e disponibilidade de horário | Garantir que meus resíduos sejam encaminhados da forma correta e sustentável       |
+| Usuário                             | Cancelar uma solicitação de coleta que eu tenha feito                                     | Evitar erros e retirar pedidos que não sejam mais necessários                      |
+| Usuário                             | Receber notificações PUSH com a previsão de atendimento da minha solicitação             | Acompanhar quando a coleta estiver próxima de acontecer e me organizar melhor      |
+| Usuário                             | Acessar uma interface para acompanhar o status da minha solicitação de coleta            | Saber em que etapa o pedido está e acompanhar todo o andamento com mais facilidade |
+| Usuário                             | Postar itens em uma interface onde outros usuários possam visualizar os itens            | Que os outros usuários que tenham interesse no item possam ver e solicitá-lo       |
+| Cooperativa                         | Aceitar solicitações dos usuários para coleta de materiais                               | Conseguir confirmar a coleta do material e que o usuário seja notificado sobre o atendimento |
+| Usuário                             | Avaliar a coleta realizada, atribuindo uma nota e podendo deixar um comentário           | Garantir a qualidade do serviço, melhorar a confiabilidade da plataforma e ajudar outros usuários |
+| Usuário                             | Acessar um histórico com todas as minhas solicitações de coleta e visualizar métricas como quantidade de resíduos reciclados e impacto ambiental estimado | Acompanhar minha contribuição para a sustentabilidade e me incentivar a manter práticas de descarte correto |
+| Representante de um Ponto de Descarte | Realizar um cadastro exclusivo fornecendo dados institucionais e geográficos             | Que o usuário consiga visualizar os pontos de descarte próximos a ele              |
+| Usuário                             | Adicionar uma opção que deixe o item marcado como reivindicado no fórum                  | Permitir que os usuários reivindiquem os itens postados para doação                |
 
 ## Requisitos do Projeto
-
-[Com base nas Histórias de Usuários, enumere os requisitos da solução. Lembre-se que cada requisito deve corresponder a uma, e somente uma, característica alvo da solução. Além disso, certifique-se de que todos os aspectos capturados nas Histórias de Usuário foram cobertos.]
 
 ### Requisitos Funcionais
 
 [Utilize o modelo de tabela abaixo para apresentar os requisitos funcionais]
 
-|ID    | Descrição                | Prioridade |
-|-------|---------------------------------|----|
-| RF-01 |  ...                    | ...   | 
-|  ...  |  ...                    | ...   |
-
-**Prioridade: Alta / Média / Baixa. 
+|ID    | Descrição                                                                                                       | Prioridade |
+|------|-----------------------------------------------------------------------------------------------------------------|------------|
+| RF-01 | Permitir o cadastro de usuários com distinção de perfis                                                        | Alta       |
+| RF-02 | Permitir o cadastro de cooperativas                                                                            | Alta       |
+| RF-03 | Exibir um mapa interativo                                                                                      | Alta       |
+| RF-04 | Permitir o usuário anexar fotos do material na solicitação de coleta                                           | Média      |
+| RF-05 | Permitir o filtro de pontos de coleta por tipo de material                                                     | Alta       |
+| RF-06 | Permitir ao usuário realizar solicitações de coleta para cooperativa                                           | Alta       |
+| RF-07 | Permitir ao usuário cancelar uma solicitação de coleta                                                         | Média      |
+| RF-08 | Notificar o usuário via PUSH quando a solicitação estiver a D-1 de ser atendida                                | Média      |
+| RF-09 | Permitir ao usuário acessar uma interface para acompanhar suas solicitações de coleta                          | Alta       |
+| RF-10 | Permitir que os usuários postem itens para doação                                                              | Média      |
+| RF-11 | Permitir que as cooperativas aceitem as solicitações dos usuários                                              | Alta       |
+| RF-12 | Permitir que usuários avaliem o serviço prestado pelas cooperativas após a coleta                              | Média      |
+| RF-13 | Permitir que o usuário visualize seu histórico de descartes e impacto ambiental                                | Média      |
+| RF-14 | Permitir o cadastro de pontos de descarte com formulário específico                                            | Média      |
+| RF-15 | Permitir a reivindicação de itens postados para doação                                                         | Média      |
+| RF-16 | Permitir que itens doados sejam marcados como reivindicados                                                    | Baixa      |
 
 ### Requisitos não Funcionais
 
-[Utilize o modelo de tabela abaixo para apresentar os requisitos não-funcionais]
-
-|ID      | Descrição               |Prioridade |
-|--------|-------------------------|----|
-| RNF-01 |  ...                    | ...   | 
-| ...    |  ...                    | ...   | 
-
-**Prioridade: Alta / Média / Baixa. 
+|ID      | Descrição                                                                                                    |Prioridade |
+|--------|--------------------------------------------------------------------------------------------------------------|-----------|
+| RNF-01 | A interface deve ser responsiva (Mobile-First)                                                               | ALTA      | 
+| RNF-02 | O sistema deve usar obrigatoriamente a biblioteca JS Leaflet para exibir o mapa interativo.                  | ALTA      | 
+| RNF-03 | A aplicação deve carregar o mapa em menos de 3 segundos.                                                     | MÉDIA     | 
+| RNF-04 | O sistema deve registrar os dados dos usuários por meio de um banco de dados MySQL.                          | ALTA      |  
+| RNF-05 | O sistema deve seguir padrões de acessibilidade (WCAG 2.1).                                                  | ALTA      | 
+| RNF-06 | O sistema deve utilizar o framework CSS Tailwind para padronização da interface                              | ALTA      | 
 
