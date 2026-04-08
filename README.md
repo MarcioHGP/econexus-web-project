@@ -16,7 +16,7 @@ Fundamentada nas diretrizes da Política Nacional de Resíduos Sólidos (PNRS), 
 * Bernardo Do Valle Pereira 
 * Marlon Gomes da Silva 
 * Tainara Lorraine Carvalho 
-* Nome completo do aluno 5
+* Rafael Felipe de Paula Silva
 * Nome completo do aluno 6
 
 ## Orientador
