@@ -6,6 +6,9 @@
 
 Etapa 1:
 
+[ECONEXUS.pdf](https://github.com/user-attachments/files/26617803/ECONEXUS.pdf)
+
+
 > - Equipe
 > - Descrição do Contexto
 > - Problema
