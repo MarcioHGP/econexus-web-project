@@ -13,11 +13,12 @@ Fundamentada nas diretrizes da Política Nacional de Resíduos Sólidos (PNRS), 
 ## Integrantes
 
 * Arthur Michel Santos Fonseca 
-* Bernardo Do Valle Pereira 
-* Marlon Gomes da Silva 
+* Bernardo Do Valle Pereira
+* Márcio Henrique Gomes Paixão
+* Mariana Guimarães de Melo 
+* Marlon Gomes da Silva
+* Rafael Felipe de Paula Silva 
 * Tainara Lorraine Carvalho 
-* Rafael Felipe de Paula Silva
-* Nome completo do aluno 6
 
 ## Orientador
 
