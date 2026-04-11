@@ -17,8 +17,6 @@ A equipe utiliza o Scrum como base para definição do processo de desenvolvimen
 - Equipe de Desenvolvimento: [A definir.]
 - Equipe de Design: [A definir.]
 
-> **Links Úteis**:
-
 ### Processo
 
 Para organização e distribuição das tarefas do projeto, a equipe está utilizando o GitHub em Conjunto com as metodologias Scrum em conjunto com o quadro Kanban, com os seguintes processor no quadro Kanban:
