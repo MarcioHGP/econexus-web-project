@@ -38,7 +38,7 @@ Fundamentada nas diretrizes da Política Nacional de Resíduos Sólidos (PNRS), 
 
 # Hospedagem
 
-* Em análise.
+* [GitHub](https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/)
 
 # Código-Fonte
 
