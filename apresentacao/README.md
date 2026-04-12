@@ -2,22 +2,7 @@
 
 ## Conjunto de Slides
 
-[A apresentação do projeto consiste na geração de um conjunto de slides em um arquivo no formato ppt, pptx ou pdf, contemplando os seguintes itens:
-
-Etapa 1:
-
 [ECONEXUS.pdf](https://github.com/user-attachments/files/26617803/ECONEXUS.pdf)
-
-
-> - Equipe
-> - Descrição do Contexto
-> - Problema
-> - Objetivos
-> - Justificativa
-> - Público-alvo
-> - Perfis de usuários
-> - Histórias de Usuários
-> - Requisitos do Projeto (Requisitos funcionais e Requisitos não funcionais)
 
 Etapa 5: 
 
