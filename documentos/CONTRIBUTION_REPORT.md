@@ -1,6 +1,6 @@
 # 📊 Relatório de Contribuições do Projeto
 
-**Última atualização:** 12/04/2026 19:32
+**Última atualização:** 12/04/2026 20:11
 
 ---
 
@@ -8,19 +8,19 @@
 
 | Aluno                     |   Commits |   Linhas+ |   Linhas- |   Arquivos |   Docs Commits |   Docs Arquivos |
 |---------------------------|-----------|-----------|-----------|------------|----------------|-----------------|
-| Arthur544                 |         2 |         1 |         2 |          1 |              2 |               1 |
+| Arthur544                 |         3 |         5 |         3 |          1 |              3 |               1 |
 | Bernardo Do Valle Pereira |        22 |       430 |       141 |         11 |             12 |               3 |
 | Rafael Felipe             |         1 |         1 |         1 |          1 |              1 |               1 |
 | Srmarlongs                |         1 |         2 |         1 |          1 |              1 |               1 |
 | Tainara-Carvalho          |         2 |         1 |         6 |          1 |              2 |               1 |
-| github-actions[bot]       |        17 |       114 |        63 |          3 |             17 |               1 |
+| github-actions[bot]       |        18 |       118 |        66 |          3 |             18 |               1 |
 | github-classroom[bot]     |         1 |       774 |         0 |         19 |              1 |               3 |
 | marciohgpdev              |         1 |         5 |         5 |          1 |              1 |               1 |
 
 
 ## 📅 Contribuições Semanais (Todo o Semestre)
 
-**2026-04-05**: Arthur544: 2, Bernardo Do Valle Pereira: 22, Rafael Felipe: 1, Srmarlongs: 1, Tainara-Carvalho: 2, github-actions[bot]: 17, marciohgpdev: 1
+**2026-04-05**: Arthur544: 3, Bernardo Do Valle Pereira: 22, Rafael Felipe: 1, Srmarlongs: 1, Tainara-Carvalho: 2, github-actions[bot]: 18, marciohgpdev: 1
 
 **2026-03-29**: github-classroom[bot]: 1
 
