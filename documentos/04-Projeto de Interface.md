@@ -28,10 +28,13 @@ A tela de menu apresenta atalhos para facilitar o acesso a outras páginas e mel
 
 ### Tela Login
 Espaço onde o usuário acessa a plataforma informando seus dados, como e-mail e senha. A partir dessa tela, ele consegue entrar na sua conta de forma rápida e segura, além de ter a opção de ir para recuperação de senha, caso necessário.
+
 <img width="280" height="540" alt="Login" src="https://github.com/user-attachments/assets/36af8134-3fd2-46ab-b567-36d57ba44401" />
 ### Recuperar senha
 Área destinada ao usuário que esqueceu sua senha. Nela, é possível informar o e-mail cadastrado para receber as instruções de redefinição e criar uma nova senha com segurança.
+
 <img width="280" height="540" alt="Recupere sua senha" src="https://github.com/user-attachments/assets/bbb96996-3476-436a-a61a-d4b42780bab8" />
 ### Cadastro
 Tela onde o usuário realiza o cadastro na plataforma, preenchendo suas informações pessoais e também seus dados de endereço. Nesse processo, ele define seus dados de acesso, como e-mail e senha, garantindo maior praticidade no uso do sistema, especialmente em funcionalidades que envolvem localização ou entrega. Após concluir o cadastro, o usuário passa a ter acesso completo às funcionalidades disponíveis.
+
 <img width="280" height="540" alt="Cadastro" src="https://github.com/user-attachments/assets/35cac8c4-7053-4464-9252-78a925934ee1" />
