@@ -22,7 +22,10 @@ homepage
 
 Página central onde o usuário poderá ver o mapa e filtrar os pontos de coleta de acordo com sua localização.
 
-<img width="540" height="960" alt="dashboard" src="https://github.com/user-attachments/assets/2edc8cca-a93c-4d88-8198-b2ca300e0ce4" />
+<img width="1080" height="1920" alt="Estrutura" src="https://github.com/user-attachments/assets/bc9d6d46-55d5-4960-ae7d-f66c589d236b" />
+<img width="1080" height="1920" alt="Página Inicial" src="https://github.com/user-attachments/assets/97990914-19a3-4ca0-a9f9-5fdcbb0a9a2d" />
+<img width="1080" height="1920" alt="Menu" src="https://github.com/user-attachments/assets/ceef2236-a136-4742-842f-730414feb732" />
+
 
 
 
