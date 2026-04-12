@@ -59,7 +59,9 @@ Esta tela representa a interface de consulta de pontos de coleta de resíduos em
 ![1000268193](https://github.com/user-attachments/assets/3d20a039-d0f8-40fa-9fda-5ff2ee520622)
 Figura 10
 
+### Detalhes do Ponto de Coleta de Resíduos
 
+Esta tela representa a interface de detalhamento de um ponto de coleta de resíduos, onde o usuário pode visualizar informações completas sobre o local, como tipo de resíduo aceito, nome do ponto, horário de funcionamento, status, regras do local, avaliações de outros usuários, instruções de como chegar e foto do ambiente, além de permitir ações como favoritar e compartilhar, facilitando o acesso, a confiança e a usabilidade do sistema.
 
 ![1000268192](https://github.com/user-attachments/assets/ccf907d7-e53b-4ecf-a6b5-6671eef206e5)
 Figurinha 11
