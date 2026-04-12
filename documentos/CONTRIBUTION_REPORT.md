@@ -1,6 +1,6 @@
 # 📊 Relatório de Contribuições do Projeto
 
-**Última atualização:** 12/04/2026 19:00
+**Última atualização:** 12/04/2026 19:02
 
 ---
 
@@ -10,13 +10,14 @@
 |---------------------------|-----------|-----------|-----------|------------|----------------|-----------------|
 | Bernardo Do Valle Pereira |        21 |       375 |       130 |         11 |             11 |               3 |
 | Rafael Felipe             |         1 |         1 |         1 |          1 |              1 |               1 |
-| github-actions[bot]       |        10 |        85 |        37 |          3 |             10 |               1 |
+| Srmarlongs                |         1 |         2 |         1 |          1 |              1 |               1 |
+| github-actions[bot]       |        11 |        90 |        42 |          3 |             11 |               1 |
 | github-classroom[bot]     |         1 |       774 |         0 |         19 |              1 |               3 |
 
 
 ## 📅 Contribuições Semanais (Todo o Semestre)
 
-**2026-04-05**: Bernardo Do Valle Pereira: 21, Rafael Felipe: 1, github-actions[bot]: 10
+**2026-04-05**: Bernardo Do Valle Pereira: 21, Rafael Felipe: 1, Srmarlongs: 1, github-actions[bot]: 11
 
 **2026-03-29**: github-classroom[bot]: 1
 
