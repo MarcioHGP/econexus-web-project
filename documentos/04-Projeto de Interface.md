@@ -1,9 +1,7 @@
 
 # Projeto de Interface
 
-## User Flow
 
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/2b942ffe-e494-4877-b0f1-4d9d9d5b02e9" />
 
 
 ## Protótipo
