@@ -3,7 +3,8 @@
 
 ## User Flow
 
-<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/71dfaa80-2eb6-4387-b710-9dd90cf2cc02" />
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/2b942ffe-e494-4877-b0f1-4d9d9d5b02e9" />
+
 
 ## Protótipo
 
