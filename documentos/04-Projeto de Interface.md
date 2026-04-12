@@ -66,6 +66,9 @@ Esta tela representa a interface de detalhamento de um ponto de coleta de resíd
 ![1000268192](https://github.com/user-attachments/assets/ccf907d7-e53b-4ecf-a6b5-6671eef206e5)
 Figurinha 11
 
+### Configurações do Usuário
+
+Esta tela permite ao usuário gerenciar suas configurações pessoais, incluindo informações pessoais, endereço, notificações e política de privacidade, além de oferecer acesso à central de ajuda e opção de login.
 
 ![1000268191](https://github.com/user-attachments/assets/6a4613b2-1377-4b20-a809-03547c67a99f)
 Figura 12 
