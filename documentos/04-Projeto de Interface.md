@@ -13,6 +13,7 @@ Desenvolver um protótipo emerge como uma das maneiras mais ágeis e econômicas
 ### Protótipo de baixa fidelidade
 
 ![Mídia (1)](https://github.com/user-attachments/assets/13f1eda1-3128-4c22-94ff-39ca45552b5f)
+<img width="1536" height="1413" alt="image" src="https://github.com/user-attachments/assets/522e799b-d8ad-48f9-b664-a571fb1da39b" />
 
  
 > **Links Úteis**:
