@@ -11,11 +11,11 @@ A metodologia ágil escolhida para o desenvolvimento deste projeto foi o SCRUM, 
 ### Divisão de Papéis
 
 A equipe utiliza o Scrum como base para definição do processo de desenvolvimento.
-
-- Scrum Master: Marlon Gomes da Silva 
-- Product Owner: Bernardo Do Valle Pereira 
-- Equipe de Desenvolvimento: [A definir.]
-- Equipe de Design: [A definir.]
+ 
+- Scrum Master: Marlon Gomes da Silva. 
+- Product Owner: Bernardo Do Valle Pereira. 
+- Equipe de Desenvolvimento: Arthur Michel Santos Fonseca, Márcio Henrique Gomes Paixão, Marlon Gomes da Silva, Rafael Felipe de Paula Silva.  
+- Equipe de Design: Tainara Lorraine Carvalho, Mariana Guimarães de Melo.
 
 ### Processo
 
