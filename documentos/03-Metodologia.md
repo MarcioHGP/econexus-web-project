@@ -47,18 +47,18 @@ Para organização e distribuição das tarefas do projeto, a equipe está utili
 ### Ferramentas
 
 - Editor de código (VScode).
-- Ferramentas de comunicação
-- Ferramentas de desenho de tela (wireframing)
+- Ferramentas de comunicação.
+- Ferramentas de desenho de tela (wireframing).
 
 O editor de código foi escolhido porque ele possui uma integração com o sistema de versionamento Git. As ferramentas de comunicação utilizadas possuem integração semelhante e por isso foram selecionadas. [Continuar...]
 
-Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito é apresentada na tabela que se segue.
+Os artefatos do projeto são desenvolvidos a partir das plataformas GitHub e Canva e a relação dos ambientes com seu respectivo propósito é apresentada na tabela que se segue.
 
 | AMBIENTE                            | PLATAFORMA                         | LINK DE ACESSO                                                                                             |
 |-------------------------------------|------------------------------------|------------------------------------------------------------------------------------------------------------|
 | Repositório de código fonte         | GitHub                             | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2                        |
 | Documentos do projeto               | GitHub                             | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/tree/main/documentos   |
-| Projeto de Interface                | Figma                              | http://....                                                                                                |
+| Projeto de Interface                | Figma                              | https://canva.link/zrz1mswfek71kco                                                                         |
 | Gerenciamento do Projeto            | GitHub Projects                    | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/2819                                               |
 | Hospedagem                          | GitHub Pages                       | https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/                        |
 
