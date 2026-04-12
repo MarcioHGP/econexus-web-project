@@ -52,6 +52,7 @@ Tela onde o usuário realiza o cadastro na plataforma, preenchendo suas informa�
 <img width="280" height="540" alt="Cadastro" src="https://github.com/user-attachments/assets/35cac8c4-7053-4464-9252-78a925934ee1" />
 Figura 7
 
+### Interface de consulta 
 
 Esta tela representa a interface de consulta de pontos de coleta de resíduos em um aplicativo, permitindo que o usuário visualize locais de descarte e utilize filtros por tipo de resíduo, com apoio de ícones e botões, facilitando a navegação, a busca por informações específicas e incentivando o descarte correto e sustentável.
 
