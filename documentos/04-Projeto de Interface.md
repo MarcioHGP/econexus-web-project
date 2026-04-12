@@ -1,7 +1,7 @@
 # Projeto de Interface
 
 ## User Flow
-O fluxograma apresentado na figura 1 mostra o fluxo de interação do usuário pelas telas do sistema. Cada uma das telas deste fluxo é detalhada na seção de Protótipo de baixa fidelidade que se segue, para visualizar o protótipo , acesse o ambiente na ferramenta<a href="https://canva.link/zrz1mswfek71kco">Canva usada no projeto.</a> 
+O fluxograma apresentado na figura 1 mostra o fluxo de interação do usuário pelas telas do sistema. Cada uma das telas deste fluxo é detalhada na seção de Protótipo de baixa fidelidade que se segue, para visualizar o protótipo , acesse o ambiente na ferramenta <a href="https://canva.link/zrz1mswfek71kco">Canva usada no projeto.</a> 
 
 [USER FLOW AQUI]
 
