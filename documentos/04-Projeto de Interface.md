@@ -56,19 +56,20 @@ Figura 7
 
 Esta tela representa a interface de consulta de pontos de coleta de resíduos em um aplicativo, permitindo que o usuário visualize locais de descarte e utilize filtros por tipo de resíduo, com apoio de ícones e botões, facilitando a navegação, a busca por informações específicas e incentivando o descarte correto e sustentável.
 
-![1000268193](https://github.com/user-attachments/assets/3d20a039-d0f8-40fa-9fda-5ff2ee520622)
+<img width="280" height="540" alt="image" src="https://github.com/user-attachments/assets/ff26f7fe-871e-4167-8f71-e8f473f9b6e4" />
 Figura 10
 
 ### Detalhes do Ponto de Coleta de Resíduos
 
 Esta tela representa a interface de detalhamento de um ponto de coleta de resíduos, onde o usuário pode visualizar informações completas sobre o local, como tipo de resíduo aceito, nome do ponto, horário de funcionamento, status, regras do local, avaliações de outros usuários, instruções de como chegar e foto do ambiente, além de permitir ações como favoritar e compartilhar, facilitando o acesso, a confiança e a usabilidade do sistema.
 
-![1000268192](https://github.com/user-attachments/assets/ccf907d7-e53b-4ecf-a6b5-6671eef206e5)
-Figurinha 11
+<img width="280" height="540" alt="image" src="https://github.com/user-attachments/assets/14ebc30e-7f81-413d-bdb8-eeceb8f2a2fa" />
+
+Figura 11
 
 ### Configurações do Usuário
 
 Esta tela permite ao usuário gerenciar suas configurações pessoais, incluindo informações pessoais, endereço, notificações e política de privacidade, além de oferecer acesso à central de ajuda e opção de login.
 
-![1000268191](https://github.com/user-attachments/assets/6a4613b2-1377-4b20-a809-03547c67a99f)
+<img width="280" height="540" alt="image" src="https://github.com/user-attachments/assets/71c2671e-172e-418f-9544-4802617459ed" />
 Figura 12 
