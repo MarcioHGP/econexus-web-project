@@ -26,4 +26,12 @@ A tela de menu apresenta atalhos para facilitar o acesso a outras páginas e mel
 
 <img width="280" height="540" alt="Menu" src="https://github.com/user-attachments/assets/ceef2236-a136-4742-842f-730414feb732" />
 
-
+### Tela Login
+Formulário para o usário acesssar a platafórma. 
+<img width="280" height="540" alt="Login" src="https://github.com/user-attachments/assets/36af8134-3fd2-46ab-b567-36d57ba44401" />
+### Recuperar senha
+Formulário para recuperar senha. 
+<img width="280" height="540" alt="Recupere sua senha" src="https://github.com/user-attachments/assets/bbb96996-3476-436a-a61a-d4b42780bab8" />
+### Cadastro
+Formulário para usuário cadastrar informações pessoais e criar uma conta.
+<img width="280" height="540" alt="Cadastro" src="https://github.com/user-attachments/assets/35cac8c4-7053-4464-9252-78a925934ee1" />
