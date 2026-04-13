@@ -51,12 +51,33 @@ Tela onde o usuário realiza o cadastro na plataforma, preenchendo suas informa�
 <img width="280" height="540" alt="Cadastro" src="https://github.com/user-attachments/assets/35cac8c4-7053-4464-9252-78a925934ee1" />
 Figura 7
 
+### Tela Dashboard Usuário
+
+Página centralizadora onde o usuário visualiza o panorama geral de sua atividade na plataforma. Através de uma interface intuitiva, é possível acompanhar o status de solicitações em tempo real, acessar o histórico de ações recentes e gerenciar preferências de forma rápida.
+
+<img width="280" height="540" alt="7" src="https://github.com/user-attachments/assets/c4a8c046-1f6f-4dff-832d-3aeced5c74fd" />
+Figura 8
+
+### Tela Dashboard da Cooperativa
+
+Ambiente administrativo destinado ao controle e monitoramento integral das operações da plataforma. Nesta tela, o gestor visualiza indicadores estratégicos, gerencia o fluxo de usuários e supervisiona as solicitações pendentes, garantindo agilidade na tomada de decisões.
+
+<img width="280" height="540" alt="8" src="https://github.com/user-attachments/assets/cd83ddb3-ffe2-4670-bafc-96eaf1c52524" />
+Figura 9
+
+### Tela Histórico de Pedidos
+
+Interface de consulta onde o usuário acompanha a cronologia de suas solicitações realizadas na plataforma. Nesta tela, as informações são listadas de forma organizada, permitindo a visualização rápida do status de cada pedido, detalhes de itens e datas de transação.
+
+<img width="280" height="540" alt="9" src="https://github.com/user-attachments/assets/77008c66-382f-43ce-9576-f000938fdd06" />
+Figura 10
+
 ### Tela Interface de consulta 
 
 Esta tela representa a interface de consulta de pontos de coleta de resíduos em um aplicativo, permitindo que o usuário visualize locais de descarte e utilize filtros por tipo de resíduo, com apoio de ícones e botões, facilitando a navegação, a busca por informações específicas e incentivando o descarte correto e sustentável.
 
 <img width="280" height="540" alt="image" src="https://github.com/user-attachments/assets/ff26f7fe-871e-4167-8f71-e8f473f9b6e4" />
-Figura 10
+Figura 11
 
 ### Tela Detalhes do Ponto de Coleta de Resíduos
 
@@ -64,11 +85,18 @@ Esta tela representa a interface de detalhamento de um ponto de coleta de resíd
 
 <img width="280" height="540" alt="image" src="https://github.com/user-attachments/assets/14ebc30e-7f81-413d-bdb8-eeceb8f2a2fa" />
 
-Figura 11
+Figura 12
 
 ### Tela Configurações do Usuário
 
 Esta tela permite ao usuário gerenciar suas configurações pessoais, incluindo informações pessoais, endereço, notificações e política de privacidade, além de oferecer acesso à central de ajuda e opção de login.
 
 <img width="280" height="540" alt="image" src="https://github.com/user-attachments/assets/71c2671e-172e-418f-9544-4802617459ed" />
-Figura 12 
+Figura 13
+
+### Tela Fórum de Itens
+
+Espaço colaborativo voltado para a interação entre usuários e a troca de informações sobre produtos e objetos de interesse. Nesta tela, o usuário tem acesso a diversas discussões organizadas por tópicos, permitindo a visualização de detalhes sobre itens específicos, além de contar com ferramentas de busca e filtragem para localizar conteúdos com precisão.
+
+<img width="280" height="540" alt="13" src="https://github.com/user-attachments/assets/64aa8b6f-fa23-4c53-9135-1b17891b6a0c" />
+Figura 14
