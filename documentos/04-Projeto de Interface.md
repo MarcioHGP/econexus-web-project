@@ -25,7 +25,7 @@ Figura 3
 
 ### Tela Menu
 
-A tela de menu apresenta atalhos para facilitar o acesso a outras páginas e melhorando o fluxo de navegação do usuário.
+A tela de menu apresenta atalhos para facilitar o acesso a outras páginas, melhorando o fluxo de navegação do usuário.
 
 <img width="280" height="540" alt="Menu" src="https://github.com/user-attachments/assets/ceef2236-a136-4742-842f-730414feb732" />
 Figura 4
