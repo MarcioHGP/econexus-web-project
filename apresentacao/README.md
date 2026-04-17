@@ -2,7 +2,7 @@
 
 ## Conjunto de Slides
 
-[ECONEXUS.pdf](https://github.com/user-attachments/files/26617803/ECONEXUS.pdf)
+[ECONEXUS.pdf](https://github.com/user-attachments/files/26835264/ECONEXUS.pdf)
 
 Etapa 5: 
 
