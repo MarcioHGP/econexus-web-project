@@ -1,6 +1,6 @@
 # 📊 Relatório de Contribuições do Projeto
 
-**Última atualização:** 13/04/2026 00:48
+**Última atualização:** 17/04/2026 17:00
 
 ---
 
@@ -9,12 +9,12 @@
 | Aluno                     |   Commits |   Linhas+ |   Linhas- |   Arquivos |   Docs Commits |   Docs Arquivos |
 |---------------------------|-----------|-----------|-----------|------------|----------------|-----------------|
 | Arthur544                 |         4 |         6 |         4 |          1 |              4 |               1 |
-| Bernardo Do Valle Pereira |        30 |       487 |       223 |         11 |             19 |               3 |
+| Bernardo Do Valle Pereira |        32 |       490 |       224 |         11 |             21 |               3 |
 | Márcio Henrique Paixão    |         1 |        31 |         3 |          1 |              1 |               1 |
 | Rafael Felipe             |         1 |         1 |         1 |          1 |              1 |               1 |
 | Srmarlongs                |         6 |        23 |         1 |          1 |              6 |               1 |
 | Tainara-Carvalho          |         6 |        21 |        10 |          1 |              6 |               1 |
-| github-actions[bot]       |        42 |       215 |       162 |          3 |             42 |               1 |
+| github-actions[bot]       |        43 |       219 |       165 |          3 |             43 |               1 |
 | github-classroom[bot]     |         1 |       774 |         0 |         19 |              1 |               3 |
 | marciohgpdev              |         1 |         5 |         5 |          1 |              1 |               1 |
 | marianadotmelo            |         9 |        17 |        17 |          2 |              8 |               2 |
@@ -22,9 +22,11 @@
 
 ## 📅 Contribuições Semanais (Todo o Semestre)
 
-**2026-04-06**: Arthur544: 4, Bernardo Do Valle Pereira: 30, Márcio Henrique Paixão: 1, Rafael Felipe: 1, Srmarlongs: 6, Tainara-Carvalho: 6, github-actions[bot]: 42, marciohgpdev: 1, marianadotmelo: 9
+**2026-04-10**: Arthur544: 4, Bernardo Do Valle Pereira: 24, Márcio Henrique Paixão: 1, Srmarlongs: 6, Tainara-Carvalho: 6, github-actions[bot]: 40, marciohgpdev: 1, marianadotmelo: 9
 
-**2026-03-30**: github-classroom[bot]: 1
+**2026-04-03**: Bernardo Do Valle Pereira: 8, Rafael Felipe: 1, github-actions[bot]: 3
+
+**2026-03-27**: github-classroom[bot]: 1
 
 
 
