@@ -68,29 +68,6 @@
 | RF-17 | exibir dicas de higienização                                        | Usuário                              | Visualizar instruções de preparo dos resíduos                                     | Evitar rejeição por contaminação                                                                      | Márcio Henrique | Dashboard / Dicas      |
 | RF-18 | avisos de utilidade pública                                         | Administrador                        | Publicar alertas sobre mudanças                                                   | Manter comunidade informada em tempo real                                                             | Márcio Henrique | Dashboard              |
 
-### Requisitos Funcionais
-
-[Utilize o modelo de tabela abaixo para apresentar os requisitos funcionais]
-
-|ID    | Descrição                                                                                                       | Prioridade |
-|------|-----------------------------------------------------------------------------------------------------------------|------------|
-| RF-01 | Permitir o cadastro de usuários com distinção de perfis                                                        | Alta       |
-| RF-02 | Permitir o cadastro de cooperativas                                                                            | Alta       |
-| RF-03 | Exibir um mapa interativo                                                                                      | Alta       |
-| RF-04 | Permitir o usuário anexar fotos do material na solicitação de coleta                                           | Média      |
-| RF-05 | Permitir o filtro de pontos de coleta por tipo de material                                                     | Alta       |
-| RF-06 | Permitir ao usuário realizar solicitações de coleta para cooperativa                                           | Alta       |
-| RF-07 | Permitir ao usuário cancelar uma solicitação de coleta                                                         | Média      |
-| RF-08 | Notificar o usuário via PUSH quando a solicitação estiver a D-1 de ser atendida                                | Média      |
-| RF-09 | Permitir ao usuário acessar uma interface para acompanhar suas solicitações de coleta                          | Alta       |
-| RF-10 | Permitir que os usuários postem itens para doação                                                              | Média      |
-| RF-11 | Permitir que as cooperativas aceitem as solicitações dos usuários                                              | Alta       |
-| RF-12 | Permitir que usuários avaliem o serviço prestado pelas cooperativas após a coleta                              | Média      |
-| RF-13 | Permitir que o usuário visualize seu histórico de descartes e impacto ambiental                                | Média      |
-| RF-14 | Permitir o cadastro de pontos de descarte com formulário específico                                            | Média      |
-| RF-15 | Permitir a reivindicação de itens postados para doação                                                         | Média      |
-| RF-16 | Permitir que itens doados sejam marcados como reivindicados                                                    | Baixa      |
-
 ### Requisitos não Funcionais
 
 |ID      | Descrição                                                                                                    |Prioridade |
