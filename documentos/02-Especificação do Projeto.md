@@ -68,31 +68,6 @@
 | RF-17 | exibir dicas de higienização                                        | Usuário                              | Visualizar instruções de preparo dos resíduos                                     | Evitar rejeição por contaminação                                                                      | Márcio Henrique | Dashboard / Dicas      |
 | RF-18 | avisos de utilidade pública                                         | Administrador                        | Publicar alertas sobre mudanças                                                   | Manter comunidade informada em tempo real                                                             | Márcio Henrique | Dashboard              |
 
-
-## Histórias de Usuários
-
-[Utilize o modelo de tabela abaixo para apresentar as histórias de usuários.]
-
-|EU COMO... `QUEM`                     | QUERO/PRECISO ... `O QUE`                                                                 | PARA ... `PORQUE`                                                                 |
-|--------------------------------------|-------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| Administrador ou Novo Usuário       | Realizar o cadastro na plataforma com a definição de um perfil específico                | Que o sistema restrinja ou libere funcionalidades de acordo com as minhas permissões |
-| Representante de uma Cooperativa    | Realizar um cadastro exclusivo fornecendo dados institucionais e geográficos             | Que a plataforma direcione ferramentas específicas de gestão de coletas e análise de dados para a minha organização |
-| Usuário                             | Visualizar um mapa interativo que exiba os pontos de coleta recicláveis                  | Que eu consiga me organizar e descartar os meus resíduos corretamente             |
-| Usuário                             | Anexar fotos do material no momento do pedido                                             | Que a cooperativa consiga identificar corretamente o tipo e o volume dos resíduos antes de realizar a coleta |
-| Usuário                             | Filtrar os pontos de coleta pelo tipo de material                                         | Para encontrar rapidamente o local adequado para destinar meu resíduo              |
-| Usuário                             | Realizar solicitações de coleta diretamente para uma cooperativa informando tipo de material, quantidade, localização e disponibilidade de horário | Garantir que meus resíduos sejam encaminhados da forma correta e sustentável       |
-| Usuário                             | Cancelar uma solicitação de coleta que eu tenha feito                                     | Evitar erros e retirar pedidos que não sejam mais necessários                      |
-| Usuário                             | Receber notificações PUSH com a previsão de atendimento da minha solicitação             | Acompanhar quando a coleta estiver próxima de acontecer e me organizar melhor      |
-| Usuário                             | Acessar uma interface para acompanhar o status da minha solicitação de coleta            | Saber em que etapa o pedido está e acompanhar todo o andamento com mais facilidade |
-| Usuário                             | Postar itens em uma interface onde outros usuários possam visualizar os itens            | Que os outros usuários que tenham interesse no item possam ver e solicitá-lo       |
-| Cooperativa                         | Aceitar solicitações dos usuários para coleta de materiais                               | Conseguir confirmar a coleta do material e que o usuário seja notificado sobre o atendimento |
-| Usuário                             | Avaliar a coleta realizada, atribuindo uma nota e podendo deixar um comentário           | Garantir a qualidade do serviço, melhorar a confiabilidade da plataforma e ajudar outros usuários |
-| Usuário                             | Acessar um histórico com todas as minhas solicitações de coleta e visualizar métricas como quantidade de resíduos reciclados e impacto ambiental estimado | Acompanhar minha contribuição para a sustentabilidade e me incentivar a manter práticas de descarte correto |
-| Representante de um Ponto de Descarte | Realizar um cadastro exclusivo fornecendo dados institucionais e geográficos             | Que o usuário consiga visualizar os pontos de descarte próximos a ele              |
-| Usuário                             | Adicionar uma opção que deixe o item marcado como reivindicado no fórum                  | Permitir que os usuários reivindiquem os itens postados para doação                |
-
-## Requisitos do Projeto
-
 ### Requisitos Funcionais
 
 [Utilize o modelo de tabela abaixo para apresentar os requisitos funcionais]
