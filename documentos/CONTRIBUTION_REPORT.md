@@ -1,6 +1,6 @@
 # 📊 Relatório de Contribuições do Projeto
 
-**Última atualização:** 07/05/2026 23:50
+**Última atualização:** 07/05/2026 23:52
 
 ---
 
@@ -9,12 +9,12 @@
 | Aluno                     |   Commits |   Linhas+ |   Linhas- |   Arquivos |   Docs Commits |   Docs Arquivos |
 |---------------------------|-----------|-----------|-----------|------------|----------------|-----------------|
 | Arthur544                 |         4 |         6 |         4 |          1 |              4 |               1 |
-| Bernardo Do Valle Pereira |        37 |       517 |       239 |         12 |             25 |               3 |
+| Bernardo Do Valle Pereira |        38 |       517 |       239 |         13 |             26 |               3 |
 | Márcio Henrique Paixão    |         1 |        31 |         3 |          1 |              1 |               1 |
 | Rafael Felipe             |         1 |         1 |         1 |          1 |              1 |               1 |
 | Srmarlongs                |         6 |        23 |         1 |          1 |              6 |               1 |
 | Tainara-Carvalho          |        11 |        60 |        98 |          2 |             11 |               1 |
-| github-actions[bot]       |        52 |       271 |       211 |          3 |             52 |               1 |
+| github-actions[bot]       |        53 |       281 |       219 |          3 |             53 |               1 |
 | github-classroom[bot]     |         1 |       774 |         0 |         19 |              1 |               3 |
 | marciohgpdev              |         1 |         5 |         5 |          1 |              1 |               1 |
 | marianadotmelo            |         9 |        17 |        17 |          2 |              8 |               2 |
@@ -22,7 +22,7 @@
 
 ## 📅 Contribuições Semanais (Todo o Semestre)
 
-**2026-04-30**: Bernardo Do Valle Pereira: 1, Tainara-Carvalho: 2, github-actions[bot]: 2
+**2026-04-30**: Bernardo Do Valle Pereira: 2, Tainara-Carvalho: 2, github-actions[bot]: 3
 
 **2026-04-23**: Bernardo Do Valle Pereira: 3, Tainara-Carvalho: 3, github-actions[bot]: 6
 
