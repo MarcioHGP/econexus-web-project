@@ -1,5 +1,5 @@
 /**
- * EcoNexus - Cadastro de Pessoa
+ * EcoNexus - Cadastro (Pessoas Físicas)
  * Sistema de cadastro para pessoas físicas com validações em tempo real
  * e armazenamento automático de dados no navegador (LocalStorage).
  */
