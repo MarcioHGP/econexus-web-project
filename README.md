@@ -42,7 +42,13 @@ Fundamentada nas diretrizes da Política Nacional de Resíduos Sólidos (PNRS), 
 
 # Etapa-3 Entrega
 
-//em andamento
+* Arthur Michel Santos Fonseca - RF 15
+* Bernardo Do Valle Pereira - RF 10
+* Márcio Henrique Gomes Paixão - RF 14
+* Mariana Guimarães de Melo - RF 17
+* Marlon Gomes da Silva - RF 01
+* Rafael Felipe de Paula Silva - RF 02
+* Tainara Lorraine Carvalho - RF 06
 
 # Código-Fonte
 
