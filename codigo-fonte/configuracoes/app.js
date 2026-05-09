@@ -1,4 +1,4 @@
- let usuarioLogado = null;
+let usuarioLogado = null;
 
         function obterUsuario() {
             const dadosSession = localStorage.getItem('usuarioLogado');
@@ -7,6 +7,31 @@
                 document.getElementById('navUserName').innerText = usuarioLogado.nome.split(' ')[0];
             } else {
                 window.location.href = 'login.html';
+            }
+        }
+
+        // FUNÇÃO DE NOTIFICAÇÃO TESTE
+        function testarPush(checkbox) {
+            if (checkbox.checked) {
+                // Solicita permissão se ainda não tiver
+                if (Notification.permission !== "granted") {
+                    Notification.requestPermission();
+                }
+
+                setTimeout(() => {
+                    // Verifica se o checkbox ainda está ativo após os 5 segundos
+                    if (checkbox.checked) {
+                        if (Notification.permission === "granted") {
+                            new Notification("Econexus", {
+                                body: "suas notificações foram ativadas",
+                                icon: "eco_favicon.png"
+                            });
+                        } else {
+                            // Fallback caso as notificações do sistema estejam bloqueadas pelo navegador
+                            alert("Notificação Econexus: suas notificações foram ativadas");
+                        }
+                    }
+                }, 5000);
             }
         }
 
@@ -35,7 +60,10 @@
                     <h3 class="fw-bold mb-4">Notificações</h3>
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <span>Alertas de Coleta Próxima</span>
-                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                        <label class="switch">
+                            <input type="checkbox" onchange="testarPush(this)">
+                            <span class="slider"></span>
+                        </label>
                     </div>
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <span>Novidades da Comunidade</span>
