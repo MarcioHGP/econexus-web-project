@@ -1,6 +1,6 @@
 # 📊 Relatório de Contribuições do Projeto
 
-**Última atualização:** 09/05/2026 13:26
+**Última atualização:** 09/05/2026 13:34
 
 ---
 
@@ -9,12 +9,12 @@
 | Aluno                     |   Commits |   Linhas+ |   Linhas- |   Arquivos |   Docs Commits |   Docs Arquivos |
 |---------------------------|-----------|-----------|-----------|------------|----------------|-----------------|
 | Arthur544                 |         4 |         6 |         4 |          1 |              4 |               1 |
-| Bernardo Do Valle Pereira |        45 |       846 |       248 |         16 |             31 |               3 |
+| Bernardo Do Valle Pereira |        46 |       978 |       348 |         16 |             31 |               3 |
 | Márcio Henrique Paixão    |         1 |        31 |         3 |          1 |              1 |               1 |
 | Rafael Felipe             |         1 |         1 |         1 |          1 |              1 |               1 |
 | Srmarlongs                |         6 |        23 |         1 |          1 |              6 |               1 |
 | Tainara-Carvalho          |        11 |        60 |        98 |          2 |             11 |               1 |
-| github-actions[bot]       |        58 |       317 |       255 |          3 |             58 |               1 |
+| github-actions[bot]       |        59 |       321 |       259 |          3 |             59 |               1 |
 | github-classroom[bot]     |         1 |       774 |         0 |         19 |              1 |               3 |
 | marciohgpdev              |         1 |         5 |         5 |          1 |              1 |               1 |
 | marianadotmelo            |        10 |        18 |        18 |          3 |              9 |               3 |
@@ -22,7 +22,7 @@
 
 ## 📅 Contribuições Semanais (Todo o Semestre)
 
-**2026-05-02**: Bernardo Do Valle Pereira: 9, Tainara-Carvalho: 2, github-actions[bot]: 8, marianadotmelo: 1
+**2026-05-02**: Bernardo Do Valle Pereira: 10, Tainara-Carvalho: 2, github-actions[bot]: 9, marianadotmelo: 1
 
 **2026-04-25**: Bernardo Do Valle Pereira: 3, github-actions[bot]: 3
 
