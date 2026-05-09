@@ -40,6 +40,10 @@ Fundamentada nas diretrizes da Política Nacional de Resíduos Sólidos (PNRS), 
 
 * [GitHub](https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/)
 
+# Etapa-3 Entrega
+
+//a fazer
+
 # Código-Fonte
 
 * <a href="codigo-fonte/README.md">Código Fonte</a>
