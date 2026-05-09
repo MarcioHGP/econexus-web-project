@@ -42,7 +42,7 @@ Fundamentada nas diretrizes da Política Nacional de Resíduos Sólidos (PNRS), 
 
 # Etapa-3 Entrega
 
-//a fazer
+//em andamento
 
 # Código-Fonte
 
