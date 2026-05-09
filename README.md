@@ -46,7 +46,7 @@ Fundamentada nas diretrizes da Política Nacional de Resíduos Sólidos (PNRS), 
 * Bernardo Do Valle Pereira - [RF 10](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/tree/main/codigo-fonte/configuracoes)
 * Márcio Henrique Gomes Paixão - RF 14
 * Mariana Guimarães de Melo - RF 17
-* Marlon Gomes da Silva - RF 01
+* Marlon Gomes da Silva - [RF 01](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/tree/main/codigo-fonte/Cadastro)
 * Rafael Felipe de Paula Silva - RF 02
 * Tainara Lorraine Carvalho - RF 06
 
