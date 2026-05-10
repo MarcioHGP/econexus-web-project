@@ -1,6 +1,6 @@
 # 📊 Relatório de Contribuições do Projeto
 
-**Última atualização:** 10/05/2026 16:22
+**Última atualização:** 10/05/2026 16:32
 
 ---
 
@@ -10,11 +10,11 @@
 |---------------------------|-----------|-----------|-----------|------------|----------------|-----------------|
 | Arthur544                 |         4 |         6 |         4 |          1 |              4 |               1 |
 | Bernardo Do Valle Pereira |        48 |       986 |       350 |         16 |             33 |               3 |
-| Márcio Henrique Paixão    |         1 |        31 |         3 |          1 |              1 |               1 |
+| Márcio Henrique Paixão    |         2 |       170 |         3 |          4 |              1 |               1 |
 | Rafael Felipe             |         4 |       249 |         2 |          4 |              2 |               1 |
 | Srmarlongs                |        12 |      1572 |         8 |         11 |             10 |               2 |
 | Tainara-Carvalho          |        11 |        60 |        98 |          2 |             11 |               1 |
-| github-actions[bot]       |        66 |       357 |       295 |          3 |             66 |               1 |
+| github-actions[bot]       |        67 |       361 |       299 |          3 |             67 |               1 |
 | github-classroom[bot]     |         1 |       774 |         0 |         19 |              1 |               3 |
 | marciohgpdev              |         1 |         5 |         5 |          1 |              1 |               1 |
 | marianadotmelo            |        10 |        18 |        18 |          3 |              9 |               3 |
@@ -22,7 +22,7 @@
 
 ## 📅 Contribuições Semanais (Todo o Semestre)
 
-**2026-05-03**: Bernardo Do Valle Pereira: 12, Rafael Felipe: 3, Srmarlongs: 6, github-actions[bot]: 14, marianadotmelo: 1
+**2026-05-03**: Bernardo Do Valle Pereira: 12, Márcio Henrique Paixão: 1, Rafael Felipe: 3, Srmarlongs: 6, github-actions[bot]: 15, marianadotmelo: 1
 
 **2026-04-26**: Bernardo Do Valle Pereira: 3, Tainara-Carvalho: 2, github-actions[bot]: 5
 
