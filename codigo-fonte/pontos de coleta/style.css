@@ -1,0 +1,79 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+        :root {
+            --verde-eco: #72b850;
+            --preto-eco: #000;
+            --cinza-fundo: #f8f9fa;
+        }
+
+        * { font-family: "Outfit", sans-serif; }
+        body { background-color: var(--cinza-fundo); min-height: 100vh; display: flex; flex-direction: column; }
+
+        .fullscreen-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .ponto-detalhe-card {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+            border: none;
+        }
+
+        .btn-voltar {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            color: var(--preto-eco);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-voltar:hover { color: var(--verde-eco); }
+
+        .map-placeholder {
+            background: #e9ecef;
+            height: 300px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            color: #adb5bd;
+            font-size: 1.2rem;
+            border: 2px dashed #dee2e6;
+        }
+
+        .badge-material {
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            background: #eef7e9;
+            color: var(--verde-eco);
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .btn-rota {
+            background: var(--verde-eco);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn-rota:hover { background: #5ea33f; transform: translateY(-2px); }
