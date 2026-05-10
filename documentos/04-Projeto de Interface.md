@@ -3,8 +3,9 @@
 ## User Flow
 O fluxograma apresentado na figura 1 mostra o fluxo de interação do usuário pelas telas do sistema. Cada uma das telas deste fluxo é detalhada na seção de Protótipo de baixa fidelidade que se segue, para visualizar o protótipo, acesse o ambiente na ferramenta <a href="https://canva.link/zrz1mswfek71kco">Canva usada no projeto.</a> 
 
-<img <img width="1258" height="794" alt="image" src="https://github.com/user-attachments/assets/d6f8f002-e4dc-4b0f-8e75-8b6b2bb79638" />
-> Figura 1
+<img width="1258" height="794" alt="image" src="https://github.com/user-attachments/assets/67e2c6cd-010d-4880-80ff-769b92461c27" />
+ 
+ > Figura 1
 
 
 ## Protótipo de baixa fidelidade
