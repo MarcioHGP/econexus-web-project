@@ -42,7 +42,7 @@ Fundamentada nas diretrizes da Política Nacional de Resíduos Sólidos (PNRS), 
 
 # Etapa-3 Entrega
 
-* Arthur Michel Santos Fonseca - RF 15
+* Arthur Michel Santos Fonseca - [RF 15](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/tree/main/codigo-fonte/pontos%20de%20coleta)
 * Bernardo Do Valle Pereira - [RF 10](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/tree/main/codigo-fonte/configuracoes)
 * Márcio Henrique Gomes Paixão - RF 14
 * Mariana Guimarães de Melo - RF 17
