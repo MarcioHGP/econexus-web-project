@@ -48,7 +48,7 @@ Fundamentada nas diretrizes da Política Nacional de Resíduos Sólidos (PNRS), 
 * Mariana Guimarães de Melo - RF 17
 * Marlon Gomes da Silva - [RF 01](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/tree/main/codigo-fonte/Cadastro)
 * Rafael Felipe de Paula Silva - [RF 02](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/tree/main/codigo-fonte/login)
-* Tainara Lorraine Carvalho - RF 06
+* Tainara Lorraine Carvalho - [RF 06](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/tree/main/codigo-fonte/Dashboard)
 
 # Código-Fonte
 
