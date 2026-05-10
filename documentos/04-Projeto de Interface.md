@@ -24,14 +24,14 @@ Figura 2
 
 A tela inicial apresenta a logo e, sobre o projeto, também possibilita o acesso às páginas de login e criar novo usuário.
 
-<img width="1080" height="1920" alt="Página Inicial" src="https://github.com/user-attachments/assets/94082ad2-6b7d-4c50-bf98-a49cd176ea53" />
+<img width="280" height="540" alt="Página Inicial" src="https://github.com/user-attachments/assets/94082ad2-6b7d-4c50-bf98-a49cd176ea53" />
 Figura 3
 
 ### Tela Menu
 
 A tela de menu apresenta atalhos para facilitar o acesso a outras páginas como dashboard, pedidos, pontos de coleta, cadastro de pontos de coleta, fórum de itens e configurações, melhorando o fluxo de navegação do usuário.
 
-<img width="1080" height="1920" alt="Menu" src="https://github.com/user-attachments/assets/d5cc2c36-5dbf-40a9-8660-3dfa2ae3803a" />
+<img width="280" height="540" alt="Menu" src="https://github.com/user-attachments/assets/d5cc2c36-5dbf-40a9-8660-3dfa2ae3803a" />
 Figura 4
 
 ### Tela Login
@@ -50,9 +50,9 @@ Figura 6
 
 ### Tela Cadastro
 
-Tela onde o usuário realiza o cadastro na plataforma, preenchendo suas informações pessoais e também seus dados de endereço. Nesse processo, ele define seus dados de acesso, como e-mail e senha, garantindo maior praticidade no uso do sistema, especialmente em funcionalidades que envolvem localização ou entrega. Após concluir o cadastro, o usuário passa a ter acesso completo às funcionalidades disponíveis.
+Tela onde o usuário realiza o cadastro na plataforma, preenchendo suas informações pessoais e também seus dados de endereço. Nesse processo, ele define seus dados de acesso, como e-mail e senha, garantindo maior praticidade no uso do sistema, especialmente em funcionalidades que envolvem localização ou entrega. Após concluir o cadastro, o usuário passa a ter acesso completo às funcionalidades disponíveis e caso necessário, pode alterar os seus dados posteriormente.
 
-<img width="280" height="540" alt="Cadastro" src="https://github.com/user-attachments/assets/35cac8c4-7053-4464-9252-78a925934ee1" />
+<img width="280" height="540" alt="Cadastro" src="https://github.com/user-attachments/assets/b9ea247f-644e-4927-9b8c-ab9ed4c7faf4" />
 Figura 7
 
 ### Tela Dashboard Usuário
