@@ -13,6 +13,26 @@ O site em HTML/CSS/JS é um projeto estático. É necessário implantá-lo em um
 
 ## Histórico de versões
 
-### [0.1.0] - DD/MM/AAAA
-#### Adicionado/Atualizado/Removido
-- Relação de artefatos ...
+**[0.1.0] - 03/05/2026**
+### Adicionado
+
+- Homepage: arquivos HTML, CSS e imagens.
+
+**[0.1.6] - 10/05/2026**
+### Atualizado
+
+- Homepage: arquivos HTML, CSS e imagens.
+
+### Adicionado
+- Cadastro: arquivos HTML, CSS, JS e imagens.
+
+- Login: arquivos HTML, CSS, JS e imagens.
+
+- Dashboard: arquivos HTML, CSS, JS e imagens.
+
+- Configurações: arquivos HTML, CSS, JS e imagens.
+
+- Pontos de Coleta: arquivos HTML, CSS, JS e imagens.
+
+- Histórico de Pedidos: arquivos HTML e CSS.
+
