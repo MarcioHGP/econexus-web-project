@@ -45,7 +45,7 @@ Fundamentada nas diretrizes da Política Nacional de Resíduos Sólidos (PNRS), 
 * Arthur Michel Santos Fonseca - [RF 15](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/tree/main/codigo-fonte/pontos%20de%20coleta)
 * Bernardo Do Valle Pereira - [RF 10](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/tree/main/codigo-fonte/configuracoes)
 * Márcio Henrique Gomes Paixão - [RF 14](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/tree/main/codigo-fonte/Hist%C3%B3rico%20de%20Pedidos)
-* Mariana Guimarães de Melo - RF 17
+* Mariana Guimarães de Melo - [RF 17](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/tree/main/codigo-fonte/pagina-inicial)
 * Marlon Gomes da Silva - [RF 01](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/tree/main/codigo-fonte/Cadastro)
 * Rafael Felipe de Paula Silva - [RF 02](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/tree/main/codigo-fonte/login)
 * Tainara Lorraine Carvalho - [RF 06](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/tree/main/codigo-fonte/Dashboard)
