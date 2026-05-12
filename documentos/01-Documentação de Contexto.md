@@ -37,9 +37,9 @@ Diante desse cenário, torna-se urgente a criação de soluções digitais que p
 
 O projeto foca em três perfis principais: 
 
-- Cidadãos Conscientes: Homens e mulheres que utilizam tecnologia diariamente e buscam formas práticas de descartar resíduos. 
+- Cidadãos Conscientes: Pessoas que utilizam tecnologia diariamente e buscam formas práticas de descartar resíduos. 
 
-- Gestores de Cooperativas: Profissionais que necessitam de dados geográficos para organizar rotas de caminhões. 
+- Gestores de Cooperativas de lixo e materiais recicláveis: Profissionais que necessitam de dados geográficos para organizar e viabilizar a logística reversa para empresas e municípios.
 
-- Empresas e Condomínios: Grandes geradores de resíduos que precisam comprovar o descarte  correto para certificações ambientais. 
+- Empresas e Condomínios: Grandes geradores de resíduos que precisam comprovar o descarte correto para certificações ambientais. 
 
