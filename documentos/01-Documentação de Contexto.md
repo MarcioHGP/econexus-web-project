@@ -39,7 +39,7 @@ O projeto foca em três perfis principais:
 
 - Cidadãos Conscientes: Pessoas que utilizam tecnologia diariamente e buscam formas práticas de descartar resíduos. 
 
-- Gestores de Cooperativas de lixo e materiais recicláveis: Profissionais que necessitam de dados geográficos para organizar e viabilizar a logística reversa para empresas e municípios.
+- Gestores de Cooperativas de lixo e materiais recicláveis: Profissionais que necessitam de dados geográficos para organizar e viabilizar a logística reversa para empresas, condomínios e municípios.
 
 - Empresas e Condomínios: Grandes geradores de resíduos que precisam comprovar o descarte correto para certificações ambientais. 
 
