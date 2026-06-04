@@ -484,9 +484,13 @@ Rafael
 
 #### Artefatos da funcionalidade
 
-•	copy.html 
-•	Estruturas HTML da Home 
-•	Estilos CSS utilizados no template padrão do projeto 
+| Arquivo/Artefato                       | Descrição                                                                        |
+| -------------------------------------- | -------------------------------------------------------------------------------- |
+| `copy.html`                            | Estrutura principal da página inicial                                            |
+| Seção "Sobre Nós"                      | Conteúdo institucional da plataforma EcoNexus                                    |
+| Cards "Desafio", "Solução" e "Impacto" | Componentes visuais de apresentação da proposta do projeto                       |
+| CSS Bootstrap 5                        | Framework utilizado para responsividade e layout                                 |
+| Estilos personalizados                 | Ajustes de cores, tipografia e espaçamento conforme identidade visual do projeto |
 
 
 #### Estrutura de Dados
