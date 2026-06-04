@@ -1,6 +1,6 @@
 # 📊 Relatório de Contribuições do Projeto
 
-**Última atualização:** 14/05/2026 14:34
+**Última atualização:** 04/06/2026 21:09
 
 ---
 
@@ -8,21 +8,25 @@
 
 | Aluno                     |   Commits |   Linhas+ |   Linhas- |   Arquivos |   Docs Commits |   Docs Arquivos |
 |---------------------------|-----------|-----------|-----------|------------|----------------|-----------------|
-| Arthur544                 |         7 |       180 |         5 |          5 |              5 |               2 |
-| Bernardo Do Valle Pereira |        52 |      1029 |       355 |         17 |             36 |               3 |
+| Arthur544                 |         8 |       183 |         8 |          6 |              5 |               2 |
+| Bernardo Do Valle Pereira |        54 |      3824 |      3200 |         52 |             36 |               3 |
 | Márcio Henrique Paixão    |         2 |       170 |         3 |          4 |              1 |               1 |
 | Rafael Felipe             |         4 |       249 |         2 |          4 |              2 |               1 |
-| Srmarlongs                |        12 |      1572 |         8 |         11 |             10 |               2 |
+| Srmarlongs                |        13 |      1574 |        10 |         12 |             10 |               2 |
 | Tainara-Carvalho          |        19 |       303 |       128 |          6 |             17 |               2 |
-| github-actions[bot]       |        88 |       466 |       404 |          3 |             88 |               1 |
+| github-actions[bot]       |        89 |       477 |       413 |          3 |             89 |               1 |
 | github-classroom[bot]     |         1 |       774 |         0 |         19 |              1 |               3 |
 | marciohgpdev              |         1 |         5 |         5 |          1 |              1 |               1 |
-| marianadotmelo            |        21 |       557 |       378 |         11 |             13 |               3 |
+| marianadotmelo            |        23 |       563 |       384 |         12 |             13 |               3 |
 
 
 ## 📅 Contribuições Semanais (Todo o Semestre)
 
-**2026-05-07**: Arthur544: 3, Bernardo Do Valle Pereira: 16, Márcio Henrique Paixão: 1, Rafael Felipe: 3, Srmarlongs: 6, Tainara-Carvalho: 8, github-actions[bot]: 36, marianadotmelo: 12
+**2026-05-28**: Bernardo Do Valle Pereira: 2, Srmarlongs: 1, marianadotmelo: 2
+
+**2026-05-21**: Arthur544: 1
+
+**2026-05-07**: Arthur544: 3, Bernardo Do Valle Pereira: 16, Márcio Henrique Paixão: 1, Rafael Felipe: 3, Srmarlongs: 6, Tainara-Carvalho: 8, github-actions[bot]: 37, marianadotmelo: 12
 
 **2026-04-30**: Tainara-Carvalho: 2, github-actions[bot]: 2
 
