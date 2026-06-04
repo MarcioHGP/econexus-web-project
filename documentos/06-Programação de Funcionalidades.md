@@ -198,18 +198,18 @@ Tainara
 
 #### Instruções de acesso
 
-Acessar o sistema por meio de login com perfil de usuário (cidadão).
-Navegar até a página “Pedidos”.
-Selecionar a opção “Solicitação de coleta”.
-Preencher corretamente os campos obrigatórios do formulário, incluindo:
-Tipo de resíduo;
-Seleção da cooperativa compatível com os materiais informados;
-Faixa de peso estimada;
-Data e horário desejados para a coleta;
-Informações adicionais (quando necessário).
-Conferir os dados informados e clicar no botão “Enviar pedido”.
-Aguardar a confirmação da solicitação e acompanhar o status diretamente pelo sistema.
-Caso necessário, realizar o cancelamento da solicitação, desde que ainda esteja dentro das condições permitidas (antes da coleta ser aceita pela cooperativa).
+1. Acessar o sistema por meio de login com perfil de usuário (cidadão).
+2. Navegar até a página “Pedidos”.
+3. Selecionar a opção “Solicitação de coleta”.
+4. Preencher corretamente os campos obrigatórios do formulário, incluindo:
+   4.1. Tipo de resíduo;
+   4.2. Seleção da cooperativa compatível com os materiais informados;
+   4.3. Faixa de peso estimada;
+   4.4. Data e horário desejados para a coleta;
+   4.5. Informações adicionais (quando necessário).
+5. Conferir os dados informados e clicar no botão “Enviar pedido”.
+6. Aguardar a confirmação da solicitação e acompanhar o status diretamente pelo sistema.
+7. Caso necessário, realizar o cancelamento da solicitação, desde que ainda esteja dentro das condições permitidas (antes da coleta ser aceita pela cooperativa).
 
 #### Responsável
 
