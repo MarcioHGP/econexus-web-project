@@ -1,10 +1,10 @@
 message: Please cite this software using these metadata.
 title:
 authors:
-  - family-names: Arthur Michel
-    given-names: Santos Fonseca
-  - family-names: Marlon Gomes 
-    given-names: Da Silva 
+  - family-names: Santos Fonseca 
+    given-names: Arthur Michel
+  - family-names: Da Silva  
+    given-names: Marlon Gomes 
   - family-names: Guimarães Melo
     given-names: Mariana
   - family-names: 
