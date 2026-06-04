@@ -148,7 +148,7 @@ Tainara
 
 ### Filtro por Tipo de Material
 
-[Adicione imagem da funcionalidade/tela]
+<img width="1805" height="827" alt="RF06" src="https://github.com/user-attachments/assets/246a0b32-f7d8-483a-833c-35146de95775" />
 
 #### Requisito atendido
 
@@ -164,7 +164,12 @@ Tainara
 
 #### Instruções de acesso
 
-[Adicione as orientações de acesso à funcionalidade]
+Acessar o sistema por meio de login com perfil de usuário (cidadão).
+Navegar até a página “Pontos de Coleta”.
+Visualizar a listagem completa dos pontos de coleta cadastrados.
+Utilizar o filtro disponível para refinar a busca, por exemplo, selecionando o bairro desejado.
+Identificar, nos cartões exibidos, os pontos que aceitam o tipo de material desejado.
+Selecionar a opção “Ver detalhes expandidos” para obter informações adicionais sobre o ponto de coleta, incluindo endereço completo, horários de funcionamento e acesso à rota via Google Maps.
 
 #### Responsável
 
@@ -192,7 +197,18 @@ Tainara
 
 #### Instruções de acesso
 
-[Adicione as orientações de acesso à funcionalidade]
+Acessar o sistema por meio de login com perfil de usuário (cidadão).
+Navegar até a página “Pedidos”.
+Selecionar a opção “Solicitação de coleta”.
+Preencher corretamente os campos obrigatórios do formulário, incluindo:
+Tipo de resíduo;
+Seleção da cooperativa compatível com os materiais informados;
+Faixa de peso estimada;
+Data e horário desejados para a coleta;
+Informações adicionais (quando necessário).
+Conferir os dados informados e clicar no botão “Enviar pedido”.
+Aguardar a confirmação da solicitação e acompanhar o status diretamente pelo sistema.
+Caso necessário, realizar o cancelamento da solicitação, desde que ainda esteja dentro das condições permitidas (antes da coleta ser aceita pela cooperativa).
 
 #### Responsável
 
