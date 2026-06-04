@@ -1,18 +1,18 @@
 message: Please cite this software using these metadata.
 title:
 authors:
-  - family-names: Arthur Michel
-    given-names: Santos Fonseca
-  - family-names: Marlon Gomes 
-    given-names: Da Silva 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
+  - family-names:Santos Fonseca 
+    given-names:Arthur Michel
+  - family-names: Guimarães Melo 
+    given-names: Mariana 
+  - family-names: Do Valle pereira
+    given-names: Bernardo 
+  - family-names:Lorraine Carvalho
+    given-names: Tainara
+  - family-names:Henrique Gomes Paixão
+    given-names: Márcio
+  - family-names:Da Silva 
+    given-names: Marlon Gomes
   - name-suffix: Professor
     affiliation: PUC Minas
     family-names: 
