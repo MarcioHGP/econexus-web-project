@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoNexus - Dashboard Cidadão</title>
+    <link rel="icon" type="image/x-icon" href="eco_favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+    <style>
+        :root {
+            --verde-escuro: #004525;
+            --verde-claro: #72b850;
+            --preto: #000000;
+            --branco: #ffffff;
+            --cinza-fundo: #f8f9fa;
+        }
+
+        * { font-family: "Outfit", sans-serif; margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--cinza-fundo); min-height: 100vh; display: flex; flex-direction: column; }
+
+        
+
+                /* Hamburger / Menu Fullscreen */
+        .logo-img { width: 50px; height: 50px; object-fit: contain; }
+        svg { width: 30px; height: auto; }
+        #menu-toggle { display: none; }
+        .hamburger-label { cursor: pointer; z-index: 1001; padding: 10px; }
+        .user-link { padding: 8px 20px; border-radius: 50px; background: white; color: black; text-decoration: none; font-weight: 600; transition: 0.3s; }
+        .full-screen-menu { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--verde-claro); display: flex; flex-direction: column; justify-content: center; align-items: center; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); opacity: 0; visibility: hidden; z-index: 1000; }
+        #menu-toggle:checked ~ .full-screen-menu { opacity: 1; visibility: visible; }
+        .full-screen-menu .nav-link { font-size: 2.2rem; color: white; margin: 10px 0; padding: 10px 40px; border-radius: 12px; background: rgba(0,0,0,0.2); transition: 0.3s; text-decoration: none; }
+        .full-screen-menu .nav-link:hover { transform: scale(1.05); background: rgba(0,0,0,0.4); }
+        body:has(#menu-toggle:checked) { overflow: hidden; }
+
+        /* Contêineres Padrão */
+        .card-custom {
+            background: var(--branco);
+            border: 1px solid var(--preto);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+
+        .panel-title { font-weight: 700; color: var(--preto); margin-bottom: 20px; }
+        label { font-weight: 600; font-size: 0.9rem; color: #333; margin-bottom: 6px; }
+        
+        /* Inputs Unificados baseados no login.html */
+        .form-select {
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 0.95rem;
+            transition: 0.2s;
+        }
+        .form-select:focus {
+            outline: none;
+            border-color: var(--verde-claro);
+            box-shadow: 0 0 0 3px rgba(114, 184, 80, 0.15);
+        }
+
+        /* Estilização do Mapa Leaflet */
+        #map {
+            width: 100%;
+            height: 550px;
+            border: 1px solid var(--preto);
+            border-radius: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        /* Popups do Leaflet Customizados */
+        .leaflet-popup-content-wrapper {
+            border-radius: 12px;
+            border: 1px solid var(--preto);
+        }
+        .btn-popup {
+            background: var(--verde-escuro);
+            color: white;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 5px 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .btn-popup:hover { background: var(--verde-claro); color: black; }
+
+        /* Botão Principal Unificado Login.html */
+        .btn-view-all {
+            background-color: var(--verde-escuro);
+            color: var(--branco);
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            width: 100%;
+            transition: 0.3s ease-in-out;
+        }
+        .btn-view-all:hover { background-color: var(--verde-claro); color: var(--preto); }
+
+        /* Elementos Internos dos Avisos */
+        .aviso-item {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            transition: 0.2s;
+        }
+        .aviso-item:hover {
+            border-color: var(--preto);
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.05);
+        }
+
+        footer {
+            background-color: var(--preto);
+            color: var(--branco);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar bg-black py-3">
+            <div class="container">
+                <label for="menu-toggle" class="hamburger-label">
+                    <svg fill="white" width="30" viewBox="0 0 14 14"><path d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/></svg>
+                </label>
+                <a class="navbar-brand m-0" href="index.html">
+                    <img src="econexus_logo.png" alt="Logo Econexus" class="logo-img">
+                </a>
+                <a href="#" class="user-link" id="navUserName">Cidadão</a>
+                <input type="checkbox" id="menu-toggle">
+                <div class="full-screen-menu">
+                    <ul class="nav flex-column text-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="dashboard_cidadao.html">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pedidos.html">Pedidos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pontos.html">Pontos de Coleta</a></li>
+                        <li class="nav-item"><a class="nav-link" href="configuracoes.html">Configurações</a></li>
+                        <li class="nav-item mt-5">
+                            <label for="menu-toggle" class="btn btn-outline-light rounded-pill px-4">Fechar</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <div class="row g-4">
+            
+            <div class="col-lg-4">
+                <div class="card-custom d-flex flex-column justify-content-between">
+                    <div>
+                        <h4 class="panel-title"><i class="bi bi-map-fill me-2"></i>Mapa de Coleta</h4>
+                        <p class="text-secondary small mb-4">Selecione filtros rápidos para localizar os ecopontos em tempo real no mapa de Belo Horizonte.</p>
+                        
+                        <div class="mb-3">
+                            <label>Filtrar por Bairro</label>
+                            <select id="filtroBairro" class="form-select" onchange="atualizarMapa()">
+                                <option value="">Todos os bairros</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label>Tipo de Material</label>
+                            <select id="filtroMaterial" class="form-select" onchange="atualizarMapa()">
+                                <option value="">Todos os materiais</option>
+                                <option value="Plástico">Plástico</option>
+                                <option value="Papel">Papel</option>
+                                <option value="Vidro">Vidro</option>
+                                <option value="Metal">Metal</option>
+                                <option value="Isopor">Isopor</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="pt-3">
+                        <a href="pontos.html" class="btn-view-all">
+                            <i class="bi bi-grid-3x3-gap-fill me-2"></i>Ver Todos em Lista (Cards)
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div id="map"></div>
+            </div>
+
+        </div>
+
+        <div class="row g-4 mt-4">
+            <div class="col-12">
+                <div class="card-custom">
+                    <h4 class="panel-title"><i class="bi bi-megaphone-fill me-2"></i>Mural de Avisos da Comunidade</h4>
+                    <div id="muralAvisos" class="row g-3">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+        <footer class="bg-black text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p class="m-0 opacity-75">&copy; 2026 Econexus. Sustentabilidade e transparência de ponta a ponta.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script>
+        const pontosColeta = [
+            { id: 1, bairro: "BARREIRO DE BAIXO", endereco: "Rua Vicente de Azevedo, 301 - Gelu Barreiro", materiais: ["Papel", "Metal", "Plástico", "Isopor", "Vidro"], horario: "Seg a Sex: 7h às 17h, Sáb: 8h às 12h", coords: [-19.9754, -44.0205] },
+            { id: 2, bairro: "CONJUNTO TÚNEL DE IBIRITÉ", endereco: "Rua Marly Passos, 10 - URPV Túnel", materiais: ["Vidro"], horario: "Seg a Sex: 7h às 18h, Sáb e Dom: 7h40 às 16h", coords: [-19.9912, -44.0154] },
+            { id: 3, bairro: "LINDEIA", endereco: "Rua Antônio de Souza Gomes, 110 - URPV Lindeia", materiais: ["Vidro"], horario: "Seg a Sex: 7h às 18h, Sáb e Dom: 7h40 às 16h", coords: [-19.9984, -44.0321] },
+            { id: 4, bairro: "MIRAMAR", endereco: "Av. Olinto Meireles - Praça José Verano da Silva", materiais: ["Vidro"], horario: "24 horas", coords: [-19.9790, -44.0298] },
+            { id: 5, bairro: "CENTRO", endereco: "Av. Afonso Pena, 1.377 - Parque Municipal", materiais: ["Papel", "Metal", "Plástico", "Isopor", "Vidro"], horario: "Ter a Sáb: 7h às 20h30, Dom: 7h às 16h30", coords: [-19.9234, -43.9351] },
+            { id: 6, bairro: "CENTRO", endereco: "Av. dos Andradas, 787 - Parque Municipal", materiais: ["Papel", "Metal", "Plástico", "Isopor", "Vidro"], horario: "Ter a Sáb: 7h às 20h30, Dom: 7h às 16h30", coords: [-19.9215, -43.9340] },
+            { id: 7, bairro: "FUNCIONÁRIOS", endereco: "Av. Getúlio Vargas, 20 (Esq. Contorno)", materiais: ["Vidro"], horario: "24 horas", coords: [-19.9298, -43.9214] },
+            { id: 8, bairro: "FUNCIONÁRIOS", endereco: "Rua dos Aimorés (Esq. Alagoas)", materiais: ["Vidro"], horario: "24 horas", coords: [-19.9325, -43.9312] },
+            { id: 9, bairro: "FUNCIONÁRIOS", endereco: "Rua dos Timbiras (Esq. Afonso Pena)", materiais: ["Vidro"], horario: "24 horas", coords: [-19.9275, -43.9315] },
+            { id: 10, bairro: "SANTA LÚCIA", endereco: "Av. Arthur Bernardes, 3.951", materiais: ["Vidro"], horario: "24 horas", coords: [-19.9602, -43.9525] },
+            { id: 11, bairro: "SANTO ANTÔNIO", endereco: "Av. Prudente de Morais (Esq. Joaquim Murtinho)", materiais: ["Vidro"], horario: "24 horas", coords: [-19.9431, -43.9450] },
+            { id: 12, bairro: "SÃO BENTO", endereco: "Av. Raja Gabáglia, 2.671 (Estac. Porcão)", materiais: ["Vidro"], horario: "24 horas", coords: [-19.9514, -43.9518] },
+            { id: 13, bairro: "SÃO BENTO", endereco: "Av. Raja Gabáglia, 3.385 (Raja Grill)", materiais: ["Vidro"], horario: "24 horas", coords: [-19.9568, -43.9592] },
+            { id: 14, bairro: "SAVASSI", endereco: "Av. Getúlio Vargas (Esq. Inconfidentes)", materiais: ["Vidro"], horario: "24 horas", coords: [-19.9367, -43.9332] },
+            { id: 15, bairro: "CASA BRANCA", endereco: "Av. dos Andradas, 8.255 - URPV Copasa", materiais: ["Papel", "Metal", "Plástico", "Isopor", "Vidro"], horario: "Seg a Sex: 7h às 18h, Sáb e Dom: 7h40 às 16h", coords: [-19.9054, -43.8968] },
+            { id: 16, bairro: "FLORESTA", endereco: "Praça Comendador Negrão de Lima", materiais: ["Vidro"], horario: "24 horas", coords: [-19.9145, -43.9248] },
+            { id: 17, bairro: "FLORESTA", endereco: "Rua Sapucaí (Esq. Assis Chateaubriand)", materiais: ["Vidro"], horario: "24 horas", coords: [-19.9210, -43.9285] },
+            { id: 18, bairro: "HORTO FLORESTAL", endereco: "Av. dos Andradas, 5.965 - URPV Andradas", materiais: ["Papel", "Metal", "Plástico", "Isopor", "Vidro"], horario: "Seg a Sex: 7h às 18h, Sáb e Dom: 7h40 às 16h", coords: [-19.9138, -43.9115] },
+            { id: 19, bairro: "HORTO FLORESTAL", endereco: "Rua Santo Agostinho, 1.717 (Senai)", materiais: ["Papel", "Metal", "Plástico", "Isopor", "Vidro"], horario: "Seg a Sex: 7h às 21h", coords: [-19.9110, -43.9168] },
+            { id: 20, bairro: "EYMARD", endereco: "Rua Lídia (Parque Guilherme Lage)", materiais: ["Papel", "Metal", "Plástico", "Isopor", "Vidro"], horario: "24 horas", coords: [-19.8864, -43.9195] },
+            { id: 21, bairro: "IPIRANGA", endereco: "Rua Princesa Leopoldina, 485 - Gelu Nordeste", materiais: ["Papel", "Metal", "Plástico", "Isopor", "Vidro"], horario: "Seg a Sex: 7h às 17h, Sáb: 8h às 12h", coords: [-19.8942, -43.9280] },
+            { id: 22, bairro: "SÃO BERNARDO", endereco: "Av. Washington Luiz, 941 - URPV Aeroporto", materiais: ["Papel", "Metal", "Plástico", "Isopor", "Vidro"], horario: "Seg a Sex: 7h às 18h, Sáb e Dom: 7h40 às 16h", coords: [-19.8456, -43.9312] },
+            { id: 23, bairro: "SALGADO FILHO", endereco: "Rua Conselheiro Pires da Mota, 205 - Gelu Oeste", materiais: ["Papel", "Metal", "Plástico", "Isopor", "Vidro"], horario: "Seg a Sex: 7h às 17h, Sáb: 8h às 12h", coords: [-19.9392, -43.9805] },
+            { id: 24, bairro: "ZOOLÓGICO", endereco: "Diversos pontos internos (Aquário/Administração)", materiais: ["Papel", "Metal", "Plástico", "Isopor", "Vidro"], horario: "Ter a Dom: 8h às 16h", coords: [-19.8520, -44.0065] },
+            { id: 25, bairro: "RIO BRANCO", endereco: "Rua Augusto dos Anjos, 1.983 - URPV Rio Branco", materiais: ["Papel", "Metal", "Plástico", "Isopor", "Vidro"], horario: "Seg a Sex: 7h às 18h, Sáb e Dom: 7h40 às 16h", coords: [-19.8324, -43.9875] }
+        ];
+
+        let map;
+        let markersGroup;
+
+        // Mescla os pontos fixos com os pontos extras cadastrados pelas cooperativas
+        function obterTodosPontos() {
+            const extras = JSON.parse(localStorage.getItem('pontosExtras') || '[]');
+            return [...pontosColeta, ...extras];
+        }
+
+        function configurarFiltrosBairro() {
+            const selectBairro = document.getElementById('filtroBairro');
+            const todos = obterTodosPontos();
+            const bairrosUnicos = [...new Set(todos.map(p => p.bairro))].sort();
+            
+            // Limpa e recarrega as opções
+            selectBairro.innerHTML = '<option value="">Todos os bairros</option>';
+            bairrosUnicos.forEach(bairro => {
+                const option = document.createElement('option');
+                option.value = bairro;
+                option.textContent = bairro;
+                selectBairro.appendChild(option);
+            });
+        }
+
+        function inicializarMapa() {
+            map = L.map('map').setView([-19.9200, -43.9400], 12);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            markersGroup = L.layerGroup().addTo(map);
+            configurarFiltrosBairro();
+            atualizarMapa();
+        }
+
+        function atualizarMapa() {
+            markersGroup.clearLayers();
+
+            const bairroSel = document.getElementById('filtroBairro').value;
+            const materialSel = document.getElementById('filtroMaterial').value;
+            const todos = obterTodosPontos();
+
+            const filtrados = todos.filter(ponto => {
+                const matchBairro = bairroSel === "" || ponto.bairro === bairroSel;
+                const matchMaterial = materialSel === "" || ponto.materiais.includes(materialSel);
+                return matchBairro && matchMaterial;
+            });
+
+            filtrados.forEach(ponto => {
+                if (!ponto.coords) return; // ignora pontos sem coordenadas
+                const isExtra = ponto.id >= 1000;
+                const marker = L.marker(ponto.coords);
+                
+                const popupContent = `
+                    <strong style="font-size:13px; color:#004525;">${ponto.bairro}</strong>
+                    ${isExtra ? '<span style="font-size:10px; background:#72b850; color:#fff; border-radius:4px; padding:1px 6px; margin-left:4px;">Novo</span>' : ''}<br>
+                    <span style="font-size:12px; color:#111; font-weight:600;">${ponto.endereco}</span><br>
+                    <small style="font-size:11px; color:#555;"><b>Horário:</b> ${ponto.horario}</small><br>
+                    <small style="font-size:11px; color:#222;"><b class="text-success">Aceita:</b> ${ponto.materiais.join(', ')}</small><br>
+                    ${isExtra ? `<small style="font-size:10px; color:#888;"><b>Cooperativa:</b> ${ponto.cooperativa || ''}</small><br>` : ''}
+                    <a href="pontos.html?id=${ponto.id}" class="btn-popup">Ver Detalhes Expandidos</a>
+                `;
+                
+                marker.bindPopup(popupContent);
+                markersGroup.addLayer(marker);
+            });
+
+            if (filtrados.length > 0 && bairroSel !== "") {
+                map.setView(filtrados[0].coords, 14);
+            }
+        }
+
+        function carregarMuralAvisos() {
+            const mural = document.getElementById('muralAvisos');
+            const avisos = JSON.parse(localStorage.getItem('avisos') || '[]');
+            const hoje = new Date().toISOString().split('T')[0];
+
+            const avisosValidos = avisos.filter(aviso => {
+                return hoje >= aviso.dataInicio && hoje <= aviso.dataFim;
+            });
+
+            if (avisosValidos.length === 0) {
+                mural.innerHTML = `
+                    <div class="col-12 text-center py-4 text-secondary">
+                        <i class="bi bi-info-circle fs-3 d-block mb-2"></i>
+                        Nenhum aviso importante ou alteração de serviço para o dia de hoje.
+                    </div>`;
+                return;
+            }
+
+            mural.innerHTML = '';
+            
+            avisosValidos.reverse().forEach(aviso => {
+                const formatarData = (dataStr) => {
+                    const [ano, mes, dia] = dataStr.split('-');
+                    return `${dia}/${mes}/${ano}`;
+                };
+
+                const template = `
+                    <div class="col-md-6 col-lg-4">
+                        <div class="aviso-item h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-start mb-2 gap-2">
+                                    <h5 class="fw-bold text-dark m-0 fs-6">${aviso.titulo}</h5>
+                                    <span class="badge bg-success-subtle text-success border px-2 py-1 text-truncate" style="max-width: 140px; font-size: 0.7rem;">
+                                        <i class="bi bi-building-fill me-1"></i>${aviso.cooperativa}
+                                    </span>
+                                </div>
+                                <p class="text-secondary small mb-3">${aviso.descricao}</p>
+                            </div>
+                            <div class="pt-2 border-top mt-auto d-flex justify-content-between align-items-center opacity-75">
+                                <small style="font-size: 0.75rem; font-weight: 600;">
+                                    <i class="bi bi-calendar-range me-1"></i>Válido de: ${formatarData(aviso.dataInicio)} até ${formatarData(aviso.dataFim)}
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                mural.innerHTML += template;
+            });
+        }
+
+        window.onload = () => {
+            const user = JSON.parse(localStorage.getItem('usuarioLogado'));
+            if(user) document.getElementById('navUserName').innerText = user.nome.split(' ')[0];
+            inicializarMapa();
+            carregarMuralAvisos();
+        };
+    </script>
+</body>
+</html>

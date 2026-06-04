@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Econexus - Home</title>
+    <link rel="icon" type="image/x-icon" href="eco_favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --verde-escuro: #004525;
+            --verde-claro: #72b850;
+            --preto: #000000;
+            --branco: #ffffff;
+            --azul-eco: #0165b0;
+            --cinza-fundo: #f8f9fa;
+        }
+
+        * { 
+            font-family: "Outfit", sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        body {
+            background-color: var(--cinza-fundo);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main { 
+            flex: 1;
+        }
+        
+        /* Navbar com a identidade visual unificada */
+        .navbar-custom {
+            background-color: var(--preto);
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hambúrguer visível em cor contrastante */
+        .hamburger-label { 
+            cursor: pointer; 
+            z-index: 1001; 
+            padding: 8px; 
+        }
+        
+        .hamburger-label svg { 
+            width: 30px; 
+            height: auto; 
+            fill: var(--branco); 
+            transition: fill 0.3s ease;
+        }
+        
+        .hamburger-label:hover svg {
+            fill: var(--verde-claro);
+        }
+
+        #menu-toggle { display: none; }
+
+        /* Estilo dos Botões Alinhados ao Padrão UX */
+        .login-button {
+            padding: 8px 24px;
+            border-radius: 20px;
+            background: var(--branco);
+            color: var(--preto);
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid var(--branco);
+            transition: 0.3s ease-in-out;
+        }
+
+        .login-button:hover {
+            background: transparent;
+            color: var(--branco);
+            border-color: var(--branco);
+            transform: translateY(-2px);
+        }
+
+        .register-button {
+            padding: 8px 24px;
+            border-radius: 20px;
+            background: var(--verde-claro);
+            color: var(--preto);
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid var(--verde-claro);
+            transition: 0.3s ease-in-out;
+        }
+
+        .register-button:hover {
+            background: var(--verde-escuro);
+            color: var(--branco);
+            border-color: var(--verde-escuro);
+            transform: translateY(-2px);
+        }
+
+        /* Menu de Tela Cheia */
+        .full-screen-menu {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: var(--verde-escuro);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        #menu-toggle:checked ~ .full-screen-menu { 
+            opacity: 1; 
+            visibility: visible; 
+        }
+
+        .full-screen-menu .nav-link {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--branco);
+            margin: 12px 0;
+            padding: 10px 40px;
+            border-radius: 20px;
+            border: 1px solid var(--branco);
+            background: var(--preto);
+            transition: 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        .full-screen-menu .nav-link:hover {
+            transform: scale(1.05);
+            background: var(--verde-claro);
+            border-color: var(--preto);
+        }
+
+        body:has(#menu-toggle:checked) { overflow: hidden; }
+
+        /* Seção Principal / Hero */
+        .hero-section {
+            background-color: var(--verde-escuro);
+            color: var(--branco);
+            padding: 60px 20px;
+        }
+
+        .logo-hero {
+            max-width: 180px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--branco);
+            margin-bottom: 15px;
+        }
+
+        .hero-subtitle {
+            max-width: 700px;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 50px;
+        }
+
+        /* Cards de Informação baseados no Design UX da login/cadastro */
+        .info-card {
+            background: var(--branco);
+            color: var(--preto);
+            padding: 35px 25px;
+            border: 1px solid var(--preto);
+            border-radius: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .info-card h5 {
+            color: var(--verde-escuro);
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .info-card h5::after {
+            content: '';
+            position: absolute;
+            left: 0; bottom: 0;
+            width: 40px; height: 3px;
+            background-color: var(--verde-claro);
+            border-radius: 2px;
+        }
+
+        .info-card p {
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Footer padrão */
+        footer {
+            background-color: var(--preto);
+            color: var(--branco);
+            text-align: center;
+            padding: 25px 0;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <nav class="navbar navbar-custom">
+            <div class="container-fluid px-4">
+                <label for="menu-toggle" class="hamburger-label">
+                    <svg viewBox="0 0 14 14">
+                        <path d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                </label>
+                
+                <input type="checkbox" id="menu-toggle">
+
+                <div class="full-screen-menu">
+                    <a class="nav-link" href="index.html">Início</a>
+                    <a class="nav-link" href="src/login.html">Entrar</a>
+                    <a class="nav-link" href="src/cadastro.html">Cadastrar</a>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <a href="src/login.html" class="login-button">Login</a>
+                    <a href="src/cadastro.html" class="register-button">Cadastrar-se</a>
+                </div>
+            </div>
+        </nav>
+
+        <section class="hero-section text-center">
+            <div class="container d-flex flex-column align-items-center">
+                
+                <img src="econexus_logo.png" alt="Logo EcoNexus" class="logo-hero">
+
+                <h2 class="hero-title">Sobre nós</h2>
+
+                <p class="hero-subtitle">
+                    Conectamos pessoas, tecnologia e sustentabilidade para transformar a forma como os resíduos são gerenciados na sua comunidade.
+                </p>
+
+                <div class="row w-100 justify-content-center g-4" style="max-width: 1100px;">
+
+                    <div class="col-md-4">
+                        <div class="info-card">
+                            <h5>Desafio</h5>
+                            <p>
+                                O crescimento acelerado das cidades aumentou drasticamente a produção de resíduos, tornando o descarte correto e o gerenciamento sustentável um desafio complexo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="info-card">
+                            <h5>Solução</h5>
+                            <p>
+                                Desenvolvemos uma plataforma integrada que conecta diretamente os cidadãos às cooperativas de reciclagem, simplificando processos e gerando valor ecológico real.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="info-card">
+                            <h5>Impacto</h5>
+                            <p>
+                                Fortalecemos a economia circular de ponta a ponta, impulsionando a inclusão socioeconômica dos catadores e promovendo cidades mais limpas e conscientes.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Econexus. Todos os direitos reservados. Sustentabilidade em cada detalhe.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

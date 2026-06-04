@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Econexus - Histórico de Coletas</title>
+    <link rel="icon" type="image/x-icon" href="eco_favicon.png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+        :root {
+            --verde-escuro: #004525;
+            --verde-claro: #72b850;
+            --preto: #000000;
+            --branco: #ffffff;
+            --cinza-fundo: #f8f9fa;
+        }
+
+        * { font-family: "Outfit", sans-serif; margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--cinza-fundo); min-height: 100vh; display: flex; flex-direction: column; }
+
+        
+
+                /* Hamburger / Menu Fullscreen */
+        .logo-img { width: 50px; height: 50px; object-fit: contain; }
+        svg { width: 30px; height: auto; }
+        #menu-toggle { display: none; }
+        .hamburger-label { cursor: pointer; z-index: 1001; padding: 10px; }
+        .user-link { padding: 8px 20px; border-radius: 50px; background: white; color: black; text-decoration: none; font-weight: 600; transition: 0.3s; }
+        .full-screen-menu { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--verde-claro); display: flex; flex-direction: column; justify-content: center; align-items: center; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); opacity: 0; visibility: hidden; z-index: 1000; }
+        #menu-toggle:checked ~ .full-screen-menu { opacity: 1; visibility: visible; }
+        .full-screen-menu .nav-link { font-size: 2.2rem; color: white; margin: 10px 0; padding: 10px 40px; border-radius: 12px; background: rgba(0,0,0,0.2); transition: 0.3s; text-decoration: none; }
+        .full-screen-menu .nav-link:hover { transform: scale(1.05); background: rgba(0,0,0,0.4); }
+        body:has(#menu-toggle:checked) { overflow: hidden; }
+
+        .card-metrica {
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            transition: transform 0.2s;
+        }
+        .card-metrica:hover { transform: translateY(-3px); }
+
+        .tabela-historico {
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.06);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+        .tabela-historico th {
+            background-color: var(--verde-escuro);
+            color: var(--branco);
+            font-weight: 600;
+            padding: 15px;
+        }
+        .tabela-historico td { padding: 15px; vertical-align: middle; }
+
+        .badge-material {
+            background-color: rgba(114, 184, 80, 0.15);
+            color: #4c8a2b;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 8px;
+        }
+
+        footer { background-color: var(--preto); color: var(--branco); text-align: center; padding: 20px 0; font-size: 0.9rem; margin-top: auto; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar bg-black py-3">
+            <div class="container">
+                <label for="menu-toggle" class="hamburger-label">
+                    <svg fill="white" width="30" viewBox="0 0 14 14"><path d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/></svg>
+                </label>
+                <a class="navbar-brand m-0" href="index.html">
+                    <img src="econexus_logo.png" alt="Logo Econexus" class="logo-img">
+                </a>
+                <a href="#" class="user-link" id="navUserName">Cidadão</a>
+                <input type="checkbox" id="menu-toggle">
+                <div class="full-screen-menu">
+                    <ul class="nav flex-column text-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="dashboard_cidadao.html">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pedidos.html">Pedidos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pontos.html">Pontos de Coleta</a></li>
+                        <li class="nav-item"><a class="nav-link" href="configuracoes.html">Configurações</a></li>
+                        <li class="nav-item mt-5">
+                            <label for="menu-toggle" class="btn btn-outline-light rounded-pill px-4">Fechar</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5 flex-grow-1">
+        
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+            <div>
+                <h2 class="fw-bold m-0 text-dark">Meu Histórico de Descartes</h2>
+                <p class="text-secondary m-0">Acompanhe o impacto ecológico das suas ações sustentáveis.</p>
+            </div>
+            <a href="dashboard_cidadao.html" class="btn btn-success rounded-3 px-4" style="background-color: var(--verde-eco); border: none;">
+                <i class="bi bi-plus-circle me-2"></i>Novo Descarte
+            </a>
+        </div>
+
+        <div class="row g-4 mb-4">
+            <div class="col-md-4">
+                <div class="card-metrica d-flex align-items-center justify-content-between">
+                    <div>
+                        <span class="text-secondary small fw-bold text-uppercase">Total Descartado</span>
+                        <h3 class="fw-bold text-dark mt-1 mb-0" id="metricaPeso">0.0 kg</h3>
+                    </div>
+                    <div class="bg-success-subtle text-success rounded-3 p-3 fs-3 d-flex align-items-center justify-content-center">
+                        <i class="bi bi-recycle"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-metrica d-flex align-items-center justify-content-between">
+                    <div>
+                        <span class="text-secondary small fw-bold text-uppercase">Pontos Acumulados</span>
+                        <h3 class="fw-bold text-primary mt-1 mb-0" id="metricaPontos">0 pts</h3>
+                    </div>
+                    <div class="bg-primary-subtle text-primary rounded-3 p-3 fs-3 d-flex align-items-center justify-content-center">
+                        <i class="bi bi-award-fill"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-metrica d-flex align-items-center justify-content-between">
+                    <div>
+                        <span class="text-secondary small fw-bold text-uppercase">Coletas Realizadas</span>
+                        <h3 class="fw-bold text-dark mt-1 mb-0" id="metricaQtd">0</h3>
+                    </div>
+                    <div class="bg-warning-subtle text-warning rounded-3 p-3 fs-3 d-flex align-items-center justify-content-center">
+                        <i class="bi bi-calendar-check"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-4 shadow-sm mb-4">
+            <div class="row g-3 align-items-center">
+                <div class="col-md-8">
+                    <label class="form-label fw-bold"><i class="bi bi-filter me-2"></i>Filtrar por Tipo de Material</label>
+                    <select id="filtroMaterial" class="form-select rounded-3" onchange="renderizarHistorico()">
+                        <option value="">Todos os materiais</option>
+                        <option value="Plástico">Plástico</option>
+                        <option value="Papel">Papel</option>
+                        <option value="Vidro">Vidro</option>
+                        <option value="Metal">Metal</option>
+                        <option value="Óleo">Óleo de Cozinha</option>
+                    </select>
+                </div>
+                <div class="col-md-4 d-grid pt-4">
+                    <button class="btn btn-outline-secondary rounded-3" onclick="limparFiltro()">Limpar Filtro</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabela-historico table-responsive">
+            <table class="table table-hover m-0 align-middle">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Cooperativa / Destino</th>
+                        <th>Material</th>
+                        <th>Quantidade</th>
+                        <th>Pontos Ganhos</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabela">
+                    </tbody>
+            </table>
+        </div>
+
+    </main>
+
+        <footer class="bg-black text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p class="m-0 opacity-75">&copy; 2026 Econexus. Sustentabilidade e transparência de ponta a ponta.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Histórico de exemplo estático caso o LocalStorage esteja limpo
+        const dadosPadraoHistorico = [
+            { data: "24/05/2026", cooperativa: "Cooperativa Centro Recicla", material: "Plástico", peso: 4.5, pontos: 45, status: "Concluído" },
+            { data: "18/05/2026", cooperativa: "EcoVida Savassi", material: "Vidro", peso: 12.0, pontos: 60, status: "Concluído" },
+            { data: "02/05/2026", cooperativa: "Cooperativa Centro Recicla", material: "Metal", peso: 2.1, pontos: 42, status: "Concluído" },
+            { data: "15/04/2026", cooperativa: "Recicla Castelo S/A", material: "Papel", peso: 8.5, pontos: 34, status: "Concluído" }
+        ];
+
+        // Obtém ou inicializa os dados no LocalStorage
+        function obterHistorico() {
+            let historico = localStorage.getItem('historicoColetas');
+            if (!historico) {
+                localStorage.setItem('historicoColetas', JSON.stringify(dadosPadraoHistorico));
+                return dadosPadraoHistorico;
+            }
+            return JSON.parse(historico);
+        }
+
+        function calcularMetricas(lista) {
+            let totalPeso = 0;
+            let totalPontos = 0;
+
+            lista.forEach(item => {
+                totalPeso += item.peso;
+                totalPontos += item.pontos;
+            });
+
+            document.getElementById('metricaPeso').innerText = `${totalPeso.toFixed(1)} kg`;
+            document.getElementById('metricaPontos').innerText = `${totalPontos} pts`;
+            document.getElementById('metricaQtd').innerText = lista.length;
+        }
+
+        function renderizarHistorico() {
+            const historicoCompleto = obterHistorico();
+            const filtro = document.getElementById('filtroMaterial').value;
+            const corpoTabela = document.getElementById('corpoTabela');
+            
+            corpoTabela.innerHTML = "";
+
+            // Filtra os dados se houver seleção
+            const dadosFiltrados = historicoCompleto.filter(item => {
+                return filtro === "" || item.material === filtro;
+            });
+
+            // Atualiza os painéis numéricos com base no filtro atual
+            calcularMetricas(dadosFiltrados);
+
+            if (dadosFiltrados.length === 0) {
+                corpoTabela.innerHTML = `
+                    <tr>
+                        <td colspan="6" class="text-center text-secondary py-5">
+                            <i class="bi bi-folder-x fs-2 d-block mb-2"></i>
+                            Nenhum registro de coleta encontrado para o filtro selecionado.
+                        </td>
+                    </tr>`;
+                return;
+            }
+
+            // Popula a tabela com as linhas
+            dadosFiltrados.forEach(item => {
+                corpoTabela.innerHTML += `
+                    <tr>
+                        <td class="fw-bold text-secondary">${item.data}</td>
+                        <td><i class="bi bi-building me-2 text-primary"></i>${item.cooperativa}</td>
+                        <td><span class="badge-material">${item.material}</span></td>
+                        <td class="fw-bold">${item.peso.toFixed(1)} kg</td>
+                        <td class="text-primary fw-bold">+${item.pontos} pts</td>
+                        <td>
+                            <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 rounded-pill small">
+                                <i class="bi bi-check-circle-fill me-1"></i>${item.status}
+                            </span>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        function limparFiltro() {
+            document.getElementById('filtroMaterial').value = "";
+            renderizarHistorico();
+        }
+
+        function logout() {
+            localStorage.removeItem('usuarioLogado');
+            window.location.href = 'login.html';
+        }
+
+        window.onload = () => {
+            // Verifica o nome do cidadão logado para exibir no topo
+            const user = JSON.parse(localStorage.getItem('usuarioLogado'));
+            if(user) {
+                document.getElementById('navUserName').innerText = user.nome.split(' ')[0];
+            }
+            
+            renderizarHistorico();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Econexus - Cadastro</title>
+    <link rel="icon" type="image/x-icon" href="eco_favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --verde-escuro: #004525;
+            --verde-claro: #72b850;
+            --preto: #000000;
+            --branco: #ffffff;
+            --cinza-input: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--branco);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar seguindo o padrão Login */
+        .navbar-custom {
+            background-color: var(--preto);
+            padding: 10px 0;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+        }
+
+        /* Container de Cadastro baseado no login-container */
+        .registration-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .registration-container {
+            border: 1px solid var(--preto);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 700px;
+            background: var(--branco);
+            transition: all 0.3s ease;
+        }
+
+        h2 {
+            font-weight: 700;
+            color: var(--preto);
+            margin-bottom: 30px;
+        }
+
+        /* Opções de tipo de conta */
+        .type-selector {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .btn-check:checked + .btn-outline-success {
+            background-color: var(--verde-escuro);
+            border-color: var(--verde-escuro);
+            color: var(--branco);
+        }
+
+        .btn-outline-success {
+            color: var(--verde-escuro);
+            border-color: var(--verde-escuro);
+            padding: 12px;
+            font-weight: 600;
+            border-radius: 10px;
+        }
+
+        /* Estilo dos Inputs */
+        label {
+            font-weight: 500;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            font-family: 'Outfit', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--verde-claro);
+            box-shadow: 0 0 0 3px rgba(114, 184, 80, 0.1);
+        }
+
+        /* Botão Principal */
+        .btn-register {
+            background-color: var(--verde-escuro);
+            color: var(--branco);
+            width: 100%;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: 0.3s ease-in-out;
+            margin-top: 10px;
+        }
+
+        .btn-register:hover {
+            background-color: var(--verde-claro);
+            transform: translateY(-2px);
+        }
+
+        .link-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        .link-footer a {
+            color: var(--verde-escuro);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .link-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--preto);
+            color: var(--branco);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-custom">
+        <div class="container text-center">
+            <a class="navbar-brand mx-auto" href="index.html">
+                <img src="econexus_logo.png" alt="Logo Econexus">
+            </a>
+        </div>
+    </nav>
+
+    <div class="registration-wrapper">
+        <div class="registration-container">
+            <h2 class="text-center">Criar sua Conta</h2>
+            
+            <form id="formCadastro">
+                <label class="d-block text-center mb-3">Eu sou:</label>
+                <div class="type-selector" role="group">
+                    <input type="radio" class="btn-check" name="tipoLogin" id="tipoCidadao" value="cidadao" checked onchange="toggleLabels()">
+                    <label class="btn btn-outline-success w-100" for="tipoCidadao">Cidadão</label>
+
+                    <input type="radio" class="btn-check" name="tipoLogin" id="tipoCooperativa" value="cooperativa" onchange="toggleLabels()">
+                    <label class="btn btn-outline-success w-100" for="tipoCooperativa">Cooperativa</label>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <label id="labelNome">Nome Completo</label>
+                        <input type="text" id="nome" placeholder="Digite seu nome" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label id="labelDocumento">CPF</label>
+                        <input type="text" id="documento" placeholder="000.000.000-00" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label>E-mail</label>
+                        <input type="email" id="email" placeholder="seu@email.com" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>CEP</label>
+                        <input type="text" id="cep" placeholder="00000-000" required>
+                    </div>
+                    <div class="col-md-8">
+                        <label>Bairro</label>
+                        <input type="text" id="bairro" placeholder="Ex: Savassi" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-9">
+                        <label>Rua</label>
+                        <input type="text" id="rua" placeholder="Nome da rua" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label>Nº</label>
+                        <input type="text" id="numero" placeholder="123" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Senha</label>
+                        <input type="password" id="senha" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-register">Finalizar Cadastro</button>
+            </form>
+
+            <div class="link-footer">
+                Já tem uma conta? <a href="login.html">Faça login.</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Econexus. Sustentabilidade em cada detalhe.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleLabels() {
+            const tipo = document.querySelector('input[name="tipoLogin"]:checked').value;
+            const labelNome = document.getElementById('labelNome');
+            const labelDoc = document.getElementById('labelDocumento');
+            const inputDoc = document.getElementById('documento');
+
+            if (tipo === 'cooperativa') {
+                labelNome.innerText = 'Razão Social';
+                labelDoc.innerText = 'CNPJ';
+                inputDoc.placeholder = '00.000.000/0001-00';
+            } else {
+                labelNome.innerText = 'Nome Completo';
+                labelDoc.innerText = 'CPF';
+                inputDoc.placeholder = '000.000.000-00';
+            }
+        }
+
+        document.getElementById('formCadastro').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const tipo = document.querySelector('input[name="tipoLogin"]:checked').value;
+            const novoUsuario = {
+                tipo: tipo,
+                nome: document.getElementById('nome').value,
+                documento: document.getElementById('documento').value,
+                email: document.getElementById('email').value,
+                cep: document.getElementById('cep').value,
+                bairro: document.getElementById('bairro').value,
+                rua: document.getElementById('rua').value,
+                numero: document.getElementById('numero').value,
+                senha: document.getElementById('senha').value
+            };
+
+            const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+            
+            if (usuarios.find(u => u.email === novoUsuario.email)) {
+                alert('Este e-mail já está em uso.');
+            } else {
+                usuarios.push(novoUsuario);
+                localStorage.setItem('usuarios', JSON.stringify(usuarios));
+                alert('Conta criada com sucesso! Redirecionando para o login...');
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</body>
+</html>
