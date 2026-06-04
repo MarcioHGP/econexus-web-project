@@ -1,6 +1,6 @@
 # 📊 Relatório de Contribuições do Projeto
 
-**Última atualização:** 04/06/2026 22:43
+**Última atualização:** 04/06/2026 23:45
 
 ---
 
@@ -13,16 +13,16 @@
 | Márcio Henrique Paixão    |         2 |       170 |         3 |          4 |              1 |               1 |
 | Rafael Felipe             |         4 |       249 |         2 |          4 |              2 |               1 |
 | Srmarlongs                |        13 |      1574 |        10 |         12 |             10 |               2 |
-| Tainara-Carvalho          |        19 |       303 |       128 |          6 |             17 |               2 |
-| github-actions[bot]       |        97 |       517 |       449 |          3 |             97 |               1 |
+| Tainara-Carvalho          |        20 |       322 |       131 |          7 |             18 |               2 |
+| github-actions[bot]       |        98 |       521 |       453 |          3 |             98 |               1 |
 | github-classroom[bot]     |         1 |       774 |         0 |         19 |              1 |               3 |
 | marciohgpdev              |         1 |         5 |         5 |          1 |              1 |               1 |
-| marianadotmelo            |        30 |       637 |       425 |         13 |             17 |               3 |
+| marianadotmelo            |        31 |       638 |       426 |         13 |             17 |               3 |
 
 
 ## 📅 Contribuições Semanais (Todo o Semestre)
 
-**2026-05-28**: Bernardo Do Valle Pereira: 7, Srmarlongs: 1, github-actions[bot]: 8, marianadotmelo: 9
+**2026-05-28**: Bernardo Do Valle Pereira: 7, Srmarlongs: 1, Tainara-Carvalho: 1, github-actions[bot]: 9, marianadotmelo: 10
 
 **2026-05-21**: Arthur544: 1
 
