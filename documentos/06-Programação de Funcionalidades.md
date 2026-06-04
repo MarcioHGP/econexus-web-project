@@ -352,19 +352,33 @@ Arthur
 
 #### Artefatos da funcionalidade
 
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
+•	Componente HTML de avaliação 
+•	Função JavaScript enviarAvaliacao() 
+•	Campos: 
+
+o	Nota (1 a 5 estrelas) 
+o	Comentário 
+o	Botão de envio 
+
 
 #### Estrutura de Dados
 
-[Caso exista estrutura de dados, adicione aqui]
+nota	inteiro	Avaliação de 1 a 5 estrelas
+comentario	texto	Comentário do usuário
+
 
 #### Instruções de acesso
 
-[Adicione as orientações de acesso à funcionalidade]
+1.	Acessar a página de detalhes da cooperativa. 
+2.	Localizar a seção "Avaliação da Cooperativa". 
+3.	Selecionar uma nota de 1 a 5 estrelas. 
+4.	Inserir um comentário. 
+5.	Clicar em "Enviar Avaliação". 
+
 
 #### Responsável
 
-Mariana
+Mariana Guimarães Melo
 
 ---
 
@@ -456,7 +470,7 @@ Rafael
 
 ### Tela Inicial e Sobre Nós
 
-[Adicione imagem da funcionalidade/tela]
+<img width="1899" height="901" alt="image" src="https://github.com/user-attachments/assets/dd591912-e6af-45c3-b8d2-7d72c0648695" />
 
 #### Requisito atendido
 
@@ -464,19 +478,28 @@ Rafael
 
 #### Artefatos da funcionalidade
 
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
+•	copy.html 
+•	Estruturas HTML da Home 
+•	Estilos CSS utilizados no template padrão do projeto 
+
 
 #### Estrutura de Dados
 
-[Caso exista estrutura de dados, adicione aqui]
+Não se aplica. A funcionalidade possui caráter informativo e não realiza armazenamento de dados.
 
 #### Instruções de acesso
 
-[Adicione as orientações de acesso à funcionalidade]
+1.	Acessar a aplicação. 
+2.	Selecionar a opção "Home" no menu principal. 
+3.	Visualizar a seção institucional "Sobre Nós", contendo: 
+o	Apresentação da EcoNexus; 
+o	Desafio; 
+o	Solução; 
+o	Impacto. 
 
 #### Responsável
 
-Mariana
+Mariana Guimarães Melo
 
 ---
 
