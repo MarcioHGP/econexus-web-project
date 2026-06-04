@@ -6,13 +6,13 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 ## RF-01
 
-### Título da funcionalidade
+### Cadastro de Usuários com Distinção de Perfis
 
 [Adicione imagem da funcionalidade/tela]
 
 #### Requisito atendido
 
-[RF-01: adicione a descrição do requisito atendido]
+**RF-01:** Permitir o cadastro de usuários com distinção de perfis.
 
 #### Artefatos da funcionalidade
 
@@ -28,19 +28,19 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Responsável
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+Marlon
 
 ---
 
 ## RF-02
 
-### Título da funcionalidade
+### Login de Usuários com Distinção de Perfis
 
 [Adicione imagem da funcionalidade/tela]
 
 #### Requisito atendido
 
-[RF-02: adicione a descrição do requisito atendido]
+**RF-02:** Permitir o login de usuários com distinção de perfis.
 
 #### Artefatos da funcionalidade
 
@@ -56,19 +56,19 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Responsável
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+Rafael
 
 ---
 
 ## RF-03
 
-### Título da funcionalidade
+### Mapa Interativo de Pontos Recicláveis
 
 [Adicione imagem da funcionalidade/tela]
 
 #### Requisito atendido
 
-[RF-03: adicione a descrição do requisito atendido]
+**RF-03:** Exibir um mapa interativo.
 
 #### Artefatos da funcionalidade
 
@@ -84,19 +84,19 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Responsável
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+Bernardo
 
 ---
 
 ## RF-04
 
-### Título da funcionalidade
+### Anexar Fotos na Solicitação de Coleta
 
 [Adicione imagem da funcionalidade/tela]
 
 #### Requisito atendido
 
-[RF-04: adicione a descrição do requisito atendido]
+**RF-04:** Permitir anexar fotos na solicitação de coleta.
 
 #### Artefatos da funcionalidade
 
@@ -112,19 +112,19 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Responsável
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+Tainara
 
 ---
 
 ## RF-05
 
-### Título da funcionalidade
+### [Requisito não informado]
 
 [Adicione imagem da funcionalidade/tela]
 
 #### Requisito atendido
 
-[RF-05: adicione a descrição do requisito atendido]
+**RF-05:** [Descrição não fornecida].
 
 #### Artefatos da funcionalidade
 
@@ -140,19 +140,19 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Responsável
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+[Não informado]
 
 ---
 
 ## RF-06
 
-### Título da funcionalidade
+### Filtro por Tipo de Material
 
 [Adicione imagem da funcionalidade/tela]
 
 #### Requisito atendido
 
-[RF-06: adicione a descrição do requisito atendido]
+**RF-06:** Permitir filtro por tipo de material.
 
 #### Artefatos da funcionalidade
 
@@ -168,19 +168,19 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Responsável
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+Tainara
 
 ---
 
 ## RF-07
 
-### Título da funcionalidade
+### Solicitação de Coleta para Cooperativa
 
 [Adicione imagem da funcionalidade/tela]
 
 #### Requisito atendido
 
-[RF-07: adicione a descrição do requisito atendido]
+**RF-07:** Permitir solicitações de coleta para cooperativa.
 
 #### Artefatos da funcionalidade
 
@@ -196,19 +196,19 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Responsável
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+Tainara
 
 ---
 
 ## RF-08
 
-### Título da funcionalidade
+### Cancelamento de Solicitação
 
 [Adicione imagem da funcionalidade/tela]
 
 #### Requisito atendido
 
-[RF-08: adicione a descrição do requisito atendido]
+**RF-08:** Permitir cancelamento de solicitação.
 
 #### Artefatos da funcionalidade
 
@@ -224,19 +224,19 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Responsável
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+Marlon
 
 ---
 
 ## RF-09
 
-### Título da funcionalidade
+### Notificações PUSH de Coleta
 
 [Adicione imagem da funcionalidade/tela]
 
 #### Requisito atendido
 
-[RF-09: adicione a descrição do requisito atendido]
+**RF-09:** Notificar usuário D-1 via PUSH.
 
 #### Artefatos da funcionalidade
 
@@ -252,19 +252,19 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Responsável
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+Marlon
 
 ---
 
-## RF-010
+## RF-10
 
-### Título da funcionalidade
+### Configurações da Conta
 
 [Adicione imagem da funcionalidade/tela]
 
 #### Requisito atendido
 
-[RF-010: adicione a descrição do requisito atendido]
+**RF-10:** Permitir interface de configurações da conta.
 
 #### Artefatos da funcionalidade
 
@@ -280,19 +280,19 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Responsável
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+Bernardo
 
 ---
 
-## RF-011
+## RF-11
 
-### Título da funcionalidade
+### Postagem de Itens para Doação
 
 [Adicione imagem da funcionalidade/tela]
 
 #### Requisito atendido
 
-[RF-011: adicione a descrição do requisito atendido]
+**RF-11:** Permitir postagem de itens para doação.
 
 #### Artefatos da funcionalidade
 
@@ -308,19 +308,19 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Responsável
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+Arthur
 
 ---
 
-## RF-012
+## RF-12
 
-### Título da funcionalidade
+### Aceitação de Solicitações por Cooperativas
 
 [Adicione imagem da funcionalidade/tela]
 
 #### Requisito atendido
 
-[RF-012: adicione a descrição do requisito atendido]
+**RF-12:** Permitir cooperativas aceitarem solicitações.
 
 #### Artefatos da funcionalidade
 
@@ -336,19 +336,19 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Responsável
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+Arthur
 
 ---
 
-## RF-013
+## RF-13
 
-### Título da funcionalidade
+### Avaliação de Cooperativas
 
 [Adicione imagem da funcionalidade/tela]
 
 #### Requisito atendido
 
-[RF-013: adicione a descrição do requisito atendido]
+**RF-13:** Permitir avaliação de cooperativas.
 
 #### Artefatos da funcionalidade
 
@@ -364,19 +364,19 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Responsável
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+Mariana
 
 ---
 
-## RF-014
+## RF-14
 
-### Título da funcionalidade
+### Histórico e Impacto Ambiental
 
 [Adicione imagem da funcionalidade/tela]
 
 #### Requisito atendido
 
-[RF-014: adicione a descrição do requisito atendido]
+**RF-14:** Visualizar histórico e impacto ambiental.
 
 #### Artefatos da funcionalidade
 
@@ -392,19 +392,19 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Responsável
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+Márcio
 
 ---
 
-## RF-015
+## RF-15
 
-### Título da funcionalidade
+### Cadastro de Pontos de Descarte
 
 [Adicione imagem da funcionalidade/tela]
 
 #### Requisito atendido
 
-[RF-015: adicione a descrição do requisito atendido]
+**RF-15:** Cadastro de pontos de descarte.
 
 #### Artefatos da funcionalidade
 
@@ -420,19 +420,19 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Responsável
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+Arthur
 
 ---
 
-## RF-016
+## RF-16
 
-### Título da funcionalidade
+### Reivindicação de Itens para Doação
 
 [Adicione imagem da funcionalidade/tela]
 
 #### Requisito atendido
 
-[RF-016: adicione a descrição do requisito atendido]
+**RF-16:** Reivindicação de itens para doação.
 
 #### Artefatos da funcionalidade
 
@@ -448,19 +448,19 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Responsável
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+Rafael
 
 ---
 
-## RF-017
+## RF-17
 
-### Título da funcionalidade
+### Tela Inicial e Sobre Nós
 
 [Adicione imagem da funcionalidade/tela]
 
 #### Requisito atendido
 
-[RF-017: adicione a descrição do requisito atendido]
+**RF-17:** Exibir tela inicial e sobre nós.
 
 #### Artefatos da funcionalidade
 
@@ -476,19 +476,19 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Responsável
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+Mariana
 
 ---
 
-## RF-018
+## RF-18
 
-### Título da funcionalidade
+### Avisos de Utilidade Pública
 
 [Adicione imagem da funcionalidade/tela]
 
 #### Requisito atendido
 
-[RF-018: adicione a descrição do requisito atendido]
+**RF-18:** Avisos de utilidade pública.
 
 #### Artefatos da funcionalidade
 
@@ -504,6 +504,6 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Responsável
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+Márcio Henrique
 
 
