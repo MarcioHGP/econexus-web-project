@@ -164,12 +164,13 @@ Tainara
 
 #### Instruções de acesso
 
-Acessar o sistema por meio de login com perfil de usuário (cidadão).
-Navegar até a página “Pontos de Coleta”.
-Visualizar a listagem completa dos pontos de coleta cadastrados.
-Utilizar o filtro disponível para refinar a busca, por exemplo, selecionando o bairro desejado.
-Identificar, nos cartões exibidos, os pontos que aceitam o tipo de material desejado.
-Selecionar a opção “Ver detalhes expandidos” para obter informações adicionais sobre o ponto de coleta, incluindo endereço completo, horários de funcionamento e acesso à rota via Google Maps.
+1. Acessar o sistema por meio de login com perfil de usuário (cidadão).
+2. Navegar até a página “Pontos de Coleta”.
+3. Visualizar a listagem completa dos pontos de coleta cadastrados.
+4. Utilizar o filtro disponível para refinar a busca, por exemplo, selecionando o bairro desejado.
+5. Identificar, nos cartões exibidos, os pontos que aceitam o tipo de material desejado.
+6. Selecionar a opção “Ver detalhes expandidos” para obter informações adicionais sobre o ponto de coleta, incluindo endereço completo, horários de funcionamento e acesso à rota via Google Maps.
+
 
 #### Responsável
 
