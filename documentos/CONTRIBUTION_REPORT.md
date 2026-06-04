@@ -1,6 +1,6 @@
 # 📊 Relatório de Contribuições do Projeto
 
-**Última atualização:** 04/06/2026 22:27
+**Última atualização:** 04/06/2026 22:29
 
 ---
 
@@ -9,12 +9,12 @@
 | Aluno                     |   Commits |   Linhas+ |   Linhas- |   Arquivos |   Docs Commits |   Docs Arquivos |
 |---------------------------|-----------|-----------|-----------|------------|----------------|-----------------|
 | Arthur544                 |         8 |       183 |         8 |          6 |              5 |               2 |
-| Bernardo Do Valle Pereira |        57 |      4342 |      3201 |         56 |             37 |               3 |
+| Bernardo Do Valle Pereira |        58 |      4342 |      3210 |         56 |             38 |               3 |
 | Márcio Henrique Paixão    |         2 |       170 |         3 |          4 |              1 |               1 |
 | Rafael Felipe             |         4 |       249 |         2 |          4 |              2 |               1 |
 | Srmarlongs                |        13 |      1574 |        10 |         12 |             10 |               2 |
 | Tainara-Carvalho          |        19 |       303 |       128 |          6 |             17 |               2 |
-| github-actions[bot]       |        91 |       493 |       425 |          3 |             91 |               1 |
+| github-actions[bot]       |        92 |       497 |       429 |          3 |             92 |               1 |
 | github-classroom[bot]     |         1 |       774 |         0 |         19 |              1 |               3 |
 | marciohgpdev              |         1 |         5 |         5 |          1 |              1 |               1 |
 | marianadotmelo            |        26 |       577 |       398 |         12 |             13 |               3 |
@@ -22,7 +22,7 @@
 
 ## 📅 Contribuições Semanais (Todo o Semestre)
 
-**2026-05-28**: Bernardo Do Valle Pereira: 5, Srmarlongs: 1, github-actions[bot]: 2, marianadotmelo: 5
+**2026-05-28**: Bernardo Do Valle Pereira: 6, Srmarlongs: 1, github-actions[bot]: 3, marianadotmelo: 5
 
 **2026-05-21**: Arthur544: 1
 
