@@ -352,19 +352,22 @@ Arthur
 
 #### Artefatos da funcionalidade
 
-•	Componente HTML de avaliação 
-•	Função JavaScript enviarAvaliacao() 
-•	Campos: 
-
-o	Nota (1 a 5 estrelas) 
-o	Comentário 
-o	Botão de envio 
+Componente HTML de avaliação
+Função JavaScript enviarAvaliacao()
+Campos:
+   Nota (1 a 5 estrelas)
+   Comentário
+   Botão de envio
 
 
 #### Estrutura de Dados
 
-nota	inteiro	Avaliação de 1 a 5 estrelas
-comentario	texto	Comentário do usuário
+| Campo       | Tipo       | Descrição                   |
+| ----------- | ---------- | --------------------------- |
+| nota        | inteiro    | Avaliação de 1 a 5 estrelas |
+| comentario  | texto      | Comentário do usuário       |
+| cooperativa | referência | Cooperativa avaliada        |
+
 
 
 #### Instruções de acesso
