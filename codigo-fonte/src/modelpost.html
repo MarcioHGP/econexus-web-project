@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Post - Econexus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+        body { font-family: "Outfit", sans-serif; background: #f4f4f7; padding: 40px 20px; }
+        .container-artigo { max-width: 750px; margin: 40px auto; background: #ffffff; padding: 40px; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .btn-voltar { display: inline-block; margin-bottom: 24px; color: #64748b; text-decoration: none; font-weight: 500; }
+        #detalhe-titulo { font-size: 2.2rem; font-weight: 700; margin-bottom: 16px; }
+        .tag-tipo { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 30px; border: 1px solid #cbd5e1; background-color: #f1f5f9; color: #334155; }
+        #detalhe-conteudo { font-size: 1.1rem; line-height: 1.7; color: #334155; white-space: pre-wrap; margin-bottom: 40px; }
+        
+        /* --- Seção de Comentários --- */
+        .secao-comentarios { border-top: 1px solid #e2e8f0; padding-top: 30px; margin-top: 30px; }
+        .secao-comentarios h3 { font-size: 1.4rem; font-weight: 600; margin-bottom: 20px; color: #0f172a; }
+        .box-comentar { display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; }
+        .box-comentar textarea { width: 100%; height: 80px; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; resize: none; outline: none; font-size: 0.95rem; }
+        .box-comentar textarea:focus { border-color: #000000; }
+        .btn-comentar { align-self: flex-end; background: #000000; color: #ffffff; border: none; padding: 8px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+        .btn-comentar:hover { background: #212529; }
+        
+        /* --- Card de comentário individual --- */
+        .comentario-card { background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 8px; margin-bottom: 12px; }
+        .comentario-autor { font-size: 0.85rem; font-weight: 700; color: #475569; margin-bottom: 4px; }
+        .comentario-texto { font-size: 0.95rem; color: #0f172a; margin: 0; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+
+   <div class="container-artigo">
+    <a href="forum.html" class="btn-voltar">← Voltar para o Fórum</a>
+    <h1 id="detalhe-titulo">Carregando título...</h1>
+    <div id="detalhe-tag" class="tag-tipo">Carregando...</div>
+    
+    <img id="detalhe-imagem" src="" alt="Imagem do Post" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 24px; display: none;">
+
+    <div id="detalhe-conteudo">Carregando conteúdo...</div>
+            <h3>Comentários</h3>
+            
+            <div class="box-comentar">
+                <textarea id="novo-comentario" placeholder="Escreva um comentário anônimo..."></textarea>
+                <button class="btn-comentar" onclick="adicionarComentario()">Enviar</button>
+            </div>
+
+            <div id="lista-comentarios">
+                </div>
+        </div>
+    </div>
+    </body>
+</html>
+<script>
+    // Variáveis globais para sabermos qual post está aberto
+    let idPostAtual = null;
+    let postsNoBanco = [];
+
+    window.onload = function() {
+        const parametrosUrl = new URLSearchParams(window.location.search);
+        idPostAtual = parametrosUrl.get('id');
+
+        if (!idPostAtual) {
+            document.getElementById('detalhe-titulo').innerText = "Erro: Post não especificado.";
+            document.getElementById('detalhe-conteudo').innerText = "";
+            document.getElementById('detalhe-tag').style.display = "none";
+            return;
+        }
+
+        postsNoBanco = JSON.parse(localStorage.getItem('postsForum')) || [];
+        const postSelecionado = postsNoBanco.find(post => post.id == idPostAtual);
+
+        if (postSelecionado) {
+        document.getElementById('detalhe-titulo').innerText = postSelecionado.titulo;
+        document.getElementById('detalhe-conteudo').innerText = postSelecionado.conteudo;
+        
+        const tagElemento = document.getElementById('detalhe-tag');
+        tagElemento.innerText = postSelecionado.tipo === 'artigo' ? 'Artigo' : 'Doação';
+
+        // TRATAMENTO DA IMAGEM
+        const imgElemento = document.getElementById('detalhe-imagem');
+        if (postSelecionado.imagem) {
+            imgElemento.src = postSelecionado.imagem;
+            imgElemento.style.display = "block"; // Torna a imagem visível
+        } else {
+            imgElemento.style.display = "none";  // Oculta a tag se não houver imagem
+            }
+
+            atualizarListaComentarios(postSelecionado);
+
+            // Carrega os comentários do post
+            atualizarListaComentarios(postSelecionado);
+        } else {
+            document.getElementById('detalhe-titulo').innerText = "O post não foi encontrado.";
+            document.getElementById('detalhe-conteudo').innerText = "Este tópico pode ter sido removido ou não existe.";
+            document.getElementById('detalhe-tag').style.display = "none";
+        }
+    };
+
+    // Função que desenha os comentários na tela
+    function atualizarListaComentarios(post) {
+        const listaDiv = document.getElementById('lista-comentarios');
+        listaDiv.innerHTML = "";
+
+        // Se o post não tiver a lista de comentários criada ainda, exibe aviso
+        if (!post.comentarios || post.comentarios.length === 0) {
+            listaDiv.innerHTML = "<p style='color: #64748b; font-size: 0.95rem;'>Nenhum comentário ainda. Seja o primeiro a opinar!</p>";
+            return;
+        }
+
+        // Renderiza cada comentário na tela
+        post.comentarios.forEach(comentario => {
+            const comentarioHTML = `
+                <div class="comentario-card">
+                    <div class="comentario-autor">👤 Participante Anônimo</div>
+                    <p class="comentario-texto">${comentario.texto}</p>
+                </div>
+            `;
+            listaDiv.innerHTML += comentarioHTML;
+        });
+    }
+
+    // Função para salvar o novo comentário
+    function adicionarComentario() {
+        const campoTexto = document.getElementById('novo-comentario');
+        const textoComentario = campoTexto.value.trim();
+
+        if (textoComentario === "") {
+            alert("Você não pode enviar um comentário vazio!");
+            return;
+        }
+
+        // Localiza novamente o post no nosso "banco"
+        const postSelecionado = postsNoBanco.find(post => post.id == idPostAtual);
+
+        if (postSelecionado) {
+            // Se o post não tiver o array de comentários, nós inicializamos ele aqui
+            if (!postSelecionado.comentarios) {
+                postSelecionado.comentarios = [];
+            }
+
+            // Cria a estrutura do comentário anônimo
+            const novoComentarioObj = {
+                id: Date.now(),
+                texto: textoComentario
+            };
+
+            // Adiciona o comentário no topo da lista do post
+            postSelecionado.comentarios.unshift(novoComentarioObj);
+
+            // Atualiza o LocalStorage com o banco modificado
+            localStorage.setItem('postsForum', JSON.stringify(postsNoBanco));
+
+            // Limpa o campo de texto
+            campoTexto.value = "";
+
+            // Atualiza a tela para o novo comentário aparecer imediatamente
+            atualizarListaComentarios(postSelecionado);
+        }
+    }
+</script>
