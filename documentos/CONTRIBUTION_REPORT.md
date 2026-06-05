@@ -1,6 +1,6 @@
 # 📊 Relatório de Contribuições do Projeto
 
-**Última atualização:** 05/06/2026 00:33
+**Última atualização:** 05/06/2026 00:43
 
 ---
 
@@ -8,13 +8,13 @@
 
 | Aluno                     |   Commits |   Linhas+ |   Linhas- |   Arquivos |   Docs Commits |   Docs Arquivos |
 |---------------------------|-----------|-----------|-----------|------------|----------------|-----------------|
-| Arthur544                 |         9 |      1014 |         8 |          8 |              5 |               2 |
+| Arthur544                 |        10 |      1017 |        11 |          8 |              5 |               2 |
 | Bernardo Do Valle Pereira |        59 |      4405 |      3273 |         56 |             39 |               3 |
 | Márcio Henrique Paixão    |         2 |       170 |         3 |          4 |              1 |               1 |
 | Rafael Felipe             |         4 |       249 |         2 |          4 |              2 |               1 |
 | Srmarlongs                |        13 |      1574 |        10 |         12 |             10 |               2 |
 | Tainara-Carvalho          |        22 |       341 |       149 |          7 |             20 |               2 |
-| github-actions[bot]       |       101 |       534 |       466 |          3 |            101 |               1 |
+| github-actions[bot]       |       102 |       546 |       478 |          3 |            102 |               1 |
 | github-classroom[bot]     |         1 |       774 |         0 |         19 |              1 |               3 |
 | marciohgpdev              |         1 |         5 |         5 |          1 |              1 |               1 |
 | marianadotmelo            |        31 |       638 |       426 |         13 |             17 |               3 |
@@ -22,7 +22,7 @@
 
 ## 📅 Contribuições Semanais (Todo o Semestre)
 
-**2026-05-29**: Arthur544: 1, Bernardo Do Valle Pereira: 7, Srmarlongs: 1, Tainara-Carvalho: 3, github-actions[bot]: 12, marianadotmelo: 10
+**2026-05-29**: Arthur544: 2, Bernardo Do Valle Pereira: 7, Srmarlongs: 1, Tainara-Carvalho: 3, github-actions[bot]: 13, marianadotmelo: 10
 
 **2026-05-22**: Arthur544: 1
 
