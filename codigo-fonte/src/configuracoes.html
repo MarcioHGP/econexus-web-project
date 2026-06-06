@@ -28,7 +28,7 @@
 
                 /* Hamburger / Menu Fullscreen */
         .logo-img { width: 50px; height: 50px; object-fit: contain; }
-        svg { width: 30px; height: auto; }
+        .hamburger-label svg { width: 30px; height: auto; }
         #menu-toggle { display: none; }
         .hamburger-label { cursor: pointer; z-index: 1001; padding: 10px; }
         .user-link { padding: 8px 20px; border-radius: 50px; background: white; color: black; text-decoration: none; font-weight: 600; transition: 0.3s; }
@@ -137,7 +137,7 @@
     <main>
         <div class="container">
             <div class="text-center mb-5">
-                <h1 class="fw-bold" style="color: var(--preto-eco);">Configurações</h1>
+                <h1 class="fw-bold" style="color: var(--preto);">Configurações</h1>
                 <p class="text-secondary">Gerencie seus dados e preferências da conta.</p>
             </div>
 
@@ -170,7 +170,7 @@
         </div>
     </main>
 
-        <footer class="bg-black text-white text-center py-4 mt-auto">
+    <footer class="bg-black text-white text-center py-4 mt-auto">
         <div class="container">
             <p class="m-0 opacity-75">&copy; 2026 Econexus. Sustentabilidade e transparência de ponta a ponta.</p>
         </div>
@@ -184,6 +184,9 @@
     </div>
 
     <script>
+        // ── Guard de sessão ───────────────────────────────────────────────────────
+        if (!localStorage.getItem('usuarioLogado')) { window.location.href = 'login.html'; }
+
          let usuarioLogado = null;
 
         function obterUsuario() {
@@ -255,7 +258,7 @@
                         <span>Novidades da Comunidade</span>
                         <label class="switch"><input type="checkbox"><span class="slider"></span></label>
                     </div>
-                    <button class="btn btn-success w-100 rounded-pill" style="background: var(--verde-eco); border:none;" onclick="fecharModal()">Salvar</button>
+                    <button class="btn btn-success w-100 rounded-pill" style="background: var(--verde-claro); border:none;" onclick="fecharModal()">Salvar</button>
                 `;
             }
         }
@@ -279,7 +282,7 @@
                     <input type="text" id="editRua" class="form-control mb-2 rounded-3" value="${usuarioLogado.rua}" placeholder="Rua">
                     <input type="text" id="editNum" class="form-control mb-2 rounded-3" value="${usuarioLogado.numero}" placeholder="Número">
                     <input type="text" id="editBairro" class="form-control mb-3 rounded-3" value="${usuarioLogado.bairro}" placeholder="Bairro">
-                    <button class="btn btn-success w-100 rounded-pill mb-2" style="background: var(--verde-eco); border:none;" onclick="salvarEndereco()">Salvar Alterações</button>
+                    <button class="btn btn-success w-100 rounded-pill mb-2" style="background: var(--verde-claro); border:none;" onclick="salvarEndereco()">Salvar Alterações</button>
                     <button class="btn btn-light w-100 rounded-pill" onclick="renderEndereco(false)">Cancelar</button>
                 `;
             }

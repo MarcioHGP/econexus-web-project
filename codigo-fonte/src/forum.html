@@ -1,668 +1,830 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fórum</title>
+    <title>Econexus - Fórum de Doações</title>
     <link rel="icon" type="image/x-icon" href="eco_favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-        * { font-family: "Outfit", sans-serif; box-sizing: border-box; margin: 0; padding: 0; }
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
 
-        html, body {
-            height: 100%;
-            margin: 0;
-            background: #f4f4f7;
-        }
-        
-        /* Layout Flexbox estrutural */
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        
-        /* A main vai ocupar o espaço inteiro e empurrar o footer */
-        main {
-            flex: 1 0 auto; 
+        :root {
+            --verde-escuro: #004525;
+            --verde-claro: #72b850;
+            --preto: #000000;
+            --branco: #ffffff;
+            --cinza-fundo: #f8f9fa;
         }
 
-        #navbar {
-            width: 100%;
-            height: auto;
-        }
+        * { font-family: "Outfit", sans-serif; margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--cinza-fundo); min-height: 100vh; display: flex; flex-direction: column; }
 
-        h1 { text-align: center; }
-        .logo-nav { width: 50px; height: 50px; }
-
-        svg { width: 30px; height: auto; }
+        /* ── Navbar / Menu ──────────────────────────────────────────────────── */
+        .logo-img { width: 50px; height: 50px; object-fit: contain; }
+        .hamburger-label svg { width: 30px; height: auto; }
         #menu-toggle { display: none; }
         .hamburger-label { cursor: pointer; z-index: 1001; padding: 10px; }
-
-        .login-button {
-            padding: 2px 10px;
-            border-radius: 4px;
-            background: white;
-            color: black;
-            transition: 0.3s ease-in-out;
-            text-decoration: none;
-        }
-
-        .login-button:hover {
-            background: #72b850;
-            color: black;
-        }
-
-        .full-screen-menu {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: #72b850;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 1000;
-        }
-
+        .user-link { padding: 8px 20px; border-radius: 50px; background: white; color: black; text-decoration: none; font-weight: 600; transition: 0.3s; }
+        .full-screen-menu { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--verde-claro); display: flex; flex-direction: column; justify-content: center; align-items: center; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); opacity: 0; visibility: hidden; z-index: 1000; }
         #menu-toggle:checked ~ .full-screen-menu { opacity: 1; visibility: visible; }
-
-        .full-screen-menu .nav-link {
-            font-size: 2rem;
-            color: white;
-            margin: 15px 0;
-            border-radius: 8px;
-            background: black;
-            transition: 0.3s ease-in-out;
-        }
-
-        .full-screen-menu .nav-link:hover {
-            transform: scale(1.1);
-            background: #0165b0;
-        }
-
+        .full-screen-menu .nav-link { font-size: 2.2rem; color: white; margin: 10px 0; padding: 10px 40px; border-radius: 12px; background: rgba(0,0,0,0.2); transition: 0.3s; text-decoration: none; }
+        .full-screen-menu .nav-link:hover { transform: scale(1.05); background: rgba(0,0,0,0.4); }
         body:has(#menu-toggle:checked) { overflow: hidden; }
 
-        /* Barra de pesquisa */
-        .search-bar {
-            width: 100%;
-            max-width: 600px; 
-            padding: 12px 25px;
-            border: 1px solid #dfe1e5;
-            border-radius: 50px;
-            font-size: 1rem;
-            transition: all 0.3s ease; 
-            outline: none; 
+        /* ── Hero header ────────────────────────────────────────────────────── */
+        .forum-hero {
+            background: var(--verde-escuro);
+            color: var(--branco);
+            padding: 40px 0 30px;
         }
-        .search-bar:focus {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-            border-color: #72b850; 
-        }
+        .forum-hero h1 { font-size: 2rem; font-weight: 700; }
+        .forum-hero p { opacity: 0.8; font-size: 1rem; }
 
-        /* Carrossel de imagens */
-        .carousel-viewport {
-            position: relative;
-            width: 100%;
-            max-width: 90rem; 
-            overflow: hidden;
-            padding: 20px 0;
-            height: auto;
-            margin: 0 auto;
-        }
-
-        .carousel-track {
-            display: flex;
-            gap: 20px; 
-            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
-            padding-left: 15%; 
-        }
-
-        .carousel-slide {
-            flex: 0 0 70%; 
-            height: 30rem;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            opacity: 0.6; 
-            transition: opacity 0.4s;
-        }
-
-        .carousel-slide.active { opacity: 1; }
-        .carousel-slide img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
-
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: #ffffff;
+        /* ── Botão publicar (abre o modal de novo anúncio) ──────────────────── */
+        .btn-publicar {
+            background: var(--verde-claro);
+            color: var(--preto);
             border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-            background-color: #ffffff;
-        }
-        
-        .carousel-btn:active { transform: translateY(-50%) scale(0.95); }
-        .btn-prev { left: 20px; }
-        .btn-next { right: 20px; }
-
-
-
-            #aba-post {
-            display: none;
-            position:fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1050;
-            align-items: center;
-            justify-content: center;
-        }
-        
-            /* --- Estilização da Caixinha Branca Interna --- */
-            .conteudo-post {
-            background-color: #ffffff;
-            width: 90%;
-            max-width: 550px; 
-            padding: 30px;
-            border-radius: 16px; 
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-            display: flex;
-            flex-direction: column; 
-            gap: 15px;
-            }
-
-            /* --- Títulos e Labels --- */
-            .conteudo-post h2 {
-            font-size: 1.6rem;
+            padding: 12px 28px;
+            border-radius: 30px;
             font-weight: 700;
-            color: #111;
-            margin-bottom: 5px;
-            }
-
-            .conteudo-post h3, 
-            .conteudo-post label {
             font-size: 0.95rem;
-            font-weight: 600;
-            color: #495057;
-            margin-top: 5px;
-            }
-
-            /* --- Inputs, Select e Textarea (Padronização) --- */
-            .conteudo-post input[type="text"],
-            .conteudo-post select,
-            .conteudo-post textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid #ced4da;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            background-color: #f8f9fa;
             transition: 0.2s;
-            outline: none;
-            }
+            white-space: nowrap;
+        }
+        .btn-publicar:hover { background: #5ea33f; color: var(--branco); }
 
-            /* --- Efeito de Foco Preto Discreto ao Clicar --- */
-            .conteudo-post input:focus,
-            .conteudo-post select:focus,
-            .conteudo-post textarea:focus {
-            border-color: #000000; 
-            background-color: #ffffff;
-            box-shadow: none;
-            }
+        /* ── Filtros ─────────────────────────────────────────────────────────  */
+        .filtros-bar {
+            background: var(--branco);
+            border-bottom: 1px solid #e9ecef;
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .filtros-bar input {
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            padding: 8px 18px;
+            font-size: 0.9rem;
+            font-family: "Outfit", sans-serif;
+            flex: 1;
+            min-width: 0;
+            transition: 0.2s;
+        }
+        .filtros-bar input:focus { outline: none; border-color: var(--verde-claro); box-shadow: 0 0 0 3px rgba(114,184,80,0.15); }
 
-            /* Força o Textarea a ter uma altura boa e não quebrar o layout */
-            .conteudo-post textarea {
-            height: 120px;
-            resize: none; /* Impede o usuário de deformar a caixinha */
-            }
+        /* ── Grid de cards ───────────────────────────────────────────────────  */
+        .anuncio-card {
+            background: var(--branco);
+            border: 1px solid #e0e0e0;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: 0.25s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .anuncio-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); border-color: var(--verde-claro); }
 
-            /* --- O Rodapé e os Botões --- */
-            .pub-rodape {
-                display: flex;
-                justify-content: flex-end; 
-                gap: 12px;
-                margin-top: 15px;
-                border-top: 1px solid #dee2e6;
-                padding-top: 15px;
-            }
+        .anuncio-foto {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f1f3f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 2.5rem;
+        }
+        .anuncio-foto img { width: 100%; height: 200px; object-fit: cover; display: block; }
 
-            .pub-rodape button {
-                padding: 10px 20px;
-                border-radius: 50px;
-                font-size: 0.95rem;
-                font-weight: 600;
-                cursor: pointer;
-                border: none;
-                transition: 0.2s;
-            }
+        .anuncio-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
+        .anuncio-titulo { font-weight: 700; font-size: 1rem; color: var(--preto); margin-bottom: 6px; }
+        .anuncio-desc { font-size: 0.85rem; color: #555; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
-            .btn-cancelar {
-                background-color: #e9ecef;
-                color: #495057;
-            }
+        .anuncio-footer {
+            padding: 12px 18px;
+            border-top: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .anuncio-meta { font-size: 0.75rem; color: #888; }
+        .badge-msgs { background: var(--verde-escuro); color: white; border-radius: 20px; padding: 3px 10px; font-size: 0.72rem; font-weight: 700; }
+        .badge-dono { background: var(--verde-claro); color: var(--preto); border-radius: 20px; padding: 2px 8px; font-size: 0.68rem; font-weight: 700; }
+        .badge-reivindicado { background: #ffc107; color: #000; border-radius: 20px; padding: 2px 8px; font-size: 0.68rem; font-weight: 700; }
 
-            .btn-cancelar:hover {
-                background-color: #dee2e6;
-            }
+        /* ── Botão Tenho Interesse ───────────────────────────────────────────── */
+        .btn-interesse {
+            background: var(--verde-escuro);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 100%;
+        }
+        .btn-interesse:hover { background: var(--verde-claro); color: var(--preto); }
+        .btn-interesse:disabled {
+            background: #e9ecef;
+            color: #aaa;
+            cursor: not-allowed;
+        }
+        .interesse-info {
+            background: #fff8e1;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 0.83rem;
+            color: #7a5c00;
+            margin-top: 10px;
+        }
 
-            .btn-criar {
-                background-color: #000000; /* Preto combinando com o botão do card */
-                color: #ffffff;
-            }
+        /* ── Empty state ─────────────────────────────────────────────────────  */
+        .empty-state { text-align: center; padding: 80px 20px; color: #aaa; }
+        .empty-state i { font-size: 4rem; display: block; margin-bottom: 16px; opacity: 0.4; }
 
-            .btn-criar:hover {
-            background-color: #212529;
-            }
+        /* ── Modal overlay (detalhe + chat) ──────────────────────────────────  */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            backdrop-filter: blur(4px);
+        }
+        .modal-overlay.ativo { display: flex; }
 
+        .modal-box {
+            background: var(--branco);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 780px;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+        }
 
-            /*CARD POST PUBLICADO*/
-            #container-posts {
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-                width: 100%;
-                max-width: 750px; /* Alargado um pouco para dar mais presença na tela */
-                margin: 30px 0;
-                /* Removemos o align-items: flex-start para não espremer os cards */
-            }
+        .modal-header-bar {
+            padding: 20px 24px 16px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .modal-header-bar h4 { font-weight: 700; font-size: 1.1rem; color: var(--preto); margin: 0; flex: 1; }
+        .btn-fechar-modal { background: none; border: none; font-size: 1.4rem; color: #999; cursor: pointer; padding: 0 4px; line-height: 1; transition: 0.2s; }
+        .btn-fechar-modal:hover { color: var(--preto); }
 
-            .guia-post-link {
-                text-decoration: none;
-                color: inherit;
-                display: block;
-                width: 100%; /* Força o link a ocupar a largura total do container */
-            }
+        .modal-scroll { overflow-y: auto; flex: 1; }
 
-            .guia-post-card {
-                background-color: #ffffff;
-                border: 1px solid #e2e8f0;
-                border-radius: 12px; /* Cantos um pouco mais suaves para combinar com o carrossel */
-                padding: 24px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%; /* Garante que o card preencha o link */
-                transition: all 0.2s ease-in-out;
-            }
+        .modal-foto { width: 100%; max-height: 300px; object-fit: cover; display: block; }
+        .modal-foto-placeholder { width: 100%; height: 180px; background: #f1f3f5; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #ccc; }
 
-            .guia-post-card:hover {
-                border-color: #000000;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            }
+        .modal-info { padding: 20px 24px; border-bottom: 1px solid #eee; }
+        .modal-info .desc { font-size: 0.92rem; color: #444; line-height: 1.6; margin-bottom: 12px; }
+        .modal-info .endereco { font-size: 0.85rem; color: #666; }
+        .modal-info .autor { font-size: 0.8rem; color: #999; margin-top: 8px; }
 
-            .guia-post-info {
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-                width: 90%;
-            }
-            .guia-post-titulo {
-                font-size: 1.25rem;
-                font-weight: 600;
-                color: #0f172a;
-                margin: 0;
-            }
+        /* ── Chat ────────────────────────────────────────────────────────────  */
+        .chat-section { padding: 0 24px 20px; }
+        .chat-titulo { font-weight: 700; font-size: 0.9rem; color: var(--preto); padding: 16px 0 10px; border-bottom: 1px solid #f0f0f0; margin-bottom: 14px; }
 
-            /* Prévia do texto */
-            .guia-post-previa {
-                font-size: 0.95rem;
-                color: #475569;
-                line-height: 1.5;
-                margin: 0;
-            }
+        .chat-lista { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
 
-            .tag-tipo {
-                font-size: 0.75rem;
-                font-weight: 600;
-                text-transform: uppercase;
-                letter-spacing: 0.05em;
-                padding: 4px 8px;
-                border-radius: 4px;
-                display: inline-block;
-                align-self: flex-start;
-                margin-top: 4px;
-            }
+        .msg-item { display: flex; gap: 10px; }
+        .msg-avatar {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: var(--verde-escuro); color: white;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 0.85rem; flex-shrink: 0;
+        }
+        .msg-avatar.coop { background: var(--preto); }
+        .msg-bubble { background: #f4f6f4; border-radius: 0 14px 14px 14px; padding: 10px 14px; flex: 1; }
+        .msg-bubble.minha { background: var(--verde-escuro); border-radius: 14px 0 14px 14px; }
+        .msg-bubble.minha .msg-autor { color: rgba(255,255,255,0.7); }
+        .msg-bubble.minha .msg-texto { color: var(--branco); }
+        .msg-bubble.minha .msg-hora { color: rgba(255,255,255,0.5); }
+        .msg-autor { font-size: 0.75rem; font-weight: 700; color: var(--verde-escuro); margin-bottom: 3px; }
+        .msg-texto { font-size: 0.88rem; color: #333; line-height: 1.4; }
+        .msg-hora { font-size: 0.68rem; color: #aaa; margin-top: 4px; }
 
-            .tag-artigo {
-                background-color: #f1f5f9;
-                color: #334155;
-                border: 1px solid #cbd5e1;
-            }
+        .chat-vazio { text-align: center; color: #bbb; font-size: 0.85rem; padding: 20px 0; }
 
-            .tag-doacao {
-                background-color: #f8fafc;
-                color: #0f172a;
-                border: 1px solid #94a3b8;
-            }
+        .chat-input-row { display: flex; gap: 10px; align-items: flex-end; }
+        .chat-input-row textarea {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 14px;
+            padding: 10px 14px;
+            font-family: "Outfit", sans-serif;
+            font-size: 0.88rem;
+            resize: none;
+            transition: 0.2s;
+            min-height: 44px;
+            max-height: 100px;
+        }
+        .chat-input-row textarea:focus { outline: none; border-color: var(--verde-claro); box-shadow: 0 0 0 3px rgba(114,184,80,0.15); }
+        .btn-enviar {
+            background: var(--verde-escuro);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+        .btn-enviar:hover { background: var(--verde-claro); color: var(--preto); }
 
-            .guia-post-seta {
-                color: #94a3b8;
-                font-size: 1.1rem;
-                transition: color 0.2s;
-            }
+        /* ── Modal de novo anúncio ───────────────────────────────────────────  */
+        .form-label-custom { font-weight: 600; font-size: 0.88rem; color: #333; margin-bottom: 5px; display: block; }
+        .input-custom {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: "Outfit", sans-serif;
+            font-size: 0.92rem;
+            transition: 0.2s;
+            margin-bottom: 14px;
+        }
+        .input-custom:focus { outline: none; border-color: var(--verde-claro); box-shadow: 0 0 0 3px rgba(114,184,80,0.15); }
 
-            .guia-post-card:hover .guia-post-seta {
-                color: #000000;
-            }
-            </style>
-    </head>
-    <body>
+        .foto-preview-wrap {
+            border: 2px dashed #ddd;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-bottom: 14px;
+            position: relative;
+        }
+        .foto-preview-wrap:hover { border-color: var(--verde-claro); background: #f9fff6; }
+        .foto-preview-wrap input { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+        .foto-preview-wrap img { max-height: 160px; border-radius: 8px; object-fit: cover; display: none; }
+        .foto-preview-wrap.tem-foto .icone-upload { display: none; }
+        .foto-preview-wrap.tem-foto img { display: block; margin: 0 auto; }
+        .icone-upload { color: #bbb; }
 
-    <main>
-        <nav class="navbar bg-black" id="navbar">
-            <div class="container-fluid">
+        .btn-submit-form {
+            background: var(--verde-escuro);
+            color: white;
+            border: none;
+            padding: 13px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            width: 100%;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .btn-submit-form:hover { background: var(--verde-claro); color: var(--preto); }
+
+        .btn-excluir-anuncio {
+            background: none;
+            border: 1px solid #dc3545;
+            color: #dc3545;
+            border-radius: 8px;
+            padding: 5px 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-excluir-anuncio:hover { background: #dc3545; color: white; }
+
+        footer { background-color: var(--preto); color: var(--branco); text-align: center; padding: 20px 0; font-size: 0.9rem; margin-top: auto; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar bg-black py-3">
+            <div class="container">
                 <label for="menu-toggle" class="hamburger-label">
-                    <svg fill="white" viewBox="0 0 14 14"><path d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/></svg>
+                    <svg fill="white" width="30" viewBox="0 0 14 14"><path d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/></svg>
                 </label>
-                
-                <a class="navbar-brand" href="index.html">
-                    <img src="eco_favicon.png" alt="Logo" class="logo-nav">
+                <a class="navbar-brand m-0" href="index.html">
+                    <img src="econexus_logo.png" alt="Logo Econexus" class="logo-img">
                 </a>
-
-                <a href="login.html" class="login-button">Login</a>
-
+                <a href="#" class="user-link" id="navUserName">Usuário</a>
                 <input type="checkbox" id="menu-toggle">
-
                 <div class="full-screen-menu">
                     <ul class="nav flex-column text-center">
-                        <li class="nav-item"><a class="nav-link" href="copy.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="dashboard_cidadao.html">Dashboard</a></li>
                         <li class="nav-item"><a class="nav-link" href="pedidos.html">Pedidos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="coleta/pontos.html">Pontos de Coleta</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pontos.html">Pontos de Coleta</a></li>
                         <li class="nav-item"><a class="nav-link" href="configuracoes.html">Configurações</a></li>
-                        <li class="nav-item"><a class="nav-link" href="forum.html">Fórum</a></li>
-                        <li class="nav-item mt-4">
-                            <label for="menu-toggle" class="btn btn-outline-light">Fechar Menu</label>
+                        <li class="nav-item mt-5">
+                            <label for="menu-toggle" class="btn btn-outline-light rounded-pill px-4">Fechar</label>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+    </header>
 
-        <h1 class="mt-4">Fórum</h1>
-
-        <div class="text-center my-5">
-            <h2>Encontre tópicos, legislações e soluções de descarte.</h2>
-            <form action="/buscar" method="get" id="barra.pesquisa">
-                <input type="search" class="search-bar" placeholder="Pesquisar tópicos">
-            </form>
-        </div>
-
-        <div class="carousel-viewport">
-            <div class="carousel-track" id="track">
-                <div class="carousel-slide active">
-                    <img src="https://images.ecycle.com.br/wp-content/uploads/2026/05/29103223/d6a5074_0.webp" alt="Slide 1">
-                </div>
-                <div class="carousel-slide">
-                    <img src="https://cestosdelixoelixeiras.com.br/materias/1578253405_quais-as-formas-de-coleta-seletiva--0.webp" alt="Slide 2">
-                </div>
-                <div class="carousel-slide">
-                    <img src="https://images.ecycle.com.br/wp-content/uploads/2022/09/09152506/antoine-giret-7_TSzqJms4w-unsplash-scaled.jpg.webp" alt="Slide 3">
-                </div>
-                <div class="carousel-slide">
-                    <img src="https://www.mundoisopor.com.br/wp-content/uploads/2022/02/economia-circular-3-2-scaled.jpg" alt="Slide 4">
-                </div>
+    <!-- Hero -->
+    <div class="forum-hero">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap gap-3">
+            <div>
+                <h1><i class="bi bi-gift-fill me-2"></i>Fórum de Doações</h1>
+                <p class="mb-0">Doe objetos que não usa mais. Conecte pessoas. Reduza o descarte.</p>
             </div>
-            <button class="carousel-btn btn-prev" id="prevBtn">&#10094;</button>
-            <button class="carousel-btn btn-next" id="nextBtn">&#10095;</button>
-        </div>     
-            
-        <div class="container my-5">
-                    <h2>Tópicos Recentes</h2>
-                    <div id="área disc"> <button class="btn btn-dark" onclick="abrirCaixinha()">Crie seu post</button>
-                        <div id="aba-post">
-                            <div class="conteudo-post">
-                                <h2>Criar novo post</h2>
-                                <label id="titulo-titulo">Insira o título do seu post:</label>
-                                <input type="text" id="titulo-pub" placeholder="Ex: Pilhas podem ser descartadas?">
-                                <label id="titulo-tipo">Qual tipo do post?</label>
-                                <select id="tipo-pub">
-                                    <option value="artigo">Artigo</option>
-                                    <option value="doacao">Item para doação</option>
-                                </select>
+            <button class="btn-publicar" onclick="abrirModalNovo()">
+                <i class="bi bi-plus-circle-fill me-2"></i>Publicar Doação
+            </button>
+        </div>
+    </div>
 
-                                <label id="titulo-imagem">Adicionar Imagem (Opcional):</label>
-                                <input type="file" id="imagem-pub" accept="image/*">
-                                <h3>Insira o conteúdo do seu post:</h3>
-                                <textarea id="conteudo-pub"></textarea>
-                                <div class="pub-rodape">
-                                    <button class="btn-cancelar" onclick="fecharCaixinha()">Cancelar</button>
-                                    <button class="btn-criar" onclick="salvarNovoPost()">Criar Post</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div id="container-posts"></div>
-                </div>
-    </main> <footer class="bg-black text-white text-center py-4 mt-auto">
-        <p class="m-0">&copy; 2026 Econexus. Todos os direitos reservados.</p>
+    <!-- Filtros -->
+    <div class="filtros-bar">
+        <div class="container d-flex gap-2 align-items-center">
+            <i class="bi bi-search text-secondary"></i>
+            <input type="text" id="campoBusca" placeholder="Buscar por título, descrição ou endereço..." oninput="renderFeed()">
+        </div>
+    </div>
+
+    <!-- Feed principal -->
+    <main class="container py-4 flex-grow-1">
+        <div id="contadorResultados" class="text-secondary small mb-3"></div>
+        <div class="row g-4" id="gridAnuncios"></div>
+        <div class="empty-state" id="emptyFeed" style="display:none;">
+            <i class="bi bi-box-seam"></i>
+            <p class="fw-semibold">Nenhuma doação publicada ainda.</p>
+            <p class="small">Seja o primeiro a publicar um anúncio!</p>
+        </div>
+    </main>
+
+    <footer class="bg-black text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p class="m-0 opacity-75">&copy; 2026 Econexus. Sustentabilidade e transparência de ponta a ponta.</p>
+        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ── MODAL: Detalhe do anúncio + Chat ─────────────────────────────────── -->
+    <div class="modal-overlay" id="modalDetalhe">
+        <div class="modal-box">
+            <div class="modal-header-bar">
+                <h4 id="detalhe-titulo">—</h4>
+                <div class="d-flex gap-2 align-items-center">
+                    <button class="btn-excluir-anuncio" id="btnExcluir" style="display:none;" onclick="excluirAnuncio()">
+                        <i class="bi bi-trash3 me-1"></i>Excluir
+                    </button>
+                    <button class="btn-fechar-modal" onclick="fecharModalDetalhe()"><i class="bi bi-x-lg"></i></button>
+                </div>
+            </div>
+            <div class="modal-scroll">
+                <!-- Foto -->
+                <div id="detalhe-foto-wrap"></div>
+
+                <!-- Infos -->
+                <div class="modal-info">
+                    <p class="desc" id="detalhe-desc"></p>
+                    <p class="endereco"><i class="bi bi-geo-alt-fill text-success me-1"></i><span id="detalhe-endereco"></span></p>
+                    <p class="autor"><i class="bi bi-person-fill me-1"></i><span id="detalhe-autor"></span> · <span id="detalhe-data"></span></p>
+                    <!-- RF-16: Reivindicação -->
+                    <div id="blocoInteresse" class="mt-3"></div>
+                </div>
+
+                <!-- Chat -->
+                <div class="chat-section">
+                    <div class="chat-titulo"><i class="bi bi-chat-dots-fill me-2 text-success"></i>Mensagens (<span id="chat-count">0</span>)</div>
+                    <div class="chat-lista" id="chatLista"></div>
+                    <div class="chat-input-row">
+                        <textarea id="chatInput" placeholder="Escreva sua mensagem..." rows="1" onkeydown="handleEnterChat(event)"></textarea>
+                        <button class="btn-enviar" onclick="enviarMensagem()"><i class="bi bi-send-fill"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── MODAL: Novo anúncio ───────────────────────────────────────────────── -->
+    <div class="modal-overlay" id="modalNovo">
+        <div class="modal-box" style="max-width:520px;">
+            <div class="modal-header-bar">
+                <h4>Nova Doação</h4>
+                <button class="btn-fechar-modal" onclick="fecharModalNovo()"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="modal-scroll" style="padding: 24px;">
+                <label class="form-label-custom">Título do objeto</label>
+                <input type="text" class="input-custom" id="novoTitulo" placeholder="Ex: Cadeira de escritório">
+
+                <label class="form-label-custom">Foto do objeto</label>
+                <div class="foto-preview-wrap" id="fotoPreviewWrap">
+                    <input type="file" id="novaFoto" accept="image/*" onchange="previewFoto(this)">
+                    <div class="icone-upload">
+                        <i class="bi bi-camera-fill d-block fs-2 mb-1"></i>
+                        <span style="font-size:0.82rem;">Clique para selecionar uma foto</span>
+                    </div>
+                    <img id="fotoPreviewImg" src="" alt="preview">
+                </div>
+
+                <label class="form-label-custom">Descrição</label>
+                <textarea class="input-custom" id="novaDesc" rows="3" placeholder="Descreva o objeto, condição, etc."></textarea>
+
+                <label class="form-label-custom">Endereço para retirada</label>
+                <input type="text" class="input-custom" id="novoEndereco" placeholder="Ex: Rua das Flores, 123 - Savassi">
+
+                <button class="btn-submit-form" onclick="publicarAnuncio()">
+                    <i class="bi bi-megaphone-fill me-2"></i>Publicar Doação
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
-                const track = document.getElementById('track');
-        const slides = document.querySelectorAll('.carousel-slide');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
+        // ── Verificação de sessão ────────────────────────────────────────────────
+        (function() {
+            if (!localStorage.getItem('usuarioLogado')) {
+                window.location.href = 'login.html';
+            }
+        })();
 
-        let currentIndex = 0;
+        // ── Guard de sessão ───────────────────────────────────────────────────────
+        if (!localStorage.getItem('usuarioLogado')) { window.location.href = 'login.html'; }
 
-        function updateCarousel() {
-            // 1. Remove a classe ativa de todos e adiciona só no atual
-            slides.forEach((slide, index) => {
-                if (index === currentIndex) {
-                    slide.classList.add('active');
+        // ── Estado global ───────────────────────────────────────────────────────
+        let usuarioLogado = null;
+        let anuncioAbertoId = null;
+
+        // ── Inicialização ───────────────────────────────────────────────────────
+        window.onload = () => {
+            const dados = localStorage.getItem('usuarioLogado');
+            if (dados) {
+                usuarioLogado = JSON.parse(dados);
+                document.getElementById('navUserName').innerText = usuarioLogado.nome.split(' ')[0];
+            } else {
+                window.location.href = 'login.html';
+            }
+            renderFeed();
+        };
+
+        // ── LocalStorage helpers ────────────────────────────────────────────────
+        function getAnuncios() {
+            return JSON.parse(localStorage.getItem('forumAnuncios') || '[]');
+        }
+        function saveAnuncios(lista) {
+            localStorage.setItem('forumAnuncios', JSON.stringify(lista));
+        }
+        function getMensagens(anuncioId) {
+            return JSON.parse(localStorage.getItem(`forumMsgs_${anuncioId}`) || '[]');
+        }
+        function saveMensagens(anuncioId, lista) {
+            localStorage.setItem(`forumMsgs_${anuncioId}`, JSON.stringify(lista));
+        }
+
+        // ── Helpers de data ─────────────────────────────────────────────────────
+        function formatarData(ts) {
+            const d = new Date(ts);
+            return d.toLocaleDateString('pt-BR') + ' às ' + d.toLocaleTimeString('pt-BR', { hour:'2-digit', minute:'2-digit' });
+        }
+
+        // ── Renderizar feed ─────────────────────────────────────────────────────
+        function renderFeed() {
+            const busca = (document.getElementById('campoBusca').value || '').toLowerCase();
+            const grid = document.getElementById('gridAnuncios');
+            const empty = document.getElementById('emptyFeed');
+            const contador = document.getElementById('contadorResultados');
+            grid.innerHTML = '';
+
+            let anuncios = getAnuncios().slice().reverse(); // mais recentes primeiro
+
+            if (busca) {
+                anuncios = anuncios.filter(a =>
+                    a.titulo.toLowerCase().includes(busca) ||
+                    a.desc.toLowerCase().includes(busca) ||
+                    a.endereco.toLowerCase().includes(busca)
+                );
+            }
+
+            if (anuncios.length === 0) {
+                empty.style.display = 'block';
+                contador.textContent = '';
+                return;
+            }
+            empty.style.display = 'none';
+            contador.textContent = `${anuncios.length} anúncio(s) encontrado(s)`;
+
+            anuncios.forEach(a => {
+                const msgs = getMensagens(a.id);
+                const ehDono = usuarioLogado && a.autorEmail === usuarioLogado.email;
+                const reivindicado = !!a.reivindicadoPor;
+                const reivindicadoPorMim = usuarioLogado && a.reivindicadoPor === usuarioLogado.email;
+
+                const col = document.createElement('div');
+                col.className = 'col-sm-6 col-lg-4';
+                col.innerHTML = `
+                    <div class="anuncio-card${reivindicado ? ' reivindicado' : ''}" onclick="abrirDetalhe(${a.id})" style="${reivindicado ? 'opacity:0.82;' : ''}">
+                        <div class="anuncio-foto">
+                            ${a.foto
+                                ? `<img src="${a.foto}" alt="${a.titulo}">`
+                                : `<i class="bi bi-box-seam"></i>`}
+                        </div>
+                        <div class="anuncio-body">
+                            <div class="anuncio-titulo">
+                                ${a.titulo}
+                                ${ehDono ? '<span class="badge-dono ms-1">Meu anúncio</span>' : ''}
+                                ${reivindicado ? '<span class="badge-reivindicado ms-1"><i class="bi bi-hand-index-fill me-1"></i>Reivindicado</span>' : ''}
+                            </div>
+                            <p class="anuncio-desc">${a.desc}</p>
+                        </div>
+                        <div class="anuncio-footer">
+                            <div class="anuncio-meta">
+                                <i class="bi bi-geo-alt me-1"></i>${a.endereco}<br>
+                                <i class="bi bi-person me-1"></i>${a.autorNome} · ${formatarData(a.ts)}
+                            </div>
+                            <span class="badge-msgs"><i class="bi bi-chat-fill me-1"></i>${msgs.length}</span>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(col);
+            });
+        }
+
+        // ── Modal: Novo anúncio ─────────────────────────────────────────────────
+        function abrirModalNovo() {
+            document.getElementById('modalNovo').classList.add('ativo');
+            document.body.style.overflow = 'hidden';
+        }
+        function fecharModalNovo() {
+            document.getElementById('modalNovo').classList.remove('ativo');
+            document.body.style.overflow = '';
+        }
+
+        function previewFoto(input) {
+            const wrap = document.getElementById('fotoPreviewWrap');
+            const img = document.getElementById('fotoPreviewImg');
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = e => {
+                    img.src = e.target.result;
+                    wrap.classList.add('tem-foto');
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function publicarAnuncio() {
+            const titulo = document.getElementById('novoTitulo').value.trim();
+            const desc = document.getElementById('novaDesc').value.trim();
+            const endereco = document.getElementById('novoEndereco').value.trim();
+            const fotoSrc = document.getElementById('fotoPreviewImg').src;
+            const temFoto = document.getElementById('fotoPreviewWrap').classList.contains('tem-foto');
+
+            if (!titulo || !desc || !endereco) {
+                alert('Preencha título, descrição e endereço.');
+                return;
+            }
+
+            const anuncios = getAnuncios();
+            const novo = {
+                id: Date.now(),
+                titulo,
+                desc,
+                endereco,
+                foto: temFoto ? fotoSrc : null,
+                autorNome: usuarioLogado.nome,
+                autorEmail: usuarioLogado.email,
+                ts: Date.now()
+            };
+            anuncios.push(novo);
+            saveAnuncios(anuncios);
+
+            // reset form
+            document.getElementById('novoTitulo').value = '';
+            document.getElementById('novaDesc').value = '';
+            document.getElementById('novoEndereco').value = '';
+            document.getElementById('fotoPreviewImg').src = '';
+            document.getElementById('fotoPreviewWrap').classList.remove('tem-foto');
+            document.getElementById('novaFoto').value = '';
+
+            fecharModalNovo();
+            renderFeed();
+        }
+
+        // ── Modal: Detalhe + Chat ───────────────────────────────────────────────
+        function abrirDetalhe(id) {
+            const anuncios = getAnuncios();
+            const a = anuncios.find(x => x.id === id);
+            if (!a) return;
+
+            anuncioAbertoId = id;
+            const ehDono = usuarioLogado && a.autorEmail === usuarioLogado.email;
+            const reivindicado = !!a.reivindicadoPor;
+            const reivindicadoPorMim = usuarioLogado && a.reivindicadoPor === usuarioLogado.email;
+
+            document.getElementById('detalhe-titulo').textContent = a.titulo;
+            document.getElementById('detalhe-desc').textContent = a.desc;
+            document.getElementById('detalhe-endereco').textContent = a.endereco;
+            document.getElementById('detalhe-autor').textContent = a.autorNome;
+            document.getElementById('detalhe-data').textContent = formatarData(a.ts);
+
+            // Foto
+            const fotoWrap = document.getElementById('detalhe-foto-wrap');
+            fotoWrap.innerHTML = a.foto
+                ? `<img class="modal-foto" src="${a.foto}" alt="${a.titulo}">`
+                : `<div class="modal-foto-placeholder"><i class="bi bi-box-seam"></i></div>`;
+
+            // Botão excluir (só para o dono)
+            document.getElementById('btnExcluir').style.display = ehDono ? 'inline-flex' : 'none';
+
+            // Bloco de interesse / reivindicação (RF-16)
+            const blocoInteresse = document.getElementById('blocoInteresse');
+            if (ehDono) {
+                // Dono vê quem reivindicou
+                blocoInteresse.innerHTML = reivindicado
+                    ? `<div class="interesse-info"><i class="bi bi-hand-index-fill me-1"></i><strong>${a.reivindicadoNome}</strong> demonstrou interesse neste item. Entre em contato pelo chat abaixo.
+                        <button onclick="liberarReivindicacao()" class="btn btn-sm btn-outline-secondary ms-2" style="font-size:0.75rem;">Desfazer</button>
+                       </div>`
+                    : `<div class="interesse-info" style="background:#f0fff0; border-color:#72b850; color:#004525;"><i class="bi bi-info-circle me-1"></i>Nenhum interessado ainda. Aguarde mensagens no chat.</div>`;
+            } else {
+                // Outros usuários veem o botão
+                if (reivindicado && !reivindicadoPorMim) {
+                    blocoInteresse.innerHTML = `<button class="btn-interesse" disabled><i class="bi bi-x-circle me-2"></i>Item já reivindicado</button>`;
+                } else if (reivindicadoPorMim) {
+                    blocoInteresse.innerHTML = `
+                        <button class="btn-interesse" disabled style="background:#ffc107;color:#000;"><i class="bi bi-hand-index-fill me-2"></i>Você demonstrou interesse</button>
+                        <button onclick="liberarReivindicacao()" class="btn btn-sm btn-outline-secondary mt-2 w-100" style="font-size:0.8rem;">Cancelar interesse</button>`;
                 } else {
-                    slide.classList.remove('active');
+                    blocoInteresse.innerHTML = `<button class="btn-interesse" onclick="reivindicarItem()"><i class="bi bi-hand-index-fill me-2"></i>Tenho Interesse!</button>`;
                 }
+            }
+
+            renderChat();
+            document.getElementById('modalDetalhe').classList.add('ativo');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function reivindicarItem() {
+            if (!anuncioAbertoId || !usuarioLogado) return;
+            let anuncios = getAnuncios();
+            const idx = anuncios.findIndex(a => a.id === anuncioAbertoId);
+            if (idx === -1) return;
+            if (anuncios[idx].reivindicadoPor) { alert('Este item já foi reivindicado.'); return; }
+
+            anuncios[idx].reivindicadoPor   = usuarioLogado.email;
+            anuncios[idx].reivindicadoNome  = usuarioLogado.nome;
+            anuncios[idx].reivindicadoTs    = Date.now();
+            saveAnuncios(anuncios);
+
+            // Auto-mensagem no chat
+            const msgs = getMensagens(anuncioAbertoId);
+            msgs.push({
+                id: Date.now(),
+                texto: '👋 Olá! Tenho interesse neste item. Podemos combinar a retirada?',
+                autorNome: usuarioLogado.nome,
+                autorEmail: usuarioLogado.email,
+                autorTipo: usuarioLogado.tipo || 'cidadao',
+                ts: Date.now()
             });
+            saveMensagens(anuncioAbertoId, msgs);
 
-            // 2. Calcula o deslocamento exato baseado na largura do slide + o gap (espaçamento)
-            const slideWidth = slides[0].getBoundingClientRect().width;
-            const gap = 20; // Deve ser idêntico ao 'gap' definido no CSS (.carousel-track)
-            
-            // O cálculo move a "pista" para trás de acordo com o índice atual
-            const amountToMove = currentIndex * (slideWidth + gap);
-            
-            track.style.transform = `translateX(-${amountToMove}px)`;
+            abrirDetalhe(anuncioAbertoId); // re-renderiza o modal
         }
 
-        // Evento para avançar
-        nextBtn.addEventListener('click', () => {
-            if (currentIndex < slides.length - 1) {
-                currentIndex++;
-            } else {
-                currentIndex = 0; // Volta para o início se quiser fazer loop
-            }
-            updateCarousel();
-        });
-
-        // Evento para voltar
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                currentIndex = slides.length - 1; // Vai para o fim
-            }
-            updateCarousel();
-        });
-
-        // Inicializa o carrossel na posição correta
-        window.addEventListener('resize', updateCarousel);
-
-
-        //CRIAÇÃO DO POST
-        
-        //ABRE FECHA
-        
-        // Abre a aba mudando o display para flex
-        function abrirCaixinha() {
-        document.getElementById('aba-post').style.display = 'flex';
-        }
-        // Fecha a aba mudando o display de volta para none
-        function fecharCaixinha() {
-        document.getElementById('aba-post').style.display = 'none';
-        }
-        
-        //ENTRADA DE DADOS
-
-function salvarNovoPost() {
-    const campoTitulo = document.getElementById('titulo-pub');
-    const campoTipo = document.getElementById('tipo-pub');
-    const campoConteudo = document.getElementById('conteudo-pub');
-    const campoImagem = document.getElementById('imagem-pub'); // Pega o input do arquivo
-
-    const tituloTexto = campoTitulo.value.trim();
-    const tipoSelecionado = campoTipo.value;
-    const conteudoTexto = campoConteudo.value.trim();
-    const arquivo = campoImagem.files[0]; // Pega o arquivo de imagem selecionado
-
-    if (tituloTexto === "" || conteudoTexto === "") {
-        alert("Por favor, preencha o título e o conteúdo do post!");
-        return;
-    }
-
-    // Função interna para ler a imagem e transformá-la em string Base64
-    const lerImagem = new Promise((resolve) => {
-        if (!arquivo) {
-            resolve(null); // Se não escolheu imagem, avança como nulo
-            return;
-        }
-        const reader = new FileReader();
-        reader.onloadend = function() {
-            resolve(reader.result); // Retorna a imagem convertida em texto
-        };
-        reader.readAsDataURL(arquivo);
-    });
-
-    // Executa a leitura e depois salva no banco
-    lerImagem.then((imagemBase64) => {
-        const postsNoBanco = JSON.parse(localStorage.getItem('postsForum')) || [];
-
-        const novoPost = {
-            id: Date.now(), 
-            titulo: tituloTexto,
-            tipo: tipoSelecionado,
-            conteudo: conteudoTexto,
-            imagem: imagemBase64 // Guarda a string da imagem aqui!
-        };
-
-        postsNoBanco.unshift(novoPost);
-        localStorage.setItem('postsForum', JSON.stringify(postsNoBanco));
-
-        // Limpa os campos
-        campoTitulo.value = "";
-        campoConteudo.value = "";
-        campoImagem.value = ""; // Limpa o arquivo selecionado
-        campoTipo.value = "artigo";
-
-        fecharCaixinha();
-        mostrarPostsNaTela();
-    });
-
-        // ATUALIZAR POSTS
-        mostrarPostsNaTela();
+        function liberarReivindicacao() {
+            if (!anuncioAbertoId) return;
+            let anuncios = getAnuncios();
+            const idx = anuncios.findIndex(a => a.id === anuncioAbertoId);
+            if (idx === -1) return;
+            delete anuncios[idx].reivindicadoPor;
+            delete anuncios[idx].reivindicadoNome;
+            delete anuncios[idx].reivindicadoTs;
+            saveAnuncios(anuncios);
+            abrirDetalhe(anuncioAbertoId);
         }
 
-        //GUIA DOS POSTS
+        function fecharModalDetalhe() {
+            document.getElementById('modalDetalhe').classList.remove('ativo');
+            document.body.style.overflow = '';
+            anuncioAbertoId = null;
+            renderFeed(); // atualiza contador de msgs no card
+        }
 
-        window.onload = function() {
-        mostrarPostsNaTela();
-        };
+        // ── Chat ────────────────────────────────────────────────────────────────
+        function renderChat() {
+            const msgs = getMensagens(anuncioAbertoId);
+            const lista = document.getElementById('chatLista');
+            document.getElementById('chat-count').textContent = msgs.length;
+            lista.innerHTML = '';
 
-        function mostrarPostsNaTela() {
-            const container = document.getElementById('container-posts');
-            
-            // SE NÃO ENCONTRA DIV ERRO
-            if (!container) return; 
-
-            // BUSCA POSTS
-            const postsSalvos = JSON.parse(localStorage.getItem('postsForum')) || [];
-
-            // IF NÃO HÁ POSTS
-            if (postsSalvos.length === 0) {
-                container.innerHTML = "<p style='text-align:center; color:#6c757d;'>Nenhum tópico criado ainda. Seja o primeiro!</p>";
+            if (msgs.length === 0) {
+                lista.innerHTML = `<p class="chat-vazio"><i class="bi bi-chat-dots me-1"></i>Nenhuma mensagem ainda. Seja o primeiro a perguntar!</p>`;
                 return;
             }
 
-            // LIMPA O CONTAINER PARA NÃO DUPLICAR
-            container.innerHTML = "";
+            msgs.forEach(m => {
+                const minha = usuarioLogado && m.autorEmail === usuarioLogado.email;
+                const inicial = m.autorNome ? m.autorNome[0].toUpperCase() : '?';
+                const avatarClass = m.autorTipo === 'cooperativa' ? 'msg-avatar coop' : 'msg-avatar';
 
-            // CONFERE LISTA DE POSTS
-            postsSalvos.forEach(post => {
-                // FORMATA O CARD
-                const tagClasse = post.tipo === 'artigo' ? 'tag-artigo' : 'tag-doacao';
-                const tagTexto = post.tipo === 'artigo' ? 'Artigo' : 'Doação';
+                const div = document.createElement('div');
+                div.className = 'msg-item';
+                if (minha) div.style.flexDirection = 'row-reverse';
 
-                // MONTA O HTML DO POST
-                const cardHTML = `
-                    <a href="modelpost.html?id=${post.id}" class="guia-post-link">
-                        <div class="guia-post-card">
-                            <div class="guia-post-info">
-                                <span class="tag-tipo ${tagClasse}">${tagTexto}</span>
-                                <h3 class="guia-post-titulo">${post.titulo}</h3>
-                                <p class="guia-post-previa">${post.conteudo.substring(0, 100)}...</p>
-                            </div>
-                            <div class="guia-post-seta">
-                                <i class="fas fa-chevron-right"></i> </div>
-                        </div>
-                    </a>
+                div.innerHTML = `
+                    <div class="${avatarClass}" title="${m.autorNome}">${inicial}</div>
+                    <div class="msg-bubble${minha ? ' minha' : ''}">
+                        <div class="msg-autor">${m.autorNome}</div>
+                        <div class="msg-texto">${escapeHtml(m.texto)}</div>
+                        <div class="msg-hora">${formatarData(m.ts)}</div>
+                    </div>
                 `;
-
-                // INJETA O HTML MONTADO NO CARD
-                container.innerHTML += cardHTML;
+                lista.appendChild(div);
             });
-        };
-        window.onload = function() {
-            mostrarPostsNaTela();
-        };
 
-        function mostrarPostsNaTela() {
-            const container = document.getElementById('container-posts');
-            if (!container) return; 
+            // scroll para a última mensagem
+            lista.scrollTop = lista.scrollHeight;
+        }
 
-            const postsSalvos = JSON.parse(localStorage.getItem('postsForum')) || [];
+        function enviarMensagem() {
+            if (!anuncioAbertoId) return;
+            const input = document.getElementById('chatInput');
+            const texto = input.value.trim();
+            if (!texto) return;
 
-            if (postsSalvos.length === 0) {
-                container.innerHTML = "<p style='text-align:center; color:#6c757d;'>Nenhum tópico criado ainda. Seja o primeiro!</p>";
-                return;
+            const msgs = getMensagens(anuncioAbertoId);
+            msgs.push({
+                id: Date.now(),
+                texto,
+                autorNome: usuarioLogado.nome,
+                autorEmail: usuarioLogado.email,
+                autorTipo: usuarioLogado.tipo || 'cidadao',
+                ts: Date.now()
+            });
+            saveMensagens(anuncioAbertoId, msgs);
+            input.value = '';
+            renderChat();
+        }
+
+        function handleEnterChat(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                enviarMensagem();
             }
+        }
 
-            container.innerHTML = "";
+        // ── Excluir anúncio (só dono) ───────────────────────────────────────────
+        function excluirAnuncio() {
+            if (!confirm('Tem certeza que deseja excluir este anúncio?')) return;
+            let anuncios = getAnuncios();
+            anuncios = anuncios.filter(a => a.id !== anuncioAbertoId);
+            saveAnuncios(anuncios);
+            localStorage.removeItem(`forumMsgs_${anuncioAbertoId}`);
+            fecharModalDetalhe();
+        }
 
-            postsSalvos.forEach(post => {
-                const tagClasse = post.tipo === 'artigo' ? 'tag-artigo' : 'tag-doacao';
-                const tagTexto = post.tipo === 'artigo' ? 'Artigo' : 'Doação';
+        // ── Fechar modal clicando fora ──────────────────────────────────────────
+        document.getElementById('modalDetalhe').addEventListener('click', function(e) {
+            if (e.target === this) fecharModalDetalhe();
+        });
+        document.getElementById('modalNovo').addEventListener('click', function(e) {
+            if (e.target === this) fecharModalNovo();
+        });
 
-                const cardHTML = `
-                    <a href="modelpost.html?id=${post.id}" class="guia-post-link">
-                        <div class="guia-post-card">
-                            <div class="guia-post-info">
-                                <span class="tag-tipo ${tagClasse}">${tagTexto}</span>
-                                <h3 class="guia-post-titulo">${post.titulo}</h3>
-                                <p class="guia-post-previa">${post.conteudo.substring(0, 100)}...</p>
-                            </div>
-                            <div class="guia-post-seta">➔</div>
-                        </div>
-                    </a>
-                `;
-                container.innerHTML += cardHTML;
-            });
+        // ── Escape fecha modais ─────────────────────────────────────────────────
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                fecharModalDetalhe();
+                fecharModalNovo();
+            }
+        });
+
+        // ── Sanitização básica ──────────────────────────────────────────────────
+        function escapeHtml(str) {
+            return str
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/\n/g, '<br>');
         }
     </script>
 </body>
