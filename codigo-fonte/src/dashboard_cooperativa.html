@@ -120,6 +120,40 @@
             color: var(--preto);
         }
 
+        /* Pedidos de cidadãos */
+        .pedido-coop-card {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin-bottom: 10px;
+            transition: 0.2s;
+        }
+        .pedido-coop-card:hover { border-color: var(--verde-claro); }
+        .pedido-coop-card.confirmado { border-left: 4px solid var(--verde-claro); background: #f0fff0; }
+        .pedido-coop-card.recusado   { border-left: 4px solid #dc3545; background: #fff5f5; opacity: 0.7; }
+
+        .badge-status {
+            display: inline-block; padding: 3px 10px; border-radius: 20px;
+            font-size: 0.72rem; font-weight: 700; white-space: nowrap;
+        }
+        .bs-pendente   { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
+        .bs-confirmado { background: #d1e7dd; color: #0a6640; border: 1px solid #72b850; }
+        .bs-recusado   { background: #f8d7da; color: #842029; border: 1px solid #dc3545; }
+
+        .btn-aceitar {
+            background: var(--verde-escuro); color: white; border: none;
+            padding: 6px 14px; border-radius: 6px; font-size: 0.82rem;
+            font-weight: 600; cursor: pointer; transition: 0.2s;
+        }
+        .btn-aceitar:hover { background: var(--verde-claro); color: var(--preto); }
+        .btn-recusar {
+            background: none; border: 1px solid #dc3545; color: #dc3545;
+            padding: 6px 14px; border-radius: 6px; font-size: 0.82rem;
+            font-weight: 600; cursor: pointer; transition: 0.2s;
+        }
+        .btn-recusar:hover { background: #dc3545; color: white; }
+
         footer {
             background-color: var(--preto);
             color: var(--branco);
@@ -253,7 +287,7 @@
                 <div class="metric-card">
                     <div>
                         <div class="metric-title">Cidadãos Atendidos</div>
-                        <div class="metric-value">184</div>
+                        <div class="metric-value" data-metric="cidadaos">0</div>
                     </div>
                     <div class="fs-2 text-success"><i class="bi bi-people-fill"></i></div>
                 </div>
@@ -262,7 +296,7 @@
                 <div class="metric-card">
                     <div>
                         <div class="metric-title">Pontos Verdes Cedidos</div>
-                        <div class="metric-value">5,840 pts</div>
+                        <div class="metric-value" data-metric="pontos">0 pts</div>
                     </div>
                     <div class="fs-2 text-success"><i class="bi bi-award-fill"></i></div>
                 </div>
@@ -415,6 +449,29 @@
             </div>
         </div>
 
+        <!-- Seção: Solicitações de Coleta dos Cidadãos (RF-12) -->
+        <div class="row g-4 mt-2">
+            <div class="col-12">
+                <div class="card-custom">
+                    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                        <h4 class="panel-title m-0"><i class="bi bi-inbox-fill me-2"></i>Solicitações de Coleta Recebidas</h4>
+                        <div class="d-flex gap-2 flex-wrap" id="filtroStatusCoop">
+                            <button class="btn btn-sm rounded-pill px-3 fw-bold fcoop-btn" data-status="" onclick="filtrarSolicitacoes(this)" style="background:var(--verde-escuro);color:white;border:none;">Todas</button>
+                            <button class="btn btn-sm rounded-pill px-3 fw-bold fcoop-btn" data-status="Pendente" onclick="filtrarSolicitacoes(this)" style="border:1px solid #ffc107;color:#856404;">Pendentes</button>
+                            <button class="btn btn-sm rounded-pill px-3 fw-bold fcoop-btn" data-status="Confirmado" onclick="filtrarSolicitacoes(this)" style="border:1px solid #72b850;color:#0a6640;">Confirmadas</button>
+                            <button class="btn btn-sm rounded-pill px-3 fw-bold fcoop-btn" data-status="Recusado" onclick="filtrarSolicitacoes(this)" style="border:1px solid #dc3545;color:#842029;">Recusadas</button>
+                        </div>
+                    </div>
+                    <div id="listaSolicitacoes">
+                        <div class="text-center text-secondary py-4" id="solicitacoesEmpty">
+                            <i class="bi bi-inbox fs-2 d-block mb-2 opacity-40"></i>
+                            <span class="small">Nenhuma solicitação recebida ainda.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
         <footer class="bg-black text-white text-center py-4 mt-auto">
@@ -429,7 +486,141 @@
             const user = JSON.parse(localStorage.getItem('usuarioLogado'));
             if (user) document.getElementById('navCoopName').innerText = user.nome;
             renderizarPontosCadastrados();
+            renderizarSolicitacoes();
+            atualizarMetricas();
         };
+
+        // ── Métricas dinâmicas ─────────────────────────────────────────────────
+        function atualizarMetricas() {
+            const user = JSON.parse(localStorage.getItem('usuarioLogado'));
+            if (!user) return;
+            const pedidos = JSON.parse(localStorage.getItem('pedidosColeta') || '[]');
+            const meus = pedidos.filter(p => p.cooperativa === user.nome);
+            const confirmados = meus.filter(p => p.status === 'Confirmado' || p.status === 'Concluído');
+
+            // Atualiza card de cidadãos atendidos
+            const elCid = document.querySelector('.metric-value[data-metric="cidadaos"]');
+            if (elCid) elCid.textContent = confirmados.length;
+
+            // Atualiza card de pontos verdes cedidos (estimativa)
+            const elPts = document.querySelector('.metric-value[data-metric="pontos"]');
+            if (elPts) elPts.textContent = (confirmados.length * 32) + ' pts';
+        }
+
+        // ── Solicitações de Coleta (RF-12) ─────────────────────────────────────
+        let filtroCoopAtivo = '';
+
+        function filtrarSolicitacoes(btn) {
+            document.querySelectorAll('.fcoop-btn').forEach(b => {
+                b.style.background = '';
+                b.style.color = b.dataset.status === 'Pendente' ? '#856404'
+                    : b.dataset.status === 'Confirmado' ? '#0a6640'
+                    : b.dataset.status === 'Recusado'   ? '#842029'
+                    : '#333';
+                b.style.border = b.style.border; // preserva borda
+            });
+            btn.style.background = 'var(--verde-escuro)';
+            btn.style.color = 'white';
+            filtroCoopAtivo = btn.dataset.status;
+            renderizarSolicitacoes();
+        }
+
+        function renderizarSolicitacoes() {
+            const lista  = document.getElementById('listaSolicitacoes');
+            const empty  = document.getElementById('solicitacoesEmpty');
+            const user   = JSON.parse(localStorage.getItem('usuarioLogado'));
+            const todos  = JSON.parse(localStorage.getItem('pedidosColeta') || '[]');
+
+            // Filtra pedidos destinados a esta cooperativa
+            const meus = todos.filter(p => p.cooperativa === (user ? user.nome : ''));
+            const filtrados = filtroCoopAtivo ? meus.filter(p => p.status === filtroCoopAtivo) : meus;
+
+            lista.querySelectorAll('.pedido-coop-card').forEach(el => el.remove());
+
+            if (filtrados.length === 0) {
+                empty.style.display = 'block';
+                return;
+            }
+            empty.style.display = 'none';
+
+            // Badge de contagem pendentes
+            const pendentes = meus.filter(p => p.status === 'Pendente').length;
+            const tituloEl = document.querySelector('#filtroStatusCoop');
+            if (tituloEl) {
+                const badgeExist = document.getElementById('badgePendentes');
+                if (!badgeExist && pendentes > 0) {
+                    const badge = document.createElement('span');
+                    badge.id = 'badgePendentes';
+                    badge.className = 'badge rounded-pill ms-1';
+                    badge.style.cssText = 'background:#ffc107;color:#000;font-size:0.75rem;';
+                    badge.textContent = pendentes + ' novas';
+                    document.querySelector('.panel-title').appendChild(badge);
+                }
+            }
+
+            [...filtrados].reverse().forEach(p => {
+                const [ano, mes, dia] = p.data.split('-');
+                const dataFmt = `${dia}/${mes}/${ano}`;
+                const dataPedido = new Date(p.ts).toLocaleDateString('pt-BR');
+                const isPendente = p.status === 'Pendente';
+
+                const statusCls = { 'Pendente': 'bs-pendente', 'Confirmado': 'bs-confirmado', 'Recusado': 'bs-recusado' };
+                const cardCls   = { 'Confirmado': 'confirmado', 'Recusado': 'recusado' };
+
+                const div = document.createElement('div');
+                div.className = `pedido-coop-card ${cardCls[p.status] || ''}`;
+                div.innerHTML = `
+                    <div class="d-flex justify-content-between align-items-start gap-2 mb-2 flex-wrap">
+                        <div>
+                            <span class="fw-bold text-dark" style="font-size:0.95rem;">
+                                <i class="bi bi-person-fill me-1 text-success"></i>${p.autorNome}
+                            </span>
+                            <span class="text-secondary ms-2" style="font-size:0.78rem;">${dataPedido}</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="badge-status ${statusCls[p.status] || 'bs-pendente'}">${p.status}</span>
+                            ${isPendente ? `
+                                <button class="btn-aceitar" onclick="responderPedido(${p.id}, 'Confirmado')">
+                                    <i class="bi bi-check-lg me-1"></i>Aceitar
+                                </button>
+                                <button class="btn-recusar" onclick="responderPedido(${p.id}, 'Recusado')">
+                                    <i class="bi bi-x-lg me-1"></i>Recusar
+                                </button>
+                            ` : ''}
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-1 mb-2">
+                        ${p.materiais.map(m => `<span class="badge bg-success-subtle text-success border" style="font-size:0.72rem;">${m}</span>`).join('')}
+                    </div>
+                    <div class="d-flex flex-wrap gap-3 text-secondary" style="font-size:0.8rem;">
+                        <span><i class="bi bi-calendar-event me-1 text-success"></i>Data solicitada: <strong class="text-dark">${dataFmt}</strong></span>
+                        <span><i class="bi bi-geo-alt me-1 text-success"></i>${p.endereco}</span>
+                    </div>
+                    ${p.obs ? `<div class="mt-2 fst-italic text-secondary border-top pt-2" style="font-size:0.8rem;"><i class="bi bi-chat-left-text me-1"></i>"${p.obs}"</div>` : ''}
+                `;
+                lista.appendChild(div);
+            });
+        }
+
+        function responderPedido(id, novoStatus) {
+            const acao = novoStatus === 'Confirmado' ? 'aceitar' : 'recusar';
+            if (!confirm(`Deseja ${acao} este pedido de coleta?`)) return;
+
+            let pedidos = JSON.parse(localStorage.getItem('pedidosColeta') || '[]');
+            const idx = pedidos.findIndex(p => p.id === id);
+            if (idx === -1) return;
+            pedidos[idx].status = novoStatus;
+            pedidos[idx].respondidoEm = Date.now();
+            localStorage.setItem('pedidosColeta', JSON.stringify(pedidos));
+
+            renderizarSolicitacoes();
+            atualizarMetricas();
+
+            const msg = novoStatus === 'Confirmado'
+                ? '✅ Pedido confirmado! O cidadão será notificado.'
+                : '❌ Pedido recusado.';
+            alert(msg);
+        }
 
         // ── Form: Aviso ────────────────────────────────────────────────────────
         document.getElementById('formAviso').addEventListener('submit', function(e) {
