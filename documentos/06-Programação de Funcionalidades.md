@@ -202,11 +202,17 @@ Não Aplicável
 2. Navegar até a página “Dashboard Cidadão”.
 3. Localize a opção “Solicitar Coleta”.
 4. Preencher corretamente os campos obrigatórios do formulário, incluindo:
+
    4.1. Seleção da cooperativa disponível;
+   
    4.2. Seleção dos tipos de materiais a serem coletados;
+   
    4.3. Data desejada para a coleta;
+   
    4.4. Endereço da Coleta;
+   
    4.5. Observações adicionais (quando necessário).
+   
 6. Conferir os dados informados
 7. Clicar no botão “Confirmar pedido”.
 8. Aguardar a confirmação da solicitação e acompanhar o status diretamente pelo sistema (Ver meus pedidos).
