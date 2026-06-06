@@ -112,7 +112,7 @@ Bernardo
 
 #### Responsável
 
-Tainara
+Tainara Lorraine Carvalho
 
 ---
 
@@ -174,7 +174,7 @@ Tainara
 
 #### Responsável
 
-Tainara
+Tainara Lorraine Carvalho
 
 ---
 
@@ -213,7 +213,7 @@ Tainara
 
 #### Responsável
 
-Tainara
+Tainara Lorraine Carvalho
 
 ---
 
