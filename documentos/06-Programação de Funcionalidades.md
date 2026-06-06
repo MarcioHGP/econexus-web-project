@@ -234,7 +234,13 @@ historico e cancelamento de pedido.html
 
 #### Estrutura de Dados
 
-[Caso exista estrutura de dados, adicione aqui]
+| Campo    | Tipo    | Descrição                                                    |
+| :------- | :------ | :----------------------------------------------------------- |
+| `id`     | inteiro | Identificador único da solicitação de coleta                 |
+| `residuo`| texto   | Tipo de material reciclável descartado                       |
+| `data`   | texto   | Data de abertura da solicitação                              |
+| `status` | texto   | Estado atual do pedido (muda para 'Cancelado')               |
+| `pontos` | inteiro | Pontuação ecológica gerada pelo descarte                     |
 
 #### Instruções de acesso
 
@@ -426,7 +432,13 @@ historico e cancelamento de pedido
 
 #### Estrutura de Dados
 
-[Caso exista estrutura de dados, adicione aqui]
+| Campo    | Tipo    | Descrição                                                    |
+| :------- | :------ | :----------------------------------------------------------- |
+| `id`     | inteiro | Identificador único do registro para listagem                |
+| `residuo`| texto   | Tipo de material reciclável descartado                       |
+| `data`   | texto   | Registro cronológico da solicitação                          |
+| `status` | texto   | Estado atual para controle e exibição de tags                |
+| `pontos` | inteiro | Valor utilizado no cálculo do impacto ambiental acumulado    |
 
 #### Instruções de acesso
 
