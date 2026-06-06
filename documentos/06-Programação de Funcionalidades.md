@@ -371,7 +371,8 @@ Arthur
 
 ### Avaliação de Cooperativas
 
-[Adicione imagem da funcionalidade/tela]
+<img width="1395" height="544" alt="image" src="https://github.com/user-attachments/assets/5ed19cff-5efb-4236-81f0-5af6bdf36efd" />
+
 
 #### Requisito atendido
 
