@@ -10,8 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 
     <style>
@@ -26,11 +24,15 @@
         * { font-family: "Outfit", sans-serif; margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: var(--cinza-fundo); min-height: 100vh; display: flex; flex-direction: column; }
 
+        /* Sobrescreve o main { height: 93vh } do styles.css externo */
+        main { height: auto !important; min-height: unset !important; flex: 1; }
+
         
 
                 /* Hamburger / Menu Fullscreen */
         .logo-img { width: 50px; height: 50px; object-fit: contain; }
-        svg { width: 30px; height: auto; }
+        /* Escopo restrito: só o SVG dentro do hamburger-label, nunca os SVGs do Leaflet */
+        .hamburger-label svg { width: 30px; height: auto; }
         #menu-toggle { display: none; }
         .hamburger-label { cursor: pointer; z-index: 1001; padding: 10px; }
         .user-link { padding: 8px 20px; border-radius: 50px; background: white; color: black; text-decoration: none; font-weight: 600; transition: 0.3s; }
@@ -124,6 +126,172 @@
             box-shadow: 3px 3px 10px rgba(0,0,0,0.05);
         }
 
+        /* Botão Fórum de Doações */
+        .btn-forum {
+            background-color: var(--preto);
+            color: var(--branco);
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            width: 100%;
+            transition: 0.3s ease-in-out;
+            margin-top: 10px;
+        }
+        .btn-forum:hover { background-color: var(--verde-claro); color: var(--preto); }
+
+        /* Avaliação de Cooperativas */
+        .avaliacao-item {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 14px;
+            padding: 20px;
+            transition: 0.2s;
+        }
+        .avaliacao-item:hover { border-color: var(--verde-claro); box-shadow: 3px 3px 10px rgba(0,0,0,0.06); }
+
+        .stars-input { display: flex; gap: 4px; flex-direction: row-reverse; justify-content: flex-end; }
+        .stars-input input { display: none; }
+        .stars-input label {
+            font-size: 1.6rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: 0.15s;
+            width: auto;
+            margin-bottom: 0;
+            font-weight: normal;
+        }
+        .stars-input label:hover,
+        .stars-input label:hover ~ label,
+        .stars-input input:checked ~ label { color: #f5b800; }
+
+        .stars-display { color: #f5b800; font-size: 0.95rem; letter-spacing: 1px; }
+        .stars-display.empty { color: #ddd; }
+
+        .avaliacao-postada {
+            background: #f4f9f0;
+            border: 1px solid #c8e6b0;
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+        }
+        .avaliacao-postada .nota { color: #f5b800; font-size: 0.9rem; }
+        .avaliacao-postada .autor { color: #888; font-size: 0.75rem; margin-top: 3px; }
+
+        .select-coop {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-family: "Outfit", sans-serif;
+            font-size: 0.92rem;
+            margin-bottom: 12px;
+            transition: 0.2s;
+            background: #fff;
+        }
+        .select-coop:focus { outline: none; border-color: var(--verde-claro); box-shadow: 0 0 0 3px rgba(114,184,80,0.15); }
+
+        .textarea-avaliacao {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-family: "Outfit", sans-serif;
+            font-size: 0.88rem;
+            resize: none;
+            transition: 0.2s;
+            margin-bottom: 12px;
+        }
+        .textarea-avaliacao:focus { outline: none; border-color: var(--verde-claro); box-shadow: 0 0 0 3px rgba(114,184,80,0.15); }
+
+        .btn-avaliar {
+            background: var(--verde-escuro);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 100%;
+        }
+        .btn-avaliar:hover { background: var(--verde-claro); color: var(--preto); }
+
+        /* ── Pedido de Coleta ──────────────────────────────────────────────── */
+        .input-pedido {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-family: "Outfit", sans-serif;
+            font-size: 0.92rem;
+            margin-bottom: 14px;
+            transition: 0.2s;
+            background: #fff;
+        }
+        .input-pedido:focus { outline: none; border-color: var(--verde-claro); box-shadow: 0 0 0 3px rgba(114,184,80,0.15); }
+
+        .material-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+        .material-pills input[type="checkbox"] { display: none; }
+        .material-pills label {
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-size: 0.84rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: #555;
+            background: #f8f9fa;
+            transition: 0.2s;
+            margin-bottom: 0;
+            width: auto;
+        }
+        .material-pills input[type="checkbox"]:checked + label {
+            background: var(--verde-escuro);
+            color: var(--branco);
+            border-color: var(--verde-escuro);
+        }
+
+        .btn-pedir-coleta {
+            background: var(--verde-escuro);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 100%;
+        }
+        .btn-pedir-coleta:hover { background: var(--verde-claro); color: var(--preto); }
+
+        /* Cards do histórico de pedidos */
+        .pedido-card {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 14px 16px;
+            font-size: 0.85rem;
+            transition: 0.2s;
+        }
+        .pedido-card:hover { border-color: var(--verde-claro); }
+        .pedido-status {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+        .status-pendente { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
+        .status-confirmado { background: #d1e7dd; color: #0a6640; border: 1px solid #72b850; }
+        .status-concluido { background: #cfe2ff; color: #084298; border: 1px solid #0d6efd; }
+
         footer {
             background-color: var(--preto);
             color: var(--branco);
@@ -196,6 +364,9 @@
                         <a href="pontos.html" class="btn-view-all">
                             <i class="bi bi-grid-3x3-gap-fill me-2"></i>Ver Todos em Lista (Cards)
                         </a>
+                        <a href="forum.html" class="btn-forum">
+                            <i class="bi bi-gift-fill me-2"></i>Fórum de Doações
+                        </a>
                     </div>
                 </div>
             </div>
@@ -215,6 +386,110 @@
                 </div>
             </div>
         </div>
+
+        <!-- Seção de Avaliação de Cooperativas -->
+        <div class="row g-4 mt-2">
+
+            <!-- Formulário de avaliação -->
+            <div class="col-lg-5">
+                <div class="card-custom h-100">
+                    <h4 class="panel-title"><i class="bi bi-star-fill me-2"></i>Avaliar Cooperativa</h4>
+                    <p class="text-secondary small mb-4">Compartilhe sua experiência com uma cooperativa parceira da Econexus.</p>
+
+                    <label style="font-size:0.88rem; font-weight:600; color:#333; margin-bottom:6px; display:block;">Selecione a cooperativa</label>
+                    <select class="select-coop" id="selectCoop">
+                        <option value="">— Escolha uma cooperativa —</option>
+                    </select>
+
+                    <label style="font-size:0.88rem; font-weight:600; color:#333; margin-bottom:6px; display:block;">Sua nota</label>
+                    <div class="stars-input mb-3" id="starsInput">
+                        <input type="radio" name="nota" id="star5" value="5"><label for="star5" title="5 estrelas">★</label>
+                        <input type="radio" name="nota" id="star4" value="4"><label for="star4" title="4 estrelas">★</label>
+                        <input type="radio" name="nota" id="star3" value="3"><label for="star3" title="3 estrelas">★</label>
+                        <input type="radio" name="nota" id="star2" value="2"><label for="star2" title="2 estrelas">★</label>
+                        <input type="radio" name="nota" id="star1" value="1"><label for="star1" title="1 estrela">★</label>
+                    </div>
+
+                    <label style="font-size:0.88rem; font-weight:600; color:#333; margin-bottom:6px; display:block;">Comentário</label>
+                    <textarea class="textarea-avaliacao" id="comentarioAvaliacao" rows="3" placeholder="Conte como foi sua experiência..."></textarea>
+
+                    <button class="btn-avaliar" onclick="enviarAvaliacao()">
+                        <i class="bi bi-send-fill me-2"></i>Publicar Avaliação
+                    </button>
+                </div>
+            </div>
+
+            <!-- Feed de avaliações -->
+            <div class="col-lg-7">
+                <div class="card-custom h-100 d-flex flex-column">
+                    <h4 class="panel-title"><i class="bi bi-chat-square-text-fill me-2"></i>Avaliações da Comunidade</h4>
+                    <div id="feedAvaliacoes" class="d-flex flex-column gap-2 flex-grow-1">
+                        <div class="text-center text-secondary py-4" id="avaliacaoEmpty">
+                            <i class="bi bi-star fs-2 d-block mb-2 opacity-40"></i>
+                            <span class="small">Nenhuma avaliação publicada ainda.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Seção de Pedido de Coleta -->
+        <div class="row g-4 mt-2">
+            <div class="col-12">
+                <div class="card-custom">
+                    <div class="row g-4">
+                        <!-- Formulário do pedido -->
+                        <div class="col-lg-5">
+                            <h4 class="panel-title"><i class="bi bi-truck me-2"></i>Solicitar Coleta</h4>
+                            <p class="text-secondary small mb-4">Agende a coleta do seu material reciclável com uma cooperativa parceira. Acompanhe seus pedidos em <a href="pedidos.html" class="text-success fw-bold">Pedidos</a>.</p>
+
+                            <label style="font-size:0.88rem;font-weight:600;color:#333;margin-bottom:6px;display:block;">Cooperativa</label>
+                            <select class="input-pedido" id="pedidoCoop">
+                                <option value="">— Selecione uma cooperativa —</option>
+                            </select>
+
+                            <label style="font-size:0.88rem;font-weight:600;color:#333;margin-bottom:8px;display:block;">Materiais Recicláveis</label>
+                            <div class="material-pills">
+                                <span><input type="checkbox" id="pmat-papel" value="Papel"><label for="pmat-papel">Papel</label></span>
+                                <span><input type="checkbox" id="pmat-plastico" value="Plástico"><label for="pmat-plastico">Plástico</label></span>
+                                <span><input type="checkbox" id="pmat-vidro" value="Vidro"><label for="pmat-vidro">Vidro</label></span>
+                                <span><input type="checkbox" id="pmat-metal" value="Metal"><label for="pmat-metal">Metal</label></span>
+                                <span><input type="checkbox" id="pmat-isopor" value="Isopor"><label for="pmat-isopor">Isopor</label></span>
+                                <span><input type="checkbox" id="pmat-oleo" value="Óleo"><label for="pmat-oleo">Óleo</label></span>
+                                <span><input type="checkbox" id="pmat-eletro" value="Eletrônicos"><label for="pmat-eletro">Eletrônicos</label></span>
+                            </div>
+
+                            <label style="font-size:0.88rem;font-weight:600;color:#333;margin-bottom:6px;display:block;">Data preferida para coleta</label>
+                            <input type="date" class="input-pedido" id="pedidoData">
+
+                            <label style="font-size:0.88rem;font-weight:600;color:#333;margin-bottom:6px;display:block;">Endereço de coleta</label>
+                            <input type="text" class="input-pedido" id="pedidoEndereco" placeholder="Ex: Rua das Flores, 123 - Savassi">
+
+                            <label style="font-size:0.88rem;font-weight:600;color:#333;margin-bottom:6px;display:block;">Observações <span class="text-secondary fw-normal">(opcional)</span></label>
+                            <textarea class="input-pedido" id="pedidoObs" rows="2" placeholder="Ex: Aproximadamente 10kg de papelão..." style="resize:none;"></textarea>
+
+                            <button class="btn-pedir-coleta" onclick="enviarPedidoColeta()">
+                                <i class="bi bi-calendar2-check-fill me-2"></i>Confirmar Pedido
+                            </button>
+                        </div>
+
+                        <!-- CTA para ver pedidos -->
+                        <div class="col-lg-7 d-flex align-items-center justify-content-center">
+                            <div class="text-center px-4">
+                                <i class="bi bi-clock-history text-success" style="font-size:3.5rem; opacity:0.6;"></i>
+                                <h5 class="fw-bold mt-3 mb-2">Acompanhe seus pedidos</h5>
+                                <p class="text-secondary small mb-4">Visualize o histórico completo, status e detalhes de todas as suas solicitações de coleta.</p>
+                                <a href="pedidos.html" class="btn-pedir-coleta text-decoration-none d-inline-block" style="width:auto; padding: 12px 28px;">
+                                    <i class="bi bi-arrow-right-circle-fill me-2"></i>Ver Meus Pedidos
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
         <footer class="bg-black text-white text-center py-4 mt-auto">
@@ -382,7 +657,147 @@
             if(user) document.getElementById('navUserName').innerText = user.nome.split(' ')[0];
             inicializarMapa();
             carregarMuralAvisos();
+            carregarSelectCooperativas();
+            renderAvaliacoes();
+            carregarSelectCoopPedido();
         };
+
+        // ── Avaliação de Cooperativas ─────────────────────────────────────────
+
+        function getCooperativas() {
+            const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+            const coops = usuarios.filter(u => u.tipo === 'cooperativa').map(u => u.nome);
+            return coops.length > 0 ? coops : ['Cooperativa Centro Recicla', 'EcoVida Savassi', 'Recicla Castelo S/A'];
+        }
+
+        function carregarSelectCooperativas() {
+            const select = document.getElementById('selectCoop');
+            select.innerHTML = '<option value="">— Escolha uma cooperativa —</option>';
+            getCooperativas().forEach(nome => {
+                const opt = document.createElement('option');
+                opt.value = nome; opt.textContent = nome;
+                select.appendChild(opt);
+            });
+        }
+
+        function enviarAvaliacao() {
+            const coop = document.getElementById('selectCoop').value;
+            const notaEl = document.querySelector('input[name="nota"]:checked');
+            const comentario = document.getElementById('comentarioAvaliacao').value.trim();
+
+            if (!coop) { alert('Selecione uma cooperativa.'); return; }
+            if (!notaEl) { alert('Selecione uma nota (1 a 5 estrelas).'); return; }
+            if (!comentario) { alert('Escreva um comentário.'); return; }
+
+            const user = JSON.parse(localStorage.getItem('usuarioLogado'));
+            const avaliacoes = JSON.parse(localStorage.getItem('avaliacoes') || '[]');
+
+            avaliacoes.push({
+                id: Date.now(),
+                cooperativa: coop,
+                nota: parseInt(notaEl.value),
+                comentario,
+                autorNome: user ? user.nome : 'Usuário',
+                autorEmail: user ? user.email : '',
+                ts: Date.now()
+            });
+
+            localStorage.setItem('avaliacoes', JSON.stringify(avaliacoes));
+            document.getElementById('selectCoop').value = '';
+            notaEl.checked = false;
+            document.getElementById('comentarioAvaliacao').value = '';
+            renderAvaliacoes();
+        }
+
+        function renderAvaliacoes() {
+            const feed = document.getElementById('feedAvaliacoes');
+            const empty = document.getElementById('avaliacaoEmpty');
+            const avaliacoes = JSON.parse(localStorage.getItem('avaliacoes') || '[]');
+
+            feed.querySelectorAll('.avaliacao-postada').forEach(el => el.remove());
+
+            if (avaliacoes.length === 0) { empty.style.display = 'block'; return; }
+            empty.style.display = 'none';
+
+            [...avaliacoes].reverse().slice(0, 10).forEach(av => {
+                const estrelas = '★'.repeat(av.nota) + '☆'.repeat(5 - av.nota);
+                const data = new Date(av.ts).toLocaleDateString('pt-BR');
+                const div = document.createElement('div');
+                div.className = 'avaliacao-postada';
+                div.innerHTML = `
+                    <div class="d-flex justify-content-between align-items-start gap-2">
+                        <div>
+                            <span class="fw-bold text-dark" style="font-size:0.88rem;">${av.cooperativa}</span>
+                            <span class="nota ms-2">${estrelas}</span>
+                        </div>
+                        <small class="text-secondary" style="white-space:nowrap; font-size:0.72rem;">${data}</small>
+                    </div>
+                    <p class="mb-0 mt-1" style="font-size:0.85rem; color:#444;">${av.comentario}</p>
+                    <div class="autor"><i class="bi bi-person-fill me-1"></i>${av.autorNome}</div>
+                `;
+                feed.appendChild(div);
+            });
+        }
+
+        // ── Pedido de Coleta (formulário — histórico fica em pedidos.html) ─────
+
+        function carregarSelectCoopPedido() {
+            const select = document.getElementById('pedidoCoop');
+            select.innerHTML = '<option value="">— Selecione uma cooperativa —</option>';
+            getCooperativas().forEach(nome => {
+                const opt = document.createElement('option');
+                opt.value = nome; opt.textContent = nome;
+                select.appendChild(opt);
+            });
+            const user = JSON.parse(localStorage.getItem('usuarioLogado'));
+            if (user && user.rua) {
+                document.getElementById('pedidoEndereco').value =
+                    `${user.rua}, ${user.numero || ''} - ${user.bairro || ''}`.trim().replace(/,\s*$/, '');
+            }
+        }
+
+        function enviarPedidoColeta() {
+            const coop  = document.getElementById('pedidoCoop').value;
+            const data  = document.getElementById('pedidoData').value;
+            const end   = document.getElementById('pedidoEndereco').value.trim();
+            const obs   = document.getElementById('pedidoObs').value.trim();
+
+            const materiais = ['pmat-papel','pmat-plastico','pmat-vidro','pmat-metal','pmat-isopor','pmat-oleo','pmat-eletro']
+                .filter(id => document.getElementById(id).checked)
+                .map(id => document.getElementById(id).value);
+
+            if (!coop)              { alert('Selecione uma cooperativa.'); return; }
+            if (!materiais.length)  { alert('Selecione ao menos um material.'); return; }
+            if (!data)              { alert('Informe a data preferida para coleta.'); return; }
+            if (!end)               { alert('Informe o endereço de coleta.'); return; }
+
+            const user = JSON.parse(localStorage.getItem('usuarioLogado'));
+            const pedidos = JSON.parse(localStorage.getItem('pedidosColeta') || '[]');
+
+            pedidos.push({
+                id: Date.now(),
+                cooperativa: coop,
+                materiais,
+                data,
+                endereco: end,
+                obs,
+                status: 'Pendente',
+                autorNome: user ? user.nome : 'Usuário',
+                autorEmail: user ? user.email : '',
+                ts: Date.now()
+            });
+            localStorage.setItem('pedidosColeta', JSON.stringify(pedidos));
+
+            document.getElementById('pedidoCoop').value = '';
+            document.getElementById('pedidoData').value = '';
+            document.getElementById('pedidoObs').value = '';
+            ['pmat-papel','pmat-plastico','pmat-vidro','pmat-metal','pmat-isopor','pmat-oleo','pmat-eletro']
+                .forEach(id => document.getElementById(id).checked = false);
+
+            if (confirm('Pedido enviado com sucesso! Deseja ver seus pedidos agora?')) {
+                window.location.href = 'pedidos.html';
+            }
+        }
     </script>
 </body>
 </html>
