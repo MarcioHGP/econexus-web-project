@@ -221,7 +221,8 @@ Tainara
 
 ### Cancelamento de Solicitação
 
-[Adicione imagem da funcionalidade/tela]
+<img width="1902" height="865" alt="image" src="https://github.com/user-attachments/assets/322d7ce7-87db-4908-931c-621741462782" />
+
 
 #### Requisito atendido
 
@@ -229,7 +230,7 @@ Tainara
 
 #### Artefatos da funcionalidade
 
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
+historico e cancelamento de pedido.html
 
 #### Estrutura de Dados
 
@@ -237,11 +238,14 @@ Tainara
 
 #### Instruções de acesso
 
-[Adicione as orientações de acesso à funcionalidade]
+1. Navegue até a raiz do projeto e execute o arquivo historico.html no navegador.
+2. Na tabela de "Meu Histórico de Solicitações", identifique as coletas que apresentam a tag de status na cor amarela como "Pendente".
+3. Clique no botão "Cancelar" localizado na última coluna da linha correspondente ao pedido desejado.
+4. Confirme a ação na caixa de diálogo (confirm) que aparecerá no navegador. O sistema atualizará o status para "Cancelado" instantaneamente e desabilitará o botão.
 
 #### Responsável
 
-Marlon
+Márcio
 
 ---
 
@@ -409,15 +413,16 @@ Mariana Guimarães Melo
 
 ### Histórico e Impacto Ambiental
 
-[Adicione imagem da funcionalidade/tela]
+<img width="1899" height="870" alt="Captura de tela 2026-06-05 193151" src="https://github.com/user-attachments/assets/285ce530-6c22-4122-8077-cf2ebdc3cb53" />
+
 
 #### Requisito atendido
 
-**RF-14:** Visualizar histórico e impacto ambiental.
+**RF-14:** Permitir a visualização do histórico de pedidos e o cálculo do impacto ambiental gerado.
 
 #### Artefatos da funcionalidade
 
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
+historico e cancelamento de pedido
 
 #### Estrutura de Dados
 
@@ -425,7 +430,11 @@ Mariana Guimarães Melo
 
 #### Instruções de acesso
 
-[Adicione as orientações de acesso à funcionalidade]
+1. Abra o arquivo historico e cancelamento de pedido.html no navegador de sua preferência.
+
+2. A tela carregará automaticamente todas as solicitações registradas no localStorage do usuário.
+
+3. Cada linha da tabela exibirá o ID do pedido, o tipo de resíduo descartado, a data da coleta, o status atual e os pontos ecológicos computados para aquela transação.
 
 #### Responsável
 
