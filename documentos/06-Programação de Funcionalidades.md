@@ -215,7 +215,7 @@ Não Aplicável
    
 6. Conferir os dados informados
 7. Clicar no botão “Confirmar pedido”.
-8. Aguardar a confirmação da solicitação e acompanhar o status diretamente pelo sistema (Ver meus pedidos).
+8. Aguardar a confirmação da solicitação e acompanhar o status diretamente pela opção (Ver meus pedidos).
 
 #### Responsável
 
