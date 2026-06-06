@@ -165,7 +165,7 @@ Não Aplicável
 #### Instruções de acesso
 
 1. Acessar o sistema por meio de login com perfil de usuário (cidadão).
-2. Navegar até a página “Pontos de Coleta”.
+2. Navegar até a página “Pontos”.
 3. Visualizar a listagem completa dos pontos de coleta cadastrados.
 4. Utilizar o filtro disponível para refinar a busca, por exemplo, selecionando o bairro desejado.
 5. Identificar, nos cartões exibidos, os pontos que aceitam o tipo de material desejado.
@@ -190,7 +190,7 @@ Tainara Lorraine Carvalho
 
 #### Artefatos da funcionalidade
 
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/blob/main/codigo-fonte/src/dashboard_cidadao.html
 
 #### Estrutura de Dados
 
@@ -199,17 +199,17 @@ Não Aplicável
 #### Instruções de acesso
 
 1. Acessar o sistema por meio de login com perfil de usuário (cidadão).
-2. Navegar até a página “Pedidos”.
-3. Selecionar a opção “Solicitação de coleta”.
+2. Navegar até a página “Dashboard Cidadão”.
+3. Localize a opção “Solicitar Coleta”.
 4. Preencher corretamente os campos obrigatórios do formulário, incluindo:
-   4.1. Tipo de resíduo;
-   4.2. Seleção da cooperativa compatível com os materiais informados;
-   4.3. Faixa de peso estimada;
-   4.4. Data e horário desejados para a coleta;
-   4.5. Informações adicionais (quando necessário).
-5. Conferir os dados informados e clicar no botão “Enviar pedido”.
-6. Aguardar a confirmação da solicitação e acompanhar o status diretamente pelo sistema.
-7. Caso necessário, realizar o cancelamento da solicitação, desde que ainda esteja dentro das condições permitidas (antes da coleta ser aceita pela cooperativa).
+   4.1. Seleção da cooperativa disponível;
+   4.2. Seleção dos tipos de materiais a serem coletados;
+   4.3. Data desejada para a coleta;
+   4.4. Endereço da Coleta;
+   4.5. Observações adicionais (quando necessário).
+6. Conferir os dados informados
+7. Clicar no botão “Confirmar pedido”.
+8. Aguardar a confirmação da solicitação e acompanhar o status diretamente pelo sistema (Ver meus pedidos).
 
 #### Responsável
 
