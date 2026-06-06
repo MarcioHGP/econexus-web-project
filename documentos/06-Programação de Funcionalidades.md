@@ -182,7 +182,7 @@ Tainara
 
 ### Solicitação de Coleta para Cooperativa
 
-[Adicione imagem da funcionalidade/tela]
+<img width="1732" height="911" alt="RF07" src="https://github.com/user-attachments/assets/055b6a56-eb05-4d06-a259-47f0b9b7f8e6" />
 
 #### Requisito atendido
 
