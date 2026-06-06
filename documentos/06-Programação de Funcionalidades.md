@@ -156,7 +156,7 @@ Tainara Lorraine Carvalho
 
 #### Artefatos da funcionalidade
 
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/blob/main/codigo-fonte/src/pontos.html
 
 #### Estrutura de Dados
 
