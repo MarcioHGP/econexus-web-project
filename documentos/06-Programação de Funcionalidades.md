@@ -160,7 +160,7 @@ Tainara Lorraine Carvalho
 
 #### Estrutura de Dados
 
-[Caso exista estrutura de dados, adicione aqui]
+Não Aplicável
 
 #### Instruções de acesso
 
@@ -194,7 +194,7 @@ Tainara Lorraine Carvalho
 
 #### Estrutura de Dados
 
-[Caso exista estrutura de dados, adicione aqui]
+Não Aplicável
 
 #### Instruções de acesso
 
