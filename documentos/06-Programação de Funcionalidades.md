@@ -8,7 +8,8 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 ### Cadastro de Usuários com Distinção de Perfis
 
-[Adicione imagem da funcionalidade/tela]
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/eddee7ca-e64e-489f-a588-55ffad039b99" />
+
 
 #### Requisito atendido
 
@@ -36,7 +37,8 @@ Marlon
 
 ### Login de Usuários com Distinção de Perfis
 
-[Adicione imagem da funcionalidade/tela]
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2c7b9053-d186-4112-89bc-b118d387adb7" />
+
 
 #### Requisito atendido
 
