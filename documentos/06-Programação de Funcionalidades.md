@@ -576,13 +576,7 @@ Rafael
 
 #### Artefatos da funcionalidade
 
-| Arquivo/Artefato                       | Descrição                                                                        |
-| -------------------------------------- | -------------------------------------------------------------------------------- |
-| `copy.html`                            | Estrutura principal da página inicial                                            |
-| Seção "Sobre Nós"                      | Conteúdo institucional da plataforma EcoNexus                                    |
-| Cards "Desafio", "Solução" e "Impacto" | Componentes visuais de apresentação da proposta do projeto                       |
-| CSS Bootstrap 5                        | Framework utilizado para responsividade e layout                                 |
-| Estilos personalizados                 | Ajustes de cores, tipografia e espaçamento conforme identidade visual do projeto |
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/blob/main/codigo-fonte/src/index.html
 
 #### Estrutura de Dados
 
