@@ -296,7 +296,8 @@ Marlon
 
 ### Configurações da Conta
 
-[Adicione imagem da funcionalidade/tela]
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/76ce89cc-67f1-48f2-a08c-0163cdba167d" />
+
 
 #### Requisito atendido
 
@@ -304,7 +305,7 @@ Marlon
 
 #### Artefatos da funcionalidade
 
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
+configuracoes.html
 
 #### Estrutura de Dados
 
