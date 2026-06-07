@@ -266,7 +266,8 @@ Márcio
 
 ### Notificações PUSH de Coleta
 
-[Adicione imagem da funcionalidade/tela]
+<img width="1918" height="1088" alt="image" src="https://github.com/user-attachments/assets/d22b829e-7773-4ac5-a1c9-f6b4b8b0ae66" />
+
 
 #### Requisito atendido
 
@@ -274,7 +275,7 @@ Márcio
 
 #### Artefatos da funcionalidade
 
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
+configuracoes.html
 
 #### Estrutura de Dados
 
@@ -323,7 +324,8 @@ Bernardo
 
 ### Postagem de Itens para Doação
 
-[Adicione imagem da funcionalidade/tela]
+<img width="1918" height="1087" alt="image" src="https://github.com/user-attachments/assets/e8f6d5a3-4134-489e-aec1-a12ecb000386" />
+
 
 #### Requisito atendido
 
@@ -351,7 +353,8 @@ Arthur
 
 ### Aceitação de Solicitações por Cooperativas
 
-[Adicione imagem da funcionalidade/tela]
+<img width="1917" height="1087" alt="image" src="https://github.com/user-attachments/assets/20db39d8-43ef-49ea-8dc7-1dde425821b7" />
+
 
 #### Requisito atendido
 
@@ -359,7 +362,7 @@ Arthur
 
 #### Artefatos da funcionalidade
 
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
+dashboard_cooperativa.html
 
 #### Estrutura de Dados
 
@@ -458,7 +461,8 @@ Márcio
 
 ### Cadastro de Pontos de Descarte
 
-[Adicione imagem da funcionalidade/tela]
+<img width="1900" height="1088" alt="image" src="https://github.com/user-attachments/assets/0a854e56-80f9-46cd-8fc4-a2d8eeaffc8b" />
+
 
 #### Requisito atendido
 
@@ -466,7 +470,7 @@ Márcio
 
 #### Artefatos da funcionalidade
 
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
+dashboard_cooperativa.html
 
 #### Estrutura de Dados
 
