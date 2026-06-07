@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoNexus - Pontos de Coleta</title>
-    <link rel="icon" type="image/x-icon" href="eco_favicon.png">
+    <link rel="icon" type="image/x-icon" href="econexus_logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -90,7 +90,152 @@
         }
 
         footer { background-color: var(--preto); color: var(--branco); text-align: center; padding: 20px 0; font-size: 0.9rem; margin-top: auto; }
-    </style>
+    
+        /* Padronização visual baseada em login.html e cadastro.html */
+        :root {
+            --verde-escuro: #004525;
+            --verde-claro: #72b850;
+            --preto: #000000;
+            --branco: #ffffff;
+        }
+        .full-screen-menu {
+            background: var(--verde-escuro) !important;
+        }
+
+        .full-screen-menu .nav-link {
+            background: var(--preto) !important;
+            color: var(--branco) !important;
+            border: 1px solid var(--branco) !important;
+            border-radius: 20px !important;
+            font-weight: 700 !important;
+        }
+
+        .full-screen-menu .nav-link:hover {
+            background: var(--verde-claro) !important;
+            color: var(--preto) !important;
+            border-color: var(--preto) !important;
+        }
+
+        .card-custom,
+        .metric-card,
+        .card-impacto,
+        .table-container,
+        .card-metrica,
+        .tabela-historico,
+        .info-card,
+        .registration-container,
+        .config-container .btn-config,
+        .overlay-card,
+        .anuncio-card,
+        .modal-box {
+            border: 1px solid var(--preto) !important;
+            border-radius: 20px !important;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        input,
+        textarea,
+        select,
+        .form-control,
+        .form-select,
+        .input-custom,
+        .input-pedido,
+        .select-coop,
+        .textarea-avaliacao,
+        .form-select-custom {
+            border-radius: 5px !important;
+        }
+
+        .btn,
+        .btn-register,
+        .btn-submit-login,
+        .btn-view-all,
+        .btn-forum,
+        .btn-avaliar,
+        .btn-pedir-coleta,
+        .btn-action,
+        .btn-maps,
+        .btn-publicar,
+        .btn-interesse,
+        .btn-submit-form,
+        .btn-eco,
+        .btn-table-action {
+            border-radius: 5px !important;
+        }
+
+        .btn-register,
+        .btn-submit-login,
+        .btn-view-all,
+        .btn-avaliar,
+        .btn-pedir-coleta,
+        .btn-action,
+        .btn-maps,
+        .btn-publicar,
+        .btn-interesse,
+        .btn-submit-form,
+        .btn-eco,
+        .btn-table-action {
+            background-color: var(--verde-escuro) !important;
+            color: var(--branco) !important;
+            border: none !important;
+            transition: 0.3s ease-in-out !important;
+            font-weight: 700 !important;
+        }
+
+        .btn-register:hover,
+        .btn-submit-login:hover,
+        .btn-view-all:hover,
+        .btn-avaliar:hover,
+        .btn-pedir-coleta:hover,
+        .btn-action:hover,
+        .btn-maps:hover,
+        .btn-publicar:hover,
+        .btn-interesse:hover,
+        .btn-submit-form:hover,
+        .btn-eco:hover,
+        .btn-table-action:hover {
+            background-color: var(--verde-claro) !important;
+            color: var(--preto) !important;
+        }
+
+
+        .btn-success,
+        .btn-primary {
+            background-color: var(--verde-escuro) !important;
+            border-color: var(--verde-escuro) !important;
+            color: var(--branco) !important;
+        }
+
+        .btn-success:hover,
+        .btn-primary:hover {
+            background-color: var(--verde-claro) !important;
+            border-color: var(--verde-claro) !important;
+            color: var(--preto) !important;
+        }
+
+        .btn-outline-primary,
+        .btn-outline-secondary {
+            border-color: var(--verde-escuro) !important;
+            color: var(--verde-escuro) !important;
+            background-color: var(--branco) !important;
+        }
+
+        .btn-outline-primary:hover,
+        .btn-outline-secondary:hover {
+            background-color: var(--verde-escuro) !important;
+            color: var(--branco) !important;
+        }        .btn-outline-success {
+            color: var(--verde-escuro) !important;
+            border-color: var(--verde-escuro) !important;
+            border-radius: 5px !important;
+            font-weight: 600 !important;
+        }
+
+        .btn-check:checked + .btn-outline-success {
+            background-color: var(--verde-escuro) !important;
+            border-color: var(--verde-escuro) !important;
+            color: var(--branco) !important;
+        }</style>
 </head>
 <body>
 
@@ -108,7 +253,7 @@
                 <div class="full-screen-menu">
                     <ul class="nav flex-column text-center">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="dashboard_cidadao.html">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" id="dashboardLink" href="dashboard_cidadao.html">Dashboard</a></li>
                         <li class="nav-item"><a class="nav-link" href="pedidos.html">Pedidos</a></li>
                         <li class="nav-item"><a class="nav-link" href="pontos.html">Pontos de Coleta</a></li>
                         <li class="nav-item"><a class="nav-link" href="configuracoes.html">Configurações</a></li>
@@ -155,6 +300,9 @@
     </footer>
 
     <script>
+        // ── Verificação de sessão ─────────────────────────────────────────────
+        if (!localStorage.getItem('usuarioLogado')) { window.location.href = 'login.html'; }
+
         // Array com todos os 25 pontos sincronizados
         const pontosColeta = [
             { id: 1, bairro: "BARREIRO DE BAIXO", endereco: "Rua Vicente de Azevedo, 301 - Gelu Barreiro", materiais: ["Papel", "Metal", "Plástico", "Isopor", "Vidro"], horario: "Seg a Sex: 7h às 17h, Sáb: 8h às 12h" },
@@ -183,17 +331,6 @@
             { id: 24, bairro: "ZOOLÓGICO", endereco: "Diversos pontos internos (Aquário/Administração)", materiais: ["Papel", "Metal", "Plástico", "Isopor", "Vidro"], horario: "Ter a Dom: 8h às 16h" },
             { id: 25, bairro: "RIO BRANCO", endereco: "Rua Augusto dos Anjos, 1.983 - URPV Rio Branco", materiais: ["Papel", "Metal", "Plástico", "Isopor", "Vidro"], horario: "Seg a Sex: 7h às 18h, Sáb e Dom: 7h40 às 16h" }
         ];
-
-        // ── Verificação de sessão ────────────────────────────────────────────────
-        (function() {
-            if (!localStorage.getItem('usuarioLogado')) {
-                window.location.href = 'login.html';
-            }
-        })();
-
-        // ── Guard de sessão ───────────────────────────────────────────────────────
-        if (!localStorage.getItem('usuarioLogado')) { window.location.href = 'login.html'; }
-
         // Mescla pontos fixos com os extras cadastrados pelas cooperativas
         function obterTodosPontos() {
             const extras = JSON.parse(localStorage.getItem('pontosExtras') || '[]');
@@ -311,7 +448,14 @@
 
         window.onload = () => {
             const user = JSON.parse(localStorage.getItem('usuarioLogado'));
-            if (user) document.getElementById('navUserName').innerText = user.nome.split(' ')[0];
+            if (user) {
+                document.getElementById('navUserName').innerText = user.nome.split(' ')[0];
+                const dashboardLink = document.getElementById('dashboardLink');
+                if (dashboardLink && user.tipo === 'cooperativa') {
+                    dashboardLink.href = 'dashboard_cooperativa.html';
+                    dashboardLink.innerText = 'Painel Principal';
+                }
+            }
             carregarPagina();
         };
     </script>

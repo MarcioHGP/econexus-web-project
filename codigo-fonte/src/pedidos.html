@@ -3,22 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Econexus - Histórico de Descartes</title>
-    <link rel="icon" type="image/x-icon" href="eco_favicon.png">
+    <title>Econexus - Pedidos de Coleta</title>
+    <link rel="icon" type="image/x-icon" href="econexus_logo.png">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
     <style>
-        :root {
-            --verde-escuro: #004525;
-            --verde-claro: #72b850;
-            --preto: #000000;
-            --branco: #ffffff;
-            --cinza-fundo: #f8f9fa;
-        }
-
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
 
         :root {
             --verde-escuro: #004525;
@@ -52,8 +44,8 @@
             background: white;
             border-radius: 20px;
             padding: 30px;
-            border: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--preto);
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
             transition: 0.3s;
         }
         .card-impacto:hover { transform: translateY(-5px); }
@@ -62,15 +54,16 @@
             background: white;
             border-radius: 20px;
             padding: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--preto);
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
         }
         .thead-dark { background-color: var(--verde-escuro); color: white; }
 
         /* Pedidos de coleta */
         .pedido-card {
-            background: #f8f9fa;
-            border: 1px solid #e0e0e0;
-            border-radius: 14px;
+            background: var(--branco);
+            border: 1px solid #ccc;
+            border-radius: 10px;
             padding: 16px 18px;
             transition: 0.2s;
         }
@@ -86,6 +79,7 @@
         .status-pendente  { background: #fff3cd; color: #856404;  border: 1px solid #ffc107; }
         .status-confirmado{ background: #d1e7dd; color: #0a6640;  border: 1px solid #72b850; }
         .status-concluido { background: #cfe2ff; color: #084298;  border: 1px solid #0d6efd; }
+        .status-recusado  { background: #f8d7da; color: #842029;  border: 1px solid #dc3545; }
 
         .secao-titulo {
             font-weight: 700;
@@ -110,8 +104,198 @@
         }
         .btn-cancelar:hover { background: #dc3545; color: white; }
 
+        .btn-eco {
+            background-color: var(--verde-escuro);
+            color: var(--branco);
+            border: none;
+            padding: 10px 18px;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-eco:hover { background-color: var(--verde-claro); color: var(--preto); }
+
+        .btn-aceitar {
+            background-color: var(--verde-escuro);
+            color: var(--branco);
+            border: none;
+            border-radius: 5px;
+            padding: 6px 14px;
+            font-size: 0.78rem;
+            font-weight: bold;
+            transition: 0.3s ease-in-out;
+        }
+        .btn-aceitar:hover { background-color: var(--verde-claro); color: var(--preto); }
+
+        .btn-recusar {
+            background: none;
+            border: 1px solid #dc3545;
+            color: #dc3545;
+            border-radius: 5px;
+            padding: 6px 14px;
+            font-size: 0.78rem;
+            font-weight: bold;
+            transition: 0.3s ease-in-out;
+        }
+        .btn-recusar:hover { background: #dc3545; color: var(--branco); }
+
+        .filtro-btn {
+            border: 1px solid var(--verde-escuro);
+            color: var(--verde-escuro);
+            background: var(--branco);
+        }
+
         footer { background-color: var(--preto); color: var(--branco); text-align: center; padding: 20px 0; font-size: 0.9rem; margin-top: auto; }
-    </style>
+    
+        /* Padronização visual baseada em login.html e cadastro.html */
+        :root {
+            --verde-escuro: #004525;
+            --verde-claro: #72b850;
+            --preto: #000000;
+            --branco: #ffffff;
+        }
+        .full-screen-menu {
+            background: var(--verde-escuro) !important;
+        }
+
+        .full-screen-menu .nav-link {
+            background: var(--preto) !important;
+            color: var(--branco) !important;
+            border: 1px solid var(--branco) !important;
+            border-radius: 20px !important;
+            font-weight: 700 !important;
+        }
+
+        .full-screen-menu .nav-link:hover {
+            background: var(--verde-claro) !important;
+            color: var(--preto) !important;
+            border-color: var(--preto) !important;
+        }
+
+        .card-custom,
+        .metric-card,
+        .card-impacto,
+        .table-container,
+        .card-metrica,
+        .tabela-historico,
+        .info-card,
+        .registration-container,
+        .config-container .btn-config,
+        .overlay-card,
+        .anuncio-card,
+        .modal-box {
+            border: 1px solid var(--preto) !important;
+            border-radius: 20px !important;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        input,
+        textarea,
+        select,
+        .form-control,
+        .form-select,
+        .input-custom,
+        .input-pedido,
+        .select-coop,
+        .textarea-avaliacao,
+        .form-select-custom {
+            border-radius: 5px !important;
+        }
+
+        .btn,
+        .btn-register,
+        .btn-submit-login,
+        .btn-view-all,
+        .btn-forum,
+        .btn-avaliar,
+        .btn-pedir-coleta,
+        .btn-action,
+        .btn-maps,
+        .btn-publicar,
+        .btn-interesse,
+        .btn-submit-form,
+        .btn-eco,
+        .btn-table-action {
+            border-radius: 5px !important;
+        }
+
+        .btn-register,
+        .btn-submit-login,
+        .btn-view-all,
+        .btn-avaliar,
+        .btn-pedir-coleta,
+        .btn-action,
+        .btn-maps,
+        .btn-publicar,
+        .btn-interesse,
+        .btn-submit-form,
+        .btn-eco,
+        .btn-table-action {
+            background-color: var(--verde-escuro) !important;
+            color: var(--branco) !important;
+            border: none !important;
+            transition: 0.3s ease-in-out !important;
+            font-weight: 700 !important;
+        }
+
+        .btn-register:hover,
+        .btn-submit-login:hover,
+        .btn-view-all:hover,
+        .btn-avaliar:hover,
+        .btn-pedir-coleta:hover,
+        .btn-action:hover,
+        .btn-maps:hover,
+        .btn-publicar:hover,
+        .btn-interesse:hover,
+        .btn-submit-form:hover,
+        .btn-eco:hover,
+        .btn-table-action:hover {
+            background-color: var(--verde-claro) !important;
+            color: var(--preto) !important;
+        }
+
+
+        .btn-success,
+        .btn-primary {
+            background-color: var(--verde-escuro) !important;
+            border-color: var(--verde-escuro) !important;
+            color: var(--branco) !important;
+        }
+
+        .btn-success:hover,
+        .btn-primary:hover {
+            background-color: var(--verde-claro) !important;
+            border-color: var(--verde-claro) !important;
+            color: var(--preto) !important;
+        }
+
+        .btn-outline-primary,
+        .btn-outline-secondary {
+            border-color: var(--verde-escuro) !important;
+            color: var(--verde-escuro) !important;
+            background-color: var(--branco) !important;
+        }
+
+        .btn-outline-primary:hover,
+        .btn-outline-secondary:hover {
+            background-color: var(--verde-escuro) !important;
+            color: var(--branco) !important;
+        }        .btn-outline-success {
+            color: var(--verde-escuro) !important;
+            border-color: var(--verde-escuro) !important;
+            border-radius: 5px !important;
+            font-weight: 600 !important;
+        }
+
+        .btn-check:checked + .btn-outline-success {
+            background-color: var(--verde-escuro) !important;
+            border-color: var(--verde-escuro) !important;
+            color: var(--branco) !important;
+        }</style>
 </head>
 <body>
 
@@ -129,7 +313,7 @@
                 <div class="full-screen-menu">
                     <ul class="nav flex-column text-center">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="dashboard_cidadao.html">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" id="dashboardLink" href="dashboard_cidadao.html">Dashboard</a></li>
                         <li class="nav-item"><a class="nav-link" href="pedidos.html">Pedidos</a></li>
                         <li class="nav-item"><a class="nav-link" href="pontos.html">Pontos de Coleta</a></li>
                         <li class="nav-item"><a class="nav-link" href="configuracoes.html">Configurações</a></li>
@@ -144,12 +328,12 @@
 
     <main class="container">
         <div class="mb-5 text-center text-md-start">
-            <h1 class="fw-bold" style="color: var(--preto);">Olá, <span id="welcomeName">Cidadão</span>!</h1>
-            <p class="text-secondary">Veja o impacto positivo que você gerou no planeta.</p>
+            <h1 class="fw-bold" style="color: var(--preto);" id="pageTitle">Olá, <span id="welcomeName">Cidadão</span>!</h1>
+            <p class="text-secondary" id="pageSubtitle">Veja o impacto positivo que você gerou no planeta.</p>
         </div>
 
         <!-- Cards de impacto -->
-        <div class="row g-4 mb-5">
+        <div class="row g-4 mb-5" id="impactSection">
             <div class="col-md-4">
                 <div class="card-impacto text-center">
                     <h2 class="texto-verde">15kg</h2>
@@ -171,7 +355,7 @@
         </div>
 
         <!-- Últimos descartes -->
-        <div class="table-container mb-4">
+        <div class="table-container mb-4" id="discardSection">
             <h4 class="fw-bold mb-4"><i class="bi bi-clock-history me-2"></i>Últimos Descartes</h4>
             <div class="table-responsive">
                 <table class="table table-hover align-middle">
@@ -204,9 +388,8 @@
         <!-- Pedidos de coleta -->
         <div class="table-container mb-4">
             <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
-                <h4 class="fw-bold m-0"><i class="bi bi-truck me-2"></i>Meus Pedidos de Coleta</h4>
-                <a href="dashboard_cidadao.html#solicitar" class="btn btn-sm fw-bold rounded-pill px-4"
-                   style="background:var(--verde-escuro);color:white;border:none;text-decoration:none;">
+                <h4 class="fw-bold m-0" id="pedidosTitle"><i class="bi bi-truck me-2"></i>Meus Pedidos de Coleta</h4>
+                <a href="dashboard_cidadao.html#solicitar" class="btn-eco" id="novoPedidoBtn">
                     <i class="bi bi-plus-circle me-1"></i>Novo Pedido
                 </a>
             </div>
@@ -217,13 +400,14 @@
                 <button class="btn btn-sm rounded-pill px-3 fw-bold filtro-btn" data-status="Pendente" onclick="filtrarPedidos(this)">Pendente</button>
                 <button class="btn btn-sm rounded-pill px-3 fw-bold filtro-btn" data-status="Confirmado" onclick="filtrarPedidos(this)">Confirmado</button>
                 <button class="btn btn-sm rounded-pill px-3 fw-bold filtro-btn" data-status="Concluído" onclick="filtrarPedidos(this)">Concluído</button>
+                <button class="btn btn-sm rounded-pill px-3 fw-bold filtro-btn" data-status="Recusado" onclick="filtrarPedidos(this)">Recusado</button>
             </div>
 
             <div class="d-flex flex-column gap-3" id="listaPedidos">
                 <div class="text-center text-secondary py-5" id="pedidosEmpty">
                     <i class="bi bi-truck fs-2 d-block mb-2 opacity-40"></i>
-                    <span class="small">Nenhum pedido de coleta realizado ainda.</span><br>
-                    <a href="dashboard_cidadao.html" class="small text-success fw-bold mt-1 d-inline-block">Solicitar agora →</a>
+                    <span class="small" id="emptyMessage">Nenhum pedido de coleta realizado ainda.</span><br>
+                    <a href="dashboard_cidadao.html#solicitar" class="small text-success fw-bold mt-1 d-inline-block" id="emptyAction">Solicitar agora →</a>
                 </div>
             </div>
         </div>
@@ -236,23 +420,18 @@
     </footer>
 
     <script>
-        // ── Verificação de sessão ────────────────────────────────────────────────
-        (function() {
-            if (!localStorage.getItem('usuarioLogado')) {
-                window.location.href = 'login.html';
-            }
-        })();
-
-        // ── Guard de sessão ───────────────────────────────────────────────────────
+        // ── Verificação de sessão ─────────────────────────────────────────────
         if (!localStorage.getItem('usuarioLogado')) { window.location.href = 'login.html'; }
 
         const statusClass = {
             'Pendente':   'status-pendente',
             'Confirmado': 'status-confirmado',
-            'Concluído':  'status-concluido'
+            'Concluído':  'status-concluido',
+            'Recusado':   'status-recusado'
         };
 
         let filtroAtivo = '';
+        let usuarioAtual = null;
 
         function filtrarPedidos(btn) {
             document.querySelectorAll('.filtro-btn').forEach(b => {
@@ -266,13 +445,29 @@
             renderPedidos();
         }
 
+        function atualizarStatusPedido(id, novoStatus) {
+            const acao = novoStatus === 'Confirmado' ? 'aceitar' : 'recusar';
+            if (!confirm(`Deseja ${acao} este pedido de coleta?`)) return;
+
+            let pedidos = JSON.parse(localStorage.getItem('pedidosColeta') || '[]');
+            const idx = pedidos.findIndex(p => p.id === id);
+            if (idx === -1) return;
+
+            pedidos[idx].status = novoStatus;
+            pedidos[idx].respondidoEm = Date.now();
+            localStorage.setItem('pedidosColeta', JSON.stringify(pedidos));
+            renderPedidos();
+        }
+
         function renderPedidos() {
             const lista  = document.getElementById('listaPedidos');
             const empty  = document.getElementById('pedidosEmpty');
-            const user   = JSON.parse(localStorage.getItem('usuarioLogado'));
+            const user   = usuarioAtual || JSON.parse(localStorage.getItem('usuarioLogado'));
             const todos  = JSON.parse(localStorage.getItem('pedidosColeta') || '[]');
 
-            const meus = (user ? todos.filter(p => p.autorEmail === user.email) : todos)
+            const meus = (user && user.tipo === 'cooperativa'
+                ? todos.filter(p => p.cooperativa === user.nome)
+                : (user ? todos.filter(p => p.autorEmail === user.email) : todos))
                 .filter(p => filtroAtivo === '' || p.status === filtroAtivo);
 
             lista.querySelectorAll('.pedido-card').forEach(el => el.remove());
@@ -287,18 +482,30 @@
                 const [ano, mes, dia] = p.data.split('-');
                 const dataFmt = `${dia}/${mes}/${ano}`;
                 const dataPedido = new Date(p.ts).toLocaleDateString('pt-BR');
-                const podeCancelar = p.status === 'Pendente';
+                const isCooperativa = user && user.tipo === 'cooperativa';
+                const podeCancelar = !isCooperativa && p.status === 'Pendente';
+                const podeResponder = isCooperativa && p.status === 'Pendente';
+                const nomePrincipal = isCooperativa ? p.autorNome : p.cooperativa;
+                const iconePrincipal = isCooperativa ? 'bi-person-fill' : 'bi-building';
                 const div = document.createElement('div');
                 div.className = 'pedido-card';
                 div.innerHTML = `
                     <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
                         <div>
                             <span class="fw-bold text-dark" style="font-size:0.95rem;">
-                                <i class="bi bi-building me-1 text-success"></i>${p.cooperativa}
+                                <i class="bi ${iconePrincipal} me-1 text-success"></i>${nomePrincipal}
                             </span>
                         </div>
-                        <div class="d-flex align-items-center gap-2">
+                        <div class="d-flex align-items-center gap-2 flex-wrap justify-content-end">
                             <span class="pedido-status ${statusClass[p.status] || 'status-pendente'}">${p.status}</span>
+                            ${podeResponder ? `
+                                <button class="btn-aceitar" onclick="atualizarStatusPedido(${p.id}, 'Confirmado')">
+                                    <i class="bi bi-check-lg me-1"></i>Aceitar
+                                </button>
+                                <button class="btn-recusar" onclick="atualizarStatusPedido(${p.id}, 'Recusado')">
+                                    <i class="bi bi-x-lg me-1"></i>Recusar
+                                </button>
+                            ` : ''}
                             ${podeCancelar ? `<button class="btn-cancelar" onclick="cancelarPedido(${p.id})"><i class="bi bi-x-circle me-1"></i>Cancelar</button>` : ''}
                         </div>
                     </div>
@@ -308,6 +515,7 @@
                     <div class="d-flex flex-wrap gap-3 text-secondary" style="font-size:0.8rem;">
                         <span><i class="bi bi-calendar-event me-1 text-success"></i>Coleta em: <strong class="text-dark">${dataFmt}</strong></span>
                         <span><i class="bi bi-geo-alt me-1 text-success"></i>${p.endereco}</span>
+                        ${isCooperativa ? `<span><i class="bi bi-envelope me-1 text-success"></i>${p.autorEmail || 'E-mail não informado'}</span>` : ''}
                         <span class="ms-auto opacity-60" style="font-size:0.72rem;">Pedido em ${dataPedido}</span>
                     </div>
                     ${p.obs ? `<div class="mt-2 fst-italic text-secondary border-top pt-2" style="font-size:0.8rem;"><i class="bi bi-chat-left-text me-1"></i>${p.obs}</div>` : ''}
@@ -328,9 +536,23 @@
             const dados = localStorage.getItem('usuarioLogado');
             if (dados) {
                 const user = JSON.parse(dados);
+                usuarioAtual = user;
                 const nome = user.nome.split(' ')[0];
                 document.getElementById('navUserName').innerText = nome;
                 document.getElementById('welcomeName').innerText = nome;
+                const dashboardLink = document.getElementById('dashboardLink');
+                if (dashboardLink && user.tipo === 'cooperativa') {
+                    dashboardLink.href = 'dashboard_cooperativa.html';
+                    dashboardLink.innerText = 'Painel Principal';
+                    document.getElementById('pageTitle').innerHTML = `Olá, ${user.nome}!`;
+                    document.getElementById('pageSubtitle').innerText = 'Acompanhe e responda as solicitações de coleta recebidas.';
+                    document.getElementById('impactSection').style.display = 'none';
+                    document.getElementById('discardSection').style.display = 'none';
+                    document.getElementById('pedidosTitle').innerHTML = '<i class="bi bi-inbox-fill me-2"></i>Pedidos Recebidos dos Cidadãos';
+                    document.getElementById('novoPedidoBtn').style.display = 'none';
+                    document.getElementById('emptyMessage').innerText = 'Nenhum cidadão solicitou coleta para esta cooperativa ainda.';
+                    document.getElementById('emptyAction').style.display = 'none';
+                }
             } else {
                 window.location.href = 'login.html';
             }

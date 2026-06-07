@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoNexus - Dashboard Cidadão</title>
-    <link rel="icon" type="image/x-icon" href="eco_favicon.png">
+    <link rel="icon" type="image/x-icon" href="econexus_logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -301,7 +301,152 @@
             font-size: 0.9rem;
             margin-top: auto;
         }
-    </style>
+    
+        /* Padronização visual baseada em login.html e cadastro.html */
+        :root {
+            --verde-escuro: #004525;
+            --verde-claro: #72b850;
+            --preto: #000000;
+            --branco: #ffffff;
+        }
+        .full-screen-menu {
+            background: var(--verde-escuro) !important;
+        }
+
+        .full-screen-menu .nav-link {
+            background: var(--preto) !important;
+            color: var(--branco) !important;
+            border: 1px solid var(--branco) !important;
+            border-radius: 20px !important;
+            font-weight: 700 !important;
+        }
+
+        .full-screen-menu .nav-link:hover {
+            background: var(--verde-claro) !important;
+            color: var(--preto) !important;
+            border-color: var(--preto) !important;
+        }
+
+        .card-custom,
+        .metric-card,
+        .card-impacto,
+        .table-container,
+        .card-metrica,
+        .tabela-historico,
+        .info-card,
+        .registration-container,
+        .config-container .btn-config,
+        .overlay-card,
+        .anuncio-card,
+        .modal-box {
+            border: 1px solid var(--preto) !important;
+            border-radius: 20px !important;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        input,
+        textarea,
+        select,
+        .form-control,
+        .form-select,
+        .input-custom,
+        .input-pedido,
+        .select-coop,
+        .textarea-avaliacao,
+        .form-select-custom {
+            border-radius: 5px !important;
+        }
+
+        .btn,
+        .btn-register,
+        .btn-submit-login,
+        .btn-view-all,
+        .btn-forum,
+        .btn-avaliar,
+        .btn-pedir-coleta,
+        .btn-action,
+        .btn-maps,
+        .btn-publicar,
+        .btn-interesse,
+        .btn-submit-form,
+        .btn-eco,
+        .btn-table-action {
+            border-radius: 5px !important;
+        }
+
+        .btn-register,
+        .btn-submit-login,
+        .btn-view-all,
+        .btn-avaliar,
+        .btn-pedir-coleta,
+        .btn-action,
+        .btn-maps,
+        .btn-publicar,
+        .btn-interesse,
+        .btn-submit-form,
+        .btn-eco,
+        .btn-table-action {
+            background-color: var(--verde-escuro) !important;
+            color: var(--branco) !important;
+            border: none !important;
+            transition: 0.3s ease-in-out !important;
+            font-weight: 700 !important;
+        }
+
+        .btn-register:hover,
+        .btn-submit-login:hover,
+        .btn-view-all:hover,
+        .btn-avaliar:hover,
+        .btn-pedir-coleta:hover,
+        .btn-action:hover,
+        .btn-maps:hover,
+        .btn-publicar:hover,
+        .btn-interesse:hover,
+        .btn-submit-form:hover,
+        .btn-eco:hover,
+        .btn-table-action:hover {
+            background-color: var(--verde-claro) !important;
+            color: var(--preto) !important;
+        }
+
+
+        .btn-success,
+        .btn-primary {
+            background-color: var(--verde-escuro) !important;
+            border-color: var(--verde-escuro) !important;
+            color: var(--branco) !important;
+        }
+
+        .btn-success:hover,
+        .btn-primary:hover {
+            background-color: var(--verde-claro) !important;
+            border-color: var(--verde-claro) !important;
+            color: var(--preto) !important;
+        }
+
+        .btn-outline-primary,
+        .btn-outline-secondary {
+            border-color: var(--verde-escuro) !important;
+            color: var(--verde-escuro) !important;
+            background-color: var(--branco) !important;
+        }
+
+        .btn-outline-primary:hover,
+        .btn-outline-secondary:hover {
+            background-color: var(--verde-escuro) !important;
+            color: var(--branco) !important;
+        }        .btn-outline-success {
+            color: var(--verde-escuro) !important;
+            border-color: var(--verde-escuro) !important;
+            border-radius: 5px !important;
+            font-weight: 600 !important;
+        }
+
+        .btn-check:checked + .btn-outline-success {
+            background-color: var(--verde-escuro) !important;
+            border-color: var(--verde-escuro) !important;
+            color: var(--branco) !important;
+        }</style>
 </head>
 <body>
 
@@ -389,7 +534,7 @@
         </div>
 
         <!-- Seção de Avaliação de Cooperativas -->
-        <div class="row g-4 mt-2">
+        <div class="row g-4 mt-2" id="solicitar">
 
             <!-- Formulário de avaliação -->
             <div class="col-lg-5">
@@ -500,16 +645,11 @@
     </footer>
 
     <script>
-        // ── Verificação de sessão ────────────────────────────────────────────────
-        (function() {
-            if (!localStorage.getItem('usuarioLogado')) {
-                window.location.href = 'login.html';
-            }
-        })();
+        // ── Verificação de sessão ─────────────────────────────────────────────
+        if (!localStorage.getItem('usuarioLogado')) { window.location.href = 'login.html'; }
+
     </script>
     <script>
-        // ── Guard de sessão ───────────────────────────────────────────────────────
-        if (!localStorage.getItem('usuarioLogado')) { window.location.href = 'login.html'; }
     </script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
@@ -618,7 +758,8 @@
         function carregarMuralAvisos() {
             const mural = document.getElementById('muralAvisos');
             const avisos = JSON.parse(localStorage.getItem('avisos') || '[]');
-            const hoje = new Date().toISOString().split('T')[0];
+            const agora = new Date();
+            const hoje = `${agora.getFullYear()}-${String(agora.getMonth() + 1).padStart(2, '0')}-${String(agora.getDate()).padStart(2, '0')}`;
 
             const avisosValidos = avisos.filter(aviso => {
                 return hoje >= aviso.dataInicio && hoje <= aviso.dataFim;
