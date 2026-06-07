@@ -353,7 +353,8 @@ Arthur
 
 ### Aceitação de Solicitações por Cooperativas
 
-<img width="1917" height="1087" alt="image" src="https://github.com/user-attachments/assets/20db39d8-43ef-49ea-8dc7-1dde425821b7" />
+<img width="1898" height="1087" alt="image" src="https://github.com/user-attachments/assets/e679a1be-f0e2-4c60-8390-2f132adbc163" />
+
 
 
 #### Requisito atendido
@@ -490,7 +491,8 @@ Arthur
 
 ### Reivindicação de Itens para Doação
 
-[Adicione imagem da funcionalidade/tela]
+<img width="1918" height="1087" alt="image" src="https://github.com/user-attachments/assets/6d65b608-859b-4564-b154-84456ce987b3" />
+
 
 #### Requisito atendido
 
@@ -571,7 +573,8 @@ Mariana Guimarães Melo
 
 #### Estrutura de Dados
 
-[Caso exista estrutura de dados, adicione aqui]
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6654138d-cd1a-4b8d-aaca-55d79eaeb4b9" />
+
 
 #### Instruções de acesso
 
