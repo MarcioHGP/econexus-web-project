@@ -27,7 +27,7 @@
 
                 /* Hamburger / Menu Fullscreen */
         .logo-img { width: 50px; height: 50px; object-fit: contain; }
-        .hamburger-label svg { width: 30px; height: auto; }
+        svg { width: 30px; height: auto; }
         #menu-toggle { display: none; }
         .hamburger-label { cursor: pointer; z-index: 1001; padding: 10px; }
         .user-link { padding: 8px 20px; border-radius: 50px; background: white; color: black; text-decoration: none; font-weight: 600; transition: 0.3s; }
@@ -109,7 +109,7 @@
                 <h2 class="fw-bold m-0 text-dark">Meu Histórico de Descartes</h2>
                 <p class="text-secondary m-0">Acompanhe o impacto ecológico das suas ações sustentáveis.</p>
             </div>
-            <a href="dashboard_cidadao.html" class="btn btn-success rounded-3 px-4" style="background-color: var(--verde-claro); border: none;">
+            <a href="dashboard_cidadao.html" class="btn btn-success rounded-3 px-4" style="background-color: var(--verde-eco); border: none;">
                 <i class="bi bi-plus-circle me-2"></i>Novo Descarte
             </a>
         </div>
@@ -188,23 +188,13 @@
 
     </main>
 
-    <footer class="bg-black text-white text-center py-4 mt-auto">
+        <footer class="bg-black text-white text-center py-4 mt-auto">
         <div class="container">
             <p class="m-0 opacity-75">&copy; 2026 Econexus. Sustentabilidade e transparência de ponta a ponta.</p>
         </div>
     </footer>
 
     <script>
-        // ── Verificação de sessão ────────────────────────────────────────────────
-        (function() {
-            if (!localStorage.getItem('usuarioLogado')) {
-                window.location.href = 'login.html';
-            }
-        })();
-
-        // ── Guard de sessão ───────────────────────────────────────────────────────
-        if (!localStorage.getItem('usuarioLogado')) { window.location.href = 'login.html'; }
-
         // Histórico de exemplo estático caso o LocalStorage esteja limpo
         const dadosPadraoHistorico = [
             { data: "24/05/2026", cooperativa: "Cooperativa Centro Recicla", material: "Plástico", peso: 4.5, pontos: 45, status: "Concluído" },
