@@ -37,7 +37,7 @@ Marlon
 
 ### Login de Usuários com Distinção de Perfis
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2c7b9053-d186-4112-89bc-b118d387adb7" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/07147766-4c6c-4d21-a144-01018624cffd" />
 
 
 #### Requisito atendido
@@ -66,7 +66,8 @@ Rafael
 
 ### Mapa Interativo de Pontos Recicláveis
 
-[Adicione imagem da funcionalidade/tela]
+<img width="1904" height="1077" alt="image" src="https://github.com/user-attachments/assets/8b8374cd-023d-49e0-8c3a-4d3244f7d9ee" />
+
 
 #### Requisito atendido
 
