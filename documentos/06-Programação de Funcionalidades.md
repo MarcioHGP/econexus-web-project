@@ -385,16 +385,7 @@ Arthur
 **RF-13:** Permitir avaliação de cooperativas.
 
 #### Artefatos da funcionalidade
-
-| Arquivo/Artefato                      | Descrição                               |
-| ------------------------------------- | --------------------------------------- |
-| Componente HTML de Avaliação          | Interface para envio de avaliações      |
-| Campo "Nota"                          | Seleção de avaliação de 1 a 5 estrelas  |
-| Campo "Comentário"                    | Registro da opinião do usuário          |
-| Botão "Enviar Avaliação"              | Acionamento do processo de envio        |
-| Função JavaScript `enviarAvaliacao()` | Validação e processamento da avaliação  |
-| Mensagem de confirmação               | Feedback visual após envio da avaliação |
-
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/blob/main/codigo-fonte/src/dashboard_cooperativa.html
 
 
 #### Estrutura de Dados
