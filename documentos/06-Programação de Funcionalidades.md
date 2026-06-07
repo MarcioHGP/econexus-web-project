@@ -17,7 +17,7 @@ Implementação da aplicação descritas por meio dos requisitos codificados.
 
 #### Artefatos da funcionalidade
 
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
+login.html
 
 #### Estrutura de Dados
 
@@ -46,7 +46,7 @@ Marlon
 
 #### Artefatos da funcionalidade
 
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
+cadastro.html
 
 #### Estrutura de Dados
 
@@ -75,11 +75,8 @@ Rafael
 
 #### Artefatos da funcionalidade
 
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
-
-#### Estrutura de Dados
-
-[Caso exista estrutura de dados, adicione aqui]
+dashboard_cidadao.html
+dashboard_cooperativa.html
 
 #### Instruções de acesso
 
@@ -95,7 +92,8 @@ Bernardo
 
 ### Anexar Fotos na Solicitação de Coleta
 
-[Adicione imagem da funcionalidade/tela]
+<img width="1918" height="1091" alt="image" src="https://github.com/user-attachments/assets/054ff37d-ae06-41e6-a1b4-70272ec4d47b" />
+
 
 #### Requisito atendido
 
@@ -103,7 +101,7 @@ Bernardo
 
 #### Artefatos da funcionalidade
 
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
+forum.html
 
 #### Estrutura de Dados
 
