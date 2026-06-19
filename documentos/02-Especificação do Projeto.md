@@ -64,8 +64,7 @@
 | RF-13 | visualizar histórico e impacto ambiental                    | Usuário                            | Acessar histórico e métricas                                          | Acompanhar contribuição ambiental                                  | Márcio            | Histórico               | Alta       |
 | RF-14 | cadastro de pontos de descarte                              | Representante de Ponto de Descarte | Cadastrar dados institucionais e geográficos                          | Permitir visualização de pontos próximos                            | Arthur            | Cadastro                | Alta       |
 | RF-15 | reivindicação de itens para doação                          | Usuário                            | Marcar itens como reivindicados                                       | Permitir reivindicação de itens                                     | Rafael            | Fórum de itens          | Baixa      |
-| RF-16 | exibir tela inicial e sobre nós                             | Usuário                            | Visualizar informações                                                | Informa o usuário sobre o projeto                                           | Mariana           | Tela Inicial    | Alta       |
-| RF-17 | avisos de utilidade pública                                 | Administrador                      | Publicar alertas                                                      | Manter comunidade informada                                         | Márcio Henrique   | Dashboard               | Média      |
+| RF-16 | avisos de utilidade pública                                 | Administrador                      | Publicar alertas                                                      | Manter comunidade informada                                         | Márcio Henrique   | Dashboard               | Média      |
 
 ### Requisitos não Funcionais
 
