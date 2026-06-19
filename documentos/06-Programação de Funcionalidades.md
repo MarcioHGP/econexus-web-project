@@ -148,38 +148,9 @@ O arquivo de imagem manipulado por meio de um `FormData` contendo o binário, ou
 #### Responsável
 
 Tainara Lorraine Carvalho
-
 ---
 
 ## RF-05
-
-### Funcionalidade Não Especificada
-
-<p><i>Imagem da funcionalidade não fornecida.</i></p>
-
-#### Requisito atendido
-
-**RF-05:** Não aplicável / Descrição não fornecida.
-
-#### Artefatos da funcionalidade
-
-Não aplicável.
-
-#### Estrutura de Dados
-
-Não aplicável.
-
-#### Instruções de acesso
-
-Não aplicável.
-
-#### Responsável
-
-Não informado
-
----
-
-## RF-06
 
 ### Filtro por Tipo de Material
 
@@ -187,7 +158,7 @@ Não informado
 
 #### Requisito atendido
 
-**RF-06:** Permitir filtro por tipo de material.
+**RF-05:** Permitir filtro por tipo de material.
 
 #### Artefatos da funcionalidade
 
@@ -213,7 +184,7 @@ Tainara Lorraine Carvalho
 
 ---
 
-## RF-07
+## RF-06
 
 ### Solicitação de Coleta para Cooperativa
 
@@ -221,7 +192,7 @@ Tainara Lorraine Carvalho
 
 #### Requisito atendido
 
-**RF-07:** Permitir solicitações de coleta para cooperativa.
+**RF-06:** Permitir solicitações de coleta para cooperativa.
 
 #### Artefatos da funcionalidade
 
@@ -252,7 +223,7 @@ Tainara Lorraine Carvalho
 
 ---
 
-## RF-08
+## RF-07
 
 ### Cancelamento de Solicitação
 
@@ -260,7 +231,7 @@ Tainara Lorraine Carvalho
 
 #### Requisito atendido
 
-**RF-08:** Permitir cancelamento de solicitação.
+**RF-07:** Permitir cancelamento de solicitação.
 
 #### Artefatos da funcionalidade
 
@@ -289,7 +260,7 @@ Márcio
 
 ---
 
-## RF-09
+## RF-08
 
 ### Notificações PUSH de Coleta
 
@@ -297,7 +268,7 @@ Márcio
 
 #### Requisito atendido
 
-**RF-09:** Notificar usuário D-1 via PUSH.
+**RF-08:** Notificar usuário D-1 via PUSH.
 
 #### Artefatos da funcionalidade
 
@@ -320,7 +291,7 @@ Marlon
 
 ---
 
-## RF-10
+## RF-09
 
 ### Configurações da Conta
 
@@ -328,7 +299,7 @@ Marlon
 
 #### Requisito atendido
 
-**RF-10:** Permitir interface de configurações da conta.
+**RF-09:** Permitir interface de configurações da conta.
 
 #### Artefatos da funcionalidade
 
@@ -360,7 +331,7 @@ Bernardo
 
 ---
 
-## RF-11
+## RF-10
 
 ### Postagem de Itens para Doação
 
@@ -368,7 +339,7 @@ Bernardo
 
 #### Requisito atendido
 
-**RF-11:** Permitir postagem de itens para doação.
+**RF-10:** Permitir postagem de itens para doação.
 
 #### Artefatos da funcionalidade
 
@@ -391,7 +362,7 @@ Arthur
 
 ---
 
-## RF-12
+## RF-11
 
 ### Aceitação de Solicitações por Cooperativas
 
@@ -399,7 +370,7 @@ Arthur
 
 #### Requisito atendido
 
-**RF-12:** Permitir cooperativas aceitarem solicitações.
+**RF-11:** Permitir cooperativas aceitarem solicitações.
 
 #### Artefatos da funcionalidade
 
@@ -422,7 +393,7 @@ Arthur
 
 ---
 
-## RF-13
+## RF-12
 
 ### Avaliação de Cooperativas
 
@@ -430,7 +401,7 @@ Arthur
 
 #### Requisito atendido
 
-**RF-13:** Permitir avaliação de cooperativas.
+**RF-12:** Permitir avaliação de cooperativas.
 
 #### Artefatos da funcionalidade
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/blob/main/codigo-fonte/src/dashboard_cooperativa.html
@@ -457,7 +428,7 @@ Mariana Guimarães Melo
 
 ---
 
-## RF-14
+## RF-13
 
 ### Histórico e Impacto Ambiental
 
@@ -465,7 +436,7 @@ Mariana Guimarães Melo
 
 #### Requisito atendido
 
-**RF-14:** Permitir a visualização do histórico de pedidos e o cálculo do impacto ambiental gerado.
+**RF-13:** Permitir a visualização do histórico de pedidos e o cálculo do impacto ambiental gerado.
 
 #### Artefatos da funcionalidade
 
@@ -493,7 +464,7 @@ Márcio
 
 ---
 
-## RF-15
+## RF-14
 
 ### Cadastro de Pontos de Descarte
 
@@ -501,7 +472,7 @@ Márcio
 
 #### Requisito atendido
 
-**RF-15:** Cadastro de pontos de descarte.
+**RF-14:** Cadastro de pontos de descarte.
 
 #### Artefatos da funcionalidade
 
@@ -533,7 +504,7 @@ Arthur
 
 ---
 
-## RF-16
+## RF-15
 
 ### Reivindicação de Itens para Doação
 
@@ -541,7 +512,7 @@ Arthur
 
 #### Requisito atendido
 
-**RF-16:** Reivindicação de itens para doação.
+**RF-15:** Reivindicação de itens para doação.
 
 #### Artefatos da funcionalidade
 
@@ -564,7 +535,7 @@ Rafael
 
 ---
 
-## RF-17
+## RF-16
 
 ### Tela Inicial e Sobre Nós
 
@@ -572,7 +543,7 @@ Rafael
 
 #### Requisito atendido
 
-**RF-17:** Exibir tela inicial e sobre nós.
+**RF-16:** Exibir tela inicial e sobre nós.
 
 #### Artefatos da funcionalidade
 
@@ -598,7 +569,7 @@ Mariana Guimarães Melo
 
 ---
 
-## RF-18
+## RF-17
 
 ### Avisos de Utilidade Pública
 
@@ -606,7 +577,7 @@ Mariana Guimarães Melo
 
 #### Requisito atendido
 
-**RF-18:** Avisos de utilidade pública.
+**RF-17:** Avisos de utilidade pública.
 
 #### Artefatos da funcionalidade
 
