@@ -1,6 +1,6 @@
 # 📊 Relatório de Contribuições do Projeto
 
-**Última atualização:** 19/06/2026 20:07
+**Última atualização:** 19/06/2026 22:39
 
 ---
 
@@ -9,12 +9,12 @@
 | Aluno                     |   Commits |   Linhas+ |   Linhas- |   Arquivos |   Docs Commits |   Docs Arquivos |
 |---------------------------|-----------|-----------|-----------|------------|----------------|-----------------|
 | Arthur544                 |        10 |      1017 |        11 |          8 |              5 |               2 |
-| Bernardo Do Valle Pereira |        73 |      7883 |      4528 |         58 |             47 |               3 |
+| Bernardo Do Valle Pereira |        75 |      7888 |      4559 |         58 |             47 |               3 |
 | Márcio Henrique Paixão    |         7 |       208 |        28 |          7 |              3 |               1 |
 | Rafael Felipe             |         4 |       249 |         2 |          4 |              2 |               1 |
 | Srmarlongs                |        14 |      1575 |        11 |         13 |             10 |               2 |
-| Tainara-Carvalho          |        30 |       785 |       172 |          8 |             27 |               2 |
-| github-actions[bot]       |       133 |       739 |       667 |          3 |            133 |               1 |
+| Tainara-Carvalho          |        31 |       810 |       226 |          8 |             28 |               2 |
+| github-actions[bot]       |       134 |       752 |       682 |          3 |            134 |               1 |
 | github-classroom[bot]     |         1 |       774 |         0 |         19 |              1 |               3 |
 | marciohgpdev              |         1 |         5 |         5 |          1 |              1 |               1 |
 | marianadotmelo            |        35 |       835 |       446 |         14 |             20 |               3 |
@@ -22,7 +22,7 @@
 
 ## 📅 Contribuições Semanais (Todo o Semestre)
 
-**2026-06-12**: Bernardo Do Valle Pereira: 2, github-actions[bot]: 1
+**2026-06-12**: Bernardo Do Valle Pereira: 4, Tainara-Carvalho: 1, github-actions[bot]: 2
 
 **2026-06-05**: Bernardo Do Valle Pereira: 12, Márcio Henrique Paixão: 4, Srmarlongs: 1, Tainara-Carvalho: 8, github-actions[bot]: 29, marianadotmelo: 4
 
@@ -30,9 +30,9 @@
 
 **2026-05-22**: Arthur544: 1
 
-**2026-05-08**: Arthur544: 3, Bernardo Do Valle Pereira: 14, Márcio Henrique Paixão: 1, Rafael Felipe: 3, Srmarlongs: 6, Tainara-Carvalho: 8, github-actions[bot]: 35, marianadotmelo: 12
+**2026-05-08**: Arthur544: 3, Bernardo Do Valle Pereira: 13, Márcio Henrique Paixão: 1, Rafael Felipe: 3, Srmarlongs: 6, Tainara-Carvalho: 8, github-actions[bot]: 34, marianadotmelo: 12
 
-**2026-05-01**: Bernardo Do Valle Pereira: 2, Tainara-Carvalho: 2, github-actions[bot]: 4
+**2026-05-01**: Bernardo Do Valle Pereira: 3, Tainara-Carvalho: 2, github-actions[bot]: 5
 
 **2026-04-24**: Bernardo Do Valle Pereira: 3, Tainara-Carvalho: 3, github-actions[bot]: 6
 
