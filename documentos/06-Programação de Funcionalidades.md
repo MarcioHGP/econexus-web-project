@@ -537,47 +537,13 @@ Rafael
 
 ## RF-16
 
-### Tela Inicial e Sobre Nós
-
-<img width="1899" height="901" alt="image" src="https://github.com/user-attachments/assets/dd591912-e6af-45c3-b8d2-7d72c0648695" />
-
-#### Requisito atendido
-
-**RF-16:** Exibir tela inicial e sobre nós.
-
-#### Artefatos da funcionalidade
-
-https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/blob/main/codigo-fonte/src/index.html
-
-#### Estrutura de Dados
-
-Não se aplica. A funcionalidade possui caráter informativo e não realiza armazenamento de dados.
-
-#### Instruções de acesso
-
-1. Acessar a aplicação. 
-2. Selecionar a opção "Home" no menu principal. 
-3. Visualizar a seção institucional "Sobre Nós", contendo: 
-    * Apresentação da EcoNexus; 
-    * Desafio; 
-    * Solução; 
-    * Impacto. 
-
-#### Responsável
-
-Mariana Guimarães Melo
-
----
-
-## RF-17
-
 ### Avisos de Utilidade Pública
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6654138d-cd1a-4b8d-aaca-55d79eaeb4b9" />
 
 #### Requisito atendido
 
-**RF-17:** Avisos de utilidade pública.
+**RF-16:** Avisos de utilidade pública.
 
 #### Artefatos da funcionalidade
 
