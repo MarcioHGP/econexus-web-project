@@ -6,8 +6,10 @@
 
 ### Vídeo de apresentação do projeto web
 
-[Adicione vídeo de apresentação.]
+
+https://github.com/user-attachments/assets/748ca2fd-9167-4661-a2e5-accd7688d970
+
 
 ### Hospedagem
 
-[Adicione o endereço eletrônico público onde o site encontra-se hospedado.]
+[GitHub](https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2026-1-e1-proj-web-t10-econexus-2/)
